@@ -1,0 +1,27 @@
+/* Style for the dropdown menu */
+.custom-dropdown {
+    border: 1px solid #007bff;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Style for each menu item */
+  .custom-dropdown .ant-dropdown-menu-item {
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-dropdown .ant-dropdown-menu-item:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* Divider styling */
+  .custom-dropdown .ant-dropdown-menu-item-divider {
+    margin: 8px 0;
+    border-color: #ddd;
+  }
+  
