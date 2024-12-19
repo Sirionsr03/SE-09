@@ -469,6 +469,8 @@ func GeneratePDF() (bytes.Buffer, error) {
 	OldGroup := "3"
 	NewGroup := "2"
 	SpecifyReason := "ต้องการเปลี่ยนกลุ่ม"
+	inputPhoneNumber := "0651018312"
+	Date := "2024-12-20"
 
 	// Form Header
 	m.Row(15, func() {
@@ -926,20 +928,54 @@ func GeneratePDF() (bytes.Buffer, error) {
 				Style: consts.Bold,
 				Left:  23, // Indent the text slightly to the right
 			})
+			m.Row(3, func() {})
+			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  49, // Indent the text slightly to the right
+			})
+			m.Text(inputName, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  80, // Indent the text slightly to the right
+			})
+			m.Text("โทรศัพท์ Tel. No.", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  115, // Indent the text slightly to the right
+			})
+			m.Text(inputPhoneNumber, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  138, // Indent the text slightly to the right
+			})
 
+			m.Text("วันที่ Date", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  158, // Indent the text slightly to the right
+			})
 
-
-
-
-
-
-
-
-
-		
-
-
-
+			m.Text(Date, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  174, // Indent the text slightly to the right
+			})
 
 			// m.SetBackgroundColor(whiteColor)
 
