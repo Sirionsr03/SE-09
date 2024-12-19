@@ -334,6 +334,7 @@ package pdf
 
 import (
 	"bytes"
+	"time"
 
 	"net/http"
 
@@ -1102,28 +1103,46 @@ func getRedColor() color.Color {
 }
 
 func CreatePrintStory(c *gin.Context) {
-	var request entity.PrintStory
+    var PrintStory entity.PrintStory
 
-	// Validate the incoming JSON
-	if err := c.ShouldBindJSON(&request); err != nil {
+	// Bind the request data to the Request struct
+	if err := c.ShouldBindJSON(&PrintStory); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
-	db := config.DB()
-	// Map DTO to Entity
-	printStory := entity.PrintStory{
-		PrintStoryCode: request.PrintStoryCode,
-		DocumentPath:   request.DocumentPath,
-		CreateAt:       request.CreateAt,
-		RequestID:      request.RequestID,
-	}
 
-	// Save to database
-	if err := db.Create(&printStory).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save print story"})
+    db := config.DB()
+
+    // // Parse form data
+    // printStoryCode := c.PostForm("PrintStoryCode")
+
+    // // Handle file upload
+    // file, err := c.FormFile("DocumentPath")
+    // if err != nil {
+    //     c.JSON(http.StatusBadRequest, gin.H{"error": "File upload failed"})
+    //     return
+    // }
+
+    // // Save file to a server directory
+    // filePath := "./uploads/" + file.Filename
+    // if err := c.SaveUploadedFile(file, filePath); err != nil {
+    //     c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save file"})
+    //     return
+    // }
+
+    // สร้าง PrintStory entity
+    printStory := entity.PrintStory{
+        PrintStoryCode: PrintStory.PrintStoryCode,
+        DocumentPath:   PrintStory.DocumentPath,
+        CreateAt:       time.Now(),
+        RequestID:      PrintStory.RequestID, // เชื่อมโยงกับ Request ที่ดึงมา
+    }
+
+ 	// Save the new Request to the database
+	 if err := db.Create(&printStory).Error; err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return
 	}
 
-	// Respond with the created record
-	c.JSON(http.StatusCreated, gin.H{"data": printStory})
+	c.JSON(http.StatusCreated, gin.H{"message": "Created successfully", "data": printStory})
 }
