@@ -463,6 +463,12 @@ func GeneratePDF() (bytes.Buffer, error) {
 	CourseTitle := "COMPUTER AND COMMUNICATION"
 	Approved := "⬛ อนุญาต Approved"
 	NotApproved := "⬛ ไม่อนุญาต Not Approved"
+	annotation := "ไม่ผ่านเงื่อนไข "
+	Group := "1"
+	Instructor := "อาจารย์ สิริอร ศรีเมือง"
+	OldGroup := "3"
+	NewGroup := "2"
+	SpecifyReason := "ต้องการเปลี่ยนกลุ่ม"
 
 	// Form Header
 	m.Row(15, func() {
@@ -501,7 +507,7 @@ func GeneratePDF() (bytes.Buffer, error) {
 		Width: 0.5, // ความหนาของเส้น 2
 	})
 
-	m.Row(105, func() {
+	m.Row(135, func() {
 		m.Col(12, func() {
 			m.Text("เรียน   อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา    Dear Instructor / Course Coordinator", props.Text{
 				Top:   1.5,
@@ -591,10 +597,88 @@ func GeneratePDF() (bytes.Buffer, error) {
 			// Add some space before the "Transactions" section
 			m.Row(33, func() {})
 
-			m.SetBackgroundColor(darkGrayColor)
+				m.SetBackgroundColor(darkGrayColor)
+				
+				//เส้นคั้นตารางตรงกลาง
+				m.Text("|", props.Text{
+					Top:   5.4,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   7.8,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   10.2,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   12.6,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   15,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   17.4,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   19.8,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   22.2,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   24.6,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   27,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   29.4,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+				m.Text("|", props.Text{
+					Top:   31.8,
+					Style: consts.Bold,
+					Left:  110.7,
+					Color: darkGrayColor,
+				})
+
+				
+
+
 
 			m.Row(7, func() {
-				m.Col(6, func() {
+				m.Col(7, func() {
 					m.Text("1. รายการ Details", props.Text{
 						Top:   0.5,
 						Size:  11,
@@ -603,7 +687,7 @@ func GeneratePDF() (bytes.Buffer, error) {
 						Color: color.NewWhite(),
 					})
 				})
-				m.Col(6, func() {
+				m.Col(5, func() {
 					m.Text("2. ผลการพิจารณา Decision Made", props.Text{
 						Top:   0.5,
 						Size:  11,
@@ -616,16 +700,31 @@ func GeneratePDF() (bytes.Buffer, error) {
 				// m.ColSpace(3)
 						
 			})
-
+			// Remove background color before this section
+			m.SetBackgroundColor(color.NewWhite()) // Set background back to white
+			m.Row(1, func() {})
+			
+			m.Col(13, func() {
+				m.Text(Approved , props.Text{
+					Top: 1,
+					Size:  11,
+					Align: consts.Left,
+					Style: consts.Bold,
+					Left:  119, // Adjust positioning as needed
+				})
+			})
 			m.Row(0.5, func() {})
-			m.Text("|", props.Text{
-				Top:   0,
-				Style: consts.Bold,
-				Left:  155,
-				Color: darkGrayColor,
+			m.Col(13, func() {
+				m.Text(NotApproved, props.Text{
+					Top: 1,
+					Size:  11,
+					Align: consts.Left,
+					Style: consts.Bold,
+					Left:  149, // Adjust positioning as needed
+				})
 			})
 
-			m.Row(1, func() {})
+			m.Row(0.5, func() {})
 
 			m.Text(Details, props.Text{
 				Top:   1.5,
@@ -650,15 +749,10 @@ func GeneratePDF() (bytes.Buffer, error) {
 				Style: consts.Bold, // Bold inputName text
 				Color: getBlueColor(),
 			})
-			m.Text("|", props.Text{
-				Top:   1,
-				Style: consts.Bold,
-				Left:  155,
-				Color: darkGrayColor,
-			})
 
 
-			m.Row(3.5, func() {})
+
+			m.Row(3, func() {})
 			m.Text("ชื่อวิชา(ภาษาอังกฤษ) Course Title", props.Text{
 				Top:   20.5,
 				Size:  11,
@@ -670,44 +764,179 @@ func GeneratePDF() (bytes.Buffer, error) {
 				Top:   20.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  55,
+				Left:  46,
 				Style: consts.Bold, // Bold inputName text
 				Color: getBlueColor(),
 			})
 
-			m.Row(12, func() {})
-			m.Text("|", props.Text{
-				Top:   1,
+			m.Text("เหตุผล (กรณีไม่อนุญาต) :", props.Text{
+				Top:   20.5,
+				Size:  11,
+				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  155,
+				Left:  119, // Indent the text slightly to the right
+			})
+
+			//ส่วนของอาจารย์
+			m.Text(annotation, props.Text{
+				Top:   20.5,
+				Size:  11,
+				Align: consts.Left,
+				Left:  149,
+				Style: consts.Bold, // Bold inputName text
+				Color: getBlueColor(),
+			})
+
+
+			m.Row(4.5, func() {})
+			m.Text("กลุ่ม Group No.", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  3, // Indent the text slightly to the right
+			})
+			m.Text(Group, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Left:  24,
+				Style: consts.Bold, // Bold inputName text
+				Color: getBlueColor(),
+			})
+
+			// ส่วนของอาจารย์
+			m.Text(Instructor, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Left:  135,
+				Style: consts.Bold, // Bold inputName text
+				Color: getBlueColor(),
+			})
+			m.Row(5, func() {})
+
+			m.Text("กรณีเปลี่ยนกลุ่ม In the case of changing study group ", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getRedColor(),
+				Left:  3, // Indent the text slightly to the right
+			})
+
+			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  125, // Indent the text slightly to the right
+			})
+
+			m.Row(5.5, func() {})
+			m.Text("กลุ่มเดิมคือกลุ่ม the old group no. is", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  3, // Indent the text slightly to the right
+			})
+			m.Text(OldGroup, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  50, // Indent the text slightly to the right
+			})
+
+			// m.Row(5, func() {})
+			m.Text("กลุ่มใหม่คือกลุ่ม the new group no. is", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  55, // Indent the text slightly to the right
+			})
+			m.Text(NewGroup, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  103, // Indent the text slightly to the right
+			})
+
+			m.Text("Instructor / Course coordinator", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  127, // Indent the text slightly to the right
+			})
+			m.Row(5.5, func() {})
+			m.Text("ระบุเหตุผล Specify reason ", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  3, // Indent the text slightly to the right
+			})
+			m.Text(SpecifyReason, props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Color: getBlueColor(),
+				Left:  38, // Indent the text slightly to the right
+			})
+			m.Row(0.6, func() {})
+			m.Text("|", props.Text{
+				Top:   27.5,
+				Style: consts.Bold,
+				Left:  110.7,
 				Color: darkGrayColor,
 			})
+			m.Row(1.59, func() {})
 			m.Text("|", props.Text{
-				Top:   52.5,
+				Top:   25.5,
 				Style: consts.Bold,
-				Left:  155,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Row(2 , func() {})
+			m.Text("|", props.Text{
+				Top:   25.5,
+				Style: consts.Bold,
+				Left:  110.7,
 				Color: darkGrayColor,
 			})
 
-			
-
-
-
-
-			// Remove background color before this section
-			m.SetBackgroundColor(color.NewWhite()) // Set background back to white
-
-			m.Row(1, func() {
-				m.Col(13, func() {
-					m.Text(Approved + "   " + NotApproved, props.Text{
-						Top:   1.5,
-						Size:  11,
-						Align: consts.Left,
-						Style: consts.Bold,
-						Left:  100, // Adjust positioning as needed
-					})
-				})
+			m.Row(7.5 , func() {})
+			m.Line(1, props.Line{
+				
+				Width: 0.1, // ความหนาของเส้น 2
 			})
+
+			m.Row(1, func() {})
+			m.Text("จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.", props.Text{
+				Top:   27.5,
+				Size:  11,
+				Align: consts.Left,
+				Style: consts.Bold,
+				Left:  23, // Indent the text slightly to the right
+			})
+
+
+
+
+
+
+
+
+
+
+		
 
 
 
