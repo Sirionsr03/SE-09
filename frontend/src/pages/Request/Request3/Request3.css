@@ -1,0 +1,125 @@
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.input {
+    width: 270px;
+    height: 30px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 16px;
+    color: #222;
+    padding: 15px 5px 10px 20px;
+    box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+    border-radius: 25px;
+    background-clip: padding-box;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .input:focus {
+    padding-bottom: 10px;
+  }
+  
+  .input::placeholder {
+    color: #969393;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+  
+  .input:focus::placeholder {
+    color: #999;
+  }
+
+  
+
+
+
+
+ select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    border-radius: 25px;
+    background: #ffffffb9;
+    background-clip: padding-box;
+    box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+    background-image: none;
+    flex: 1;
+    padding: 0 20px;
+    color:#222;
+    font-weight: 500;
+    cursor:pointer;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+
+ }
+ select::-ms-expand {
+    display: none;
+ }
+ .select {
+    position: relative;
+    display: flex;
+    width: 15em;
+    height: 30px;
+    line-height: 3;
+    background: #fff7f5;
+    overflow: hidden;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    
+ }
+ .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #5d88e345;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+    margin-top: -7px;
+ }
+ .select:hover::after {
+    color: #060a78;
+ }
+
+
+
+ .custom-datepicker {
+    box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+    background-color: #ffffff23; /* สีของกล่อง */
+    border-color: #999999;    /* สีของขอบ */
+    color: #333333;           /* สีข้อความ */
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .custom-datepicker1 {
+    box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+    background-color: #ffffff; /* สีของกล่อง */
+    border-color: #999999;    /* สีของขอบ */
+    color: #333333;           /* สีข้อความ */
+    border-radius: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .custom-datepicker .ant-picker-input > input {
+    color: #333333;           /* สีข้อความที่พิมพ์ในกล่อง */
+  }
+  .ant-picker ant-picker-outlined css-dev-only-do-not-override-1x0dypw custom-datepicker1{
+    border-color: #ffffff;
+  }

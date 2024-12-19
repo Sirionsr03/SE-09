@@ -1,14 +1,15 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
-import ConfigRoutes from "./routes";
-import "./App.css";
+import './App.css'
+import Request3 from './pages/Request/Request3/Request3'
 
-const App: React.FC = () => {
+
+
+function App() {
+
   return (
-    <Router>
-      <ConfigRoutes />
-    </Router>
-  );
-};
+    <>
+      <Request3/>
+    </>
+  )
+}
 
-export default App;
+export default App

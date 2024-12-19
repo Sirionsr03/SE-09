@@ -10,6 +10,7 @@ type Request struct {
 	gorm.Model
 	RetryCount  int
 	RequestDate time.Time
+	Status      string
 	Note        string
 
 	StudentID uint
