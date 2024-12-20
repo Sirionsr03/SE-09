@@ -1,5 +1,8 @@
+
 import './App.css'
-import Request3 from './pages/Request/Request3/Request3'
+import NavbarHome from './components/Navbar'
+import Request1 from './pages/Request/Request1/Request1'
+
 
 
 
@@ -7,7 +10,9 @@ function App() {
 
   return (
     <>
-      <Request3/>
+      <NavbarHome/>
+      <Request1/>
+   
     </>
   )
 }

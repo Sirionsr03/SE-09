@@ -1,7 +1,11 @@
-/* From Uiverse.io by Lu2ovic */ 
-.radio-input {
+/*From Uiverse.io by Lu2ovic */
+
+
+/* เดิม ใช้งานได้*/
+
+/* .radio-input {
     display: flex;
-    gap: 16px; /* Espace entre les lignes */
+    gap: 16px; 
     margin-left: 50px;
     margin-top: 15px;
   }
@@ -22,7 +26,7 @@
   .radio-b__label {
     display: flex;
     align-items: center;
-    gap: 12px; /* Espace entre le carré et le texte */
+    gap: 12px; 
     font-size: 15px;
     color: #000000;
     font-weight: 600;
@@ -62,8 +66,8 @@
   }
   
   .radio-b__input:checked + .radio-b__label .radio-b__custom {
-    border: none; /* Supprime les bordures noires */
-    transition: all 0.3s ease; /* Assure une transition fluide */
+    border: none; 
+    transition: all 0.3s ease; 
   }
   
   .radio-b__input:hover + .radio-b__label .radio-b__custom {
@@ -75,7 +79,7 @@
     );
   }
   
-  /* Optionnel : style pour le texte */
+
   .radio-b__text {
     font-size: 15px;
     color: #000000;
@@ -83,7 +87,7 @@
   }
   
   
-/* From Uiverse.io by Smit-Prajapati */ 
+
 .input-container {
     display: flex;
     background: white;
@@ -157,16 +161,15 @@
 
 
 
-/* Custom styles for the table header */
 .custom-table .ant-table-thead > tr > th {
-    background-color: #8096BC; /* Header background color */
-    color: #131010; /* Header text color */
+    background-color: #8096BC; 
+    color: #131010;
 
 }
 
 .custom-table2 .ant-table-thead > tr > th {
-  background-color: #c46c6c; /* Header background color */
-  color: #131010; /* Header text color */
+  background-color: #c46c6c; 
+  color: #131010; 
 
 }
 
@@ -199,8 +202,221 @@
  .icon i :hover{
   background:#000000 ;
   color: #dcdcdc;
- }
+ } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* From Uiverse.io by JaydipPrajapati1910 */ 
+.input {
+  width: 270px;
+  height: 30px;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 16px;
+  color: #222;
+  padding: 15px 5px 10px 20px;
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  border-radius: 25px;
+  background-clip: padding-box;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.input:focus {
+  padding-bottom: 10px;
+}
+
+.input::placeholder {
+  color: #969393;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.input:focus::placeholder {
+  color: #999;
+}
+
+
+select {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  border-radius: 25px;
+  background: #ffffffb9;
+  background-clip: padding-box;
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  background-image: none;
+  flex: 1;
+  padding: 0 20px;
+  color:#222;
+  font-weight: 500;
+  cursor:pointer;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+select::-ms-expand {
+  display: none;
+}
+.select {
+  position: relative;
+  display: flex;
+  width: 15em;
+  height: 30px;
+  line-height: 3;
+  background: #fff7f5;
+  overflow: hidden;
+  border-radius: 50px;
+  margin-top: 0;
+  margin-left: 10px;
+  margin-right: 10px;
   
+}
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #5d88e345;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+  margin-top: -7px;
+}
+.select:hover::after {
+  color: #060a78;
+}
+
+
+.select-degree {
+  -webkit-appearance:none;
+  -moz-appearance:none;
+  -ms-appearance:none;
+  appearance:none;
+  outline:0;
+  box-shadow:none;
+  border:0!important;
+  border-radius: 25px;
+  background: #ffffffb9;
+  background-clip: padding-box;
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  background-image: none;
+  flex: 1;
+  padding: 0 20px;
+  color:#222;
+  font-weight: 500;
+  cursor:pointer;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+ 
+
+}
+select::-ms-expand {
+  display: none;
+}
+.selectdegree {
+  position: relative;
+  display: flex;
+  width: 10em;
+  height: 30px;
+  line-height: 3;
+  background: #fff7f5;
+  overflow: hidden;
+  border-radius: 50px;
+  margin-top: 0px;
+  margin-left: 20px;
+  margin-right: 10px;
+  
+}
+.selectdegree::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #5d88e345;
+  cursor:pointer;
+  pointer-events:none;
+  transition:.25s all ease;
+  margin-top: -7px;
+}
+.selectdegree:hover::after {
+  color: #060a78;
+}
+
+.custom-datepicker {
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  background-color: #ffffff23; /* สีของกล่อง */
+  border-color: #999999;    /* สีของขอบ */
+  color: #333333;           /* สีข้อความ */
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.custom-datepicker1 {
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  background-color: #ffffff; /* สีของกล่อง */
+  border-color: #999999;    /* สีของขอบ */
+  color: #333333;           /* สีข้อความ */
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.custom-datepicker .ant-picker-input > input {
+  color: #333333;           /* สีข้อความที่พิมพ์ในกล่อง */
+}
+.ant-picker ant-picker-outlined css-dev-only-do-not-override-1x0dypw custom-datepicker1{
+  border-color: #ffffff;
+}
+  
+.responsive-div {
+  background-color: #9db2c4;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ปรับ layout สำหรับหน้าจอขนาดใหญ่ */
+@media (min-width: 768px) {
+  .responsive-div {
+    flex-direction: row; /* เปลี่ยนเป็นการจัดเรียงในแนวนอน */
+    justify-content: space-between;
+  }
+}
 
 
 

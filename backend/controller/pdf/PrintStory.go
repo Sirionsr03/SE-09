@@ -439,14 +439,9 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 func GeneratePDF() (bytes.Buffer, error) {
 	// begin := time.Now()
 	darkGrayColor := getDarkGrayColor()
-	// grayColor := getGrayColor()
-	// whiteColor := color.NewWhite()
-	// blueColor := getBlueColor()
-	// redColor := getRedColor()
-	// header := getHeader()
-	// contents := getContents()
 
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
+	
 	m.AddUTF8Font("THSarabun", consts.Normal, "./font/THSarabun.ttf")
 	m.AddUTF8Font("THSarabun", consts.Italic, "./font/THSarabun Italic.ttf")
 	m.AddUTF8Font("THSarabun", consts.Bold, "./font/THSarabun Bold.ttf")
@@ -1112,23 +1107,6 @@ func CreatePrintStory(c *gin.Context) {
 	}
 
     db := config.DB()
-
-    // // Parse form data
-    // printStoryCode := c.PostForm("PrintStoryCode")
-
-    // // Handle file upload
-    // file, err := c.FormFile("DocumentPath")
-    // if err != nil {
-    //     c.JSON(http.StatusBadRequest, gin.H{"error": "File upload failed"})
-    //     return
-    // }
-
-    // // Save file to a server directory
-    // filePath := "./uploads/" + file.Filename
-    // if err := c.SaveUploadedFile(file, filePath); err != nil {
-    //     c.JSON(http.StatusInternalServerError, gin.H{"error": "Could not save file"})
-    //     return
-    // }
 
     // สร้าง PrintStory entity
     printStory := entity.PrintStory{
