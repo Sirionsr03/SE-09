@@ -706,7 +706,7 @@
 
 
 import React from 'react';
-import { DatePickerProps, Flex, Layout,  theme } from 'antd';
+import { DatePicker, DatePickerProps, Flex, Layout,  Space,  theme } from 'antd';
 import "./Request1.css"
 
 
@@ -883,11 +883,11 @@ const Request: React.FC = () => {
                     >
                       <p >1. รายการ Details </p>
                     </div>
-                    <div
+                      {/* ส่วนของอาจารย์ */}
+                    {/* <div
                       style={{
                         background: '#8096BC',
                         padding: '10px 40px',
-                        // color: 'white',
                         display: 'flex',
                         alignItems: 'center',
                         borderRadius: '0px',
@@ -896,7 +896,8 @@ const Request: React.FC = () => {
                       }}
                     >
                       <p>2. ผลการพิจารณา Decision Made</p>
-                    </div>
+                    </div> */}
+
                   </div>
 
 
@@ -1049,13 +1050,12 @@ const Request: React.FC = () => {
 
                     
                     
-                    
+                    //ส่วนของอาจารย์
                     {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 */}
-                    <div
+                    {/*<div
                       style={{
                         background: '#DFDFE2',
                         padding: '10px 40px',
-                        // color: 'white',
                         display: 'flex',
                         alignItems: 'center',
                         borderRadius: '0px',
@@ -1072,7 +1072,7 @@ const Request: React.FC = () => {
                           
                         </div>
 
-                    </div> {/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 end*/}
+                    </div> */}{/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 end*/}
 
                   </div> {/* <-- กล่องสี่เหลี่ยมใน cotent end*/}
 
@@ -1080,9 +1080,40 @@ const Request: React.FC = () => {
                   marginTop:"30px",
                   display:"flex",
                   marginBottom:"20px",
-                  marginLeft:"250px"
+                  marginLeft:"50px"
                 }}>
                 จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.
+              </p>
+
+              <p style={{
+                  marginTop:"30px",
+                  display:"flex",
+                  marginBottom:"20px",
+                  marginLeft:"150px"
+                }}>
+
+                นักศึกษาลงชื่อ Signature
+                <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                            
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+
+                โทรศัพท์ Tel. No.
+                <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                            
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                 วันที่ <Space direction="vertical" style={{color:"#9999",marginTop:"-16px"}}>
+                            <DatePicker onChange={onChange} 
+                              className="custom-datepicker" />
+                      </Space>
+                
+
+                 
               </p>
 
                                        
