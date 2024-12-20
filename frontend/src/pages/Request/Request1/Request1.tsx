@@ -706,7 +706,7 @@
 
 
 import React from 'react';
-import { DatePickerProps, Layout,  theme } from 'antd';
+import { DatePickerProps, Flex, Layout,  theme } from 'antd';
 import "./Request1.css"
 
 
@@ -860,19 +860,195 @@ const Request: React.FC = () => {
                     มีความประสงค์จะลงทะเบียน wish to register :
                   </p>
 
-                  <div
-                    style={{
-                      background: '#1a2e5a',
-                      padding: '20px 20px',
-                      color: 'white',
-                      display: 'flex',
-                      alignItems: 'center',
-                      borderRadius: '10px',
-                      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-                    }}
-                  >
-                    <h3>คำร้องขอลงทะเบียนเพิ่ม / เปลี่ยนกลุ่ม กรณีกลุ่มเต็ม / ลดรายวิชา</h3>
+                  {/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
+                  <div style={{display:"flex",justifyContent:"center"}}>
+                    <div
+                      style={{
+                        background: '#8096BC',
+                        padding: '10px 20px',
+                        // color: "black",
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                        width:"790px"
+                      }}
+                    >
+                      <p >1. รายการ Details </p>
+                    </div>
+                    <div
+                      style={{
+                        background: '#DFDFE2',
+                        padding: '10px 40px',
+                        // color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                        width:"500px"
+                      }}
+                    >
+                      <p>2. ผลกำรพิจำรณำ Decision Made</p>
+                    </div>
                   </div>
+
+
+                  {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล */}
+                  <div style={{display:"flex",justifyContent:"center"}}>
+                    <div
+                      style={{
+                        background: '#DFDFE2',
+                        padding: '10px 20px',
+                        // color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                        width:"790px"
+                      }}
+                    >
+
+
+                    {/* ส่วนของ Checkbox */}
+                      {/* <div className="radio-input">
+                        <div className="radio-b">
+                          <input type="radio" className="radio-b__input" id="radio1" name="radio-group" />
+                          <label className="radio-b__label" htmlFor="radio1">
+                            <div className="radio-b__custom">
+                              <span className="radio-b__custom-fill"></span>
+                            </div>
+                            <span className="radio-b__text">เพิ่มวิชา</span>
+                          </label>
+                        </div>
+                        <div className="radio-b">
+                          <input type="radio" className="radio-b__input" id="radio2" name="radio-group" />
+                          <label className="radio-b__label" htmlFor="radio2">
+                            <div className="radio-b__custom">
+                              <span className="radio-b__custom-fill"></span>
+                            </div>
+                            <span className="radio-b__text">ลดรายวิชา</span>
+                          </label>
+                        </div>
+                        <div className="radio-b">
+                          <input type="radio" className="radio-b__input" id="radio3" name="radio-group" />
+                          <label className="radio-b__label" htmlFor="radio3">
+                            <div className="radio-b__custom">
+                              <span className="radio-b__custom-fill"></span>
+                            </div>
+                            <span className="radio-b__text">เปลี่ยนกลุ่มวิชา</span>
+                          </label>
+                        </div>
+                      </div> */}
+
+                      <div style={{ marginTop: "15px", marginBottom: "20px" }}>
+                        {/* Radio Buttons */}
+                        <div style={{ display: "flex", gap: "20px" }}>
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio1"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio1">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">เพิ่มวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio2"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio2">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">ลดรายวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio3"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio3">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">เปลี่ยนกลุ่มวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Course Code */}
+                        <div style={{ marginTop: "15px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>รหัสวิชา Course Code</span>
+                          <div className="selectdegree">
+                            <select name="format" id="format" style={{ padding: "5px" }}>
+                              <option selected disabled>เลือกรหัสวิชา</option>
+                              <option value="ปริญญาตรี">ปริญญาตรี</option>
+                              <option value="ปริญญาโท">ปริญญาโท</option>
+                              <option value="ปริญญาเอก">ปริญญาเอก</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        {/* Course Title */}
+                        <div style={{ marginTop: "15px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>ชื่อวิชำ(ภาษาอังกฤษ) Course Title</span>
+                          <div className="selectsubject">
+                            <select name="format" id="format" style={{ padding: "5px" }}>
+                              <option selected disabled>เลือกรหัสวิชา</option>
+                              <option value="ปริญญาตรี">ปริญญาตรี</option>
+                              <option value="ปริญญาโท">ปริญญาโท</option>
+                              <option value="ปริญญาเอก">ปริญญาเอก</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                      </div>
+
+
+
+
+
+               
+                    </div>
+
+                    
+                    
+                    
+                    
+                    <div
+                      style={{
+                        background: '#DFDFE2',
+                        padding: '10px 40px',
+                        // color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                        width:"500px"
+                      }}
+                    >
+                
+                    </div>
+                  </div>
+
 
 
                 
