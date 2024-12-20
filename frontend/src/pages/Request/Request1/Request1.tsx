@@ -773,8 +773,10 @@ const Request: React.FC = () => {
               className="fa-solid fa-circle-left fa-2xl"
               style={{ color: "#fff", marginLeft: "580px" }}
             ></i>
+
           </div>
-        </div>
+
+        </div> {/* <-- Header end*/}
           
  
         {/* Content */}
@@ -883,7 +885,7 @@ const Request: React.FC = () => {
                     </div>
                     <div
                       style={{
-                        background: '#DFDFE2',
+                        background: '#8096BC',
                         padding: '10px 40px',
                         // color: 'white',
                         display: 'flex',
@@ -893,13 +895,14 @@ const Request: React.FC = () => {
                         width:"500px"
                       }}
                     >
-                      <p>2. ผลกำรพิจำรณำ Decision Made</p>
+                      <p>2. ผลการพิจารณา Decision Made</p>
                     </div>
                   </div>
 
 
-                  {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล */}
+                  {/* กล่องสี่เหลี่ยมใน cotent*/}
                   <div style={{display:"flex",justifyContent:"center"}}>
+                    {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 1 */}
                     <div
                       style={{
                         background: '#DFDFE2',
@@ -1008,23 +1011,46 @@ const Request: React.FC = () => {
 
                         <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px",color:"red" }}>
                           <span>กรณีเปลี่ยนกลุ่ม In the case of changing study group</span>
-                          
                         </div>
 
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" ,justifyContent:"center"}}>
+                          <span>กลุ่มเดิมคือกลุ่ม the old group no. is</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
 
-                      </div>
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px",justifyContent:"center" }}>
+                          <span>กลุ่มใหม่คือกลุ่ม the new group no. is </span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
 
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>ระบุเหตุผล Specify reason</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"480px"
+                              }}type="text" name="text" className="input" placeholder="เหตุผล"></input> 
+                        </div>
 
+                      </div> {/* <<--ส่วนของ Checkbox  end*/}
 
-
-
-               
-                    </div>
+                    </div> {/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 1 end/}
 
                     
                     
                     
-                    
+                    {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 */}
                     <div
                       style={{
                         background: '#DFDFE2',
@@ -1035,20 +1061,34 @@ const Request: React.FC = () => {
                         borderRadius: '0px',
                         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                         width:"500px"
+                        
                       }}
                     >
-                
-                    </div>
-                  </div>
 
+                        <div style={{ marginTop: "200px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent:"center" }}>
+                          <span>อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา 
+                          Instructor / Course coordinator
+                          </span>
+                          
+                        </div>
 
+                    </div> {/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 end*/}
 
-                
-                
-                                                            
-            </div>
+                  </div> {/* <-- กล่องสี่เหลี่ยมใน cotent end*/}
 
-        </div>
+              <p style={{
+                  marginTop:"30px",
+                  display:"flex",
+                  marginBottom:"20px",
+                  marginLeft:"250px"
+                }}>
+                จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.
+              </p>
+
+                                       
+            </div> {/* <-- ส่วนของการกรอกข้อมูล end*/}
+
+        </div> {/* <-- Content end*/}
 
 
       </section>
