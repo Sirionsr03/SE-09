@@ -1,9 +1,11 @@
-export interface RequestInterface{
-    ID?: number;
-    StudentID?:        string;	
-	Years?:             number;
-	InstituteOf?:        number;
-	Major?:            string;	
-	PictureStudentID?: string;
-	MemberId: number;
-}
+export interface RequestInterface {
+	ID?: number;
+	RetryCount: number;
+	RequestDate: Time;
+	Status: string;
+	Note: string;
+	StudentID: string;
+	RequestTypeID: number;
+	CourseID: number;
+  }
+  
