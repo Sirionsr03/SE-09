@@ -377,7 +377,7 @@ select::-ms-expand {
 .selectsubject {
   position: relative;
   display: flex;
-  width: 15em;
+  width: 25em;
   height: 30px;
   line-height: 3;
   background: #fff7f5;

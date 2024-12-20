@@ -799,9 +799,14 @@ const Request: React.FC = () => {
                    
                 }}
             >
-                <p>เรียน อาจารย์ผู้รับผิดชอบวิชารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา Dear Instructor / Course coordinator </p>
+                <p style={{
+                      marginTop:"0px",
+                      display:"flex"
+                    }}>
+                      เรียน อาจารย์ผู้รับผิดชอบวิชารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา Dear Instructor / Course coordinator 
+                </p>
                   <p style={{
-                      marginTop:"15px",
+                      marginTop:"30px",
                       display:"flex"
                     }}>
                     ข้าพเจ้า <input 
@@ -825,7 +830,7 @@ const Request: React.FC = () => {
                   </p>
 
                   <p style={{
-                      marginTop:"15px",
+                      marginTop:"30px",
                       display:"flex"
                     }}>
                   สังกัดสำนักวิชา the Institute of        
@@ -853,7 +858,7 @@ const Request: React.FC = () => {
                   </p>
 
                   <p style={{
-                      marginTop:"15px",
+                      marginTop:"30px",
                       display:"flex",
                       marginBottom:"20px"
                     }}>
@@ -861,7 +866,7 @@ const Request: React.FC = () => {
                   </p>
 
                   {/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
-                  <div style={{display:"flex",justifyContent:"center"}}>
+                  <div style={{display:"flex",justifyContent:"center",marginTop:"30px",}}>
                     <div
                       style={{
                         background: '#8096BC',
@@ -910,36 +915,6 @@ const Request: React.FC = () => {
 
 
                     {/* ส่วนของ Checkbox */}
-                      {/* <div className="radio-input">
-                        <div className="radio-b">
-                          <input type="radio" className="radio-b__input" id="radio1" name="radio-group" />
-                          <label className="radio-b__label" htmlFor="radio1">
-                            <div className="radio-b__custom">
-                              <span className="radio-b__custom-fill"></span>
-                            </div>
-                            <span className="radio-b__text">เพิ่มวิชา</span>
-                          </label>
-                        </div>
-                        <div className="radio-b">
-                          <input type="radio" className="radio-b__input" id="radio2" name="radio-group" />
-                          <label className="radio-b__label" htmlFor="radio2">
-                            <div className="radio-b__custom">
-                              <span className="radio-b__custom-fill"></span>
-                            </div>
-                            <span className="radio-b__text">ลดรายวิชา</span>
-                          </label>
-                        </div>
-                        <div className="radio-b">
-                          <input type="radio" className="radio-b__input" id="radio3" name="radio-group" />
-                          <label className="radio-b__label" htmlFor="radio3">
-                            <div className="radio-b__custom">
-                              <span className="radio-b__custom-fill"></span>
-                            </div>
-                            <span className="radio-b__text">เปลี่ยนกลุ่มวิชา</span>
-                          </label>
-                        </div>
-                      </div> */}
-
                       <div style={{ marginTop: "15px", marginBottom: "20px" }}>
                         {/* Radio Buttons */}
                         <div style={{ display: "flex", gap: "20px" }}>
@@ -994,7 +969,7 @@ const Request: React.FC = () => {
                         </div>
 
                         {/* Course Code */}
-                        <div style={{ marginTop: "15px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
                           <span>รหัสวิชา Course Code</span>
                           <div className="selectdegree">
                             <select name="format" id="format" style={{ padding: "5px" }}>
@@ -1007,7 +982,7 @@ const Request: React.FC = () => {
                         </div>
 
                         {/* Course Title */}
-                        <div style={{ marginTop: "15px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
                           <span>ชื่อวิชำ(ภาษาอังกฤษ) Course Title</span>
                           <div className="selectsubject">
                             <select name="format" id="format" style={{ padding: "5px" }}>
@@ -1017,6 +992,23 @@ const Request: React.FC = () => {
                               <option value="ปริญญาเอก">ปริญญาเอก</option>
                             </select>
                           </div>
+                        </div>
+
+
+                        {/* Course Title */}
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>กลุ่ม Group No.</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
+
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px",color:"red" }}>
+                          <span>กรณีเปลี่ยนกลุ่ม In the case of changing study group</span>
+                          
                         </div>
 
 
