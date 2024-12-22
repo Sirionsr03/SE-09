@@ -4,6 +4,7 @@ import "../../App.css";
 import { Breadcrumb, Layout } from "antd";
 
 import NavbarHome from "../Navbar";
+import Request1 from "../../pages/Request/Request1/Request1";
 
 // import HomeRequest from "../../pages/home/HomeRequest/HomeRequest";
 // import ManageLecturer from "../../pages/ManageLecturer/ManageLecturer";
@@ -37,11 +38,11 @@ const FullLayout: React.FC = () => {
               // }}
             >
               <Routes>
-                
+
                 {/* <Route path="/homerequest" element={<HomeRequest />}/>
                 <Route path="/managelecturer" element={<ManageLecturer />} />
-                <Route path="/managelecturer/major/:id" element={<LecturerList />} />
-                <Route path="/managelecturer/create" element={<CreateLecturer />}/> */}
+                <Route path="/managelecturer/major/:id" element={<LecturerList />} /> */}
+                <Route path="/request1" element={<Request1 />}/>
 
               </Routes>
             </div>

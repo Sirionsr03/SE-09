@@ -1,7 +1,24 @@
 import axios from "axios";
+import { PrintStoryInterface } from "../../interfaces/PrintStory";
 // import { LecturerInterface } from "../../interfaces/Lecturer";
 
 const apiUrl = "http://localhost:8000";
+const Authorization = localStorage.getItem("token");
+const Bearer = localStorage.getItem("token_type");
+
+const requestOptions = {
+
+    headers: {
+  
+      "Content-Type": "application/json",
+  
+      Authorization: `${Bearer} ${Authorization}`,
+  
+    },
+  
+  };
+
+
 
 async function GetFaculty() {
     return await axios
@@ -57,6 +74,22 @@ async function GetDegrees() {
         .catch((e) => e.response);
 }
 
+
+
+
+//Request  Jiw
+async function GeneratePDF(data: PrintStoryInterface) {
+
+    return await axios
+  
+      .post(`${apiUrl}/printstory`, data, requestOptions)
+  
+      .then((res) => res)
+  
+      .catch((e) => e.response);
+  
+  }
+
 export {
     GetFaculty,
     GetMajorByFacultyID,
@@ -64,4 +97,9 @@ export {
     GetGenders,
     GetLecturerByMajorID,
     GetDegrees,
+
+    
+
+    //Request  Jiw
+    GeneratePDF
 };

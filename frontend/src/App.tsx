@@ -1,20 +1,14 @@
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import ConfigRoutes from "./routes";
+import "./App.css";
 
-import './App.css'
-import NavbarHome from './components/Navbar'
-import Request1 from './pages/Request/Request1/Request1'
-
-
-
-
-function App() {
-
+const App: React.FC = () => {
   return (
-    <>
-      <NavbarHome/>
-      <Request1/>
-   
-    </>
-  )
-}
+    <Router>
+      <ConfigRoutes />
+    </Router>
+  );
+};
 
-export default App
+export default App;

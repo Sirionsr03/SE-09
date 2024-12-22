@@ -41,6 +41,12 @@ func SetupDatabase() {
 		&entity.LecturerThesis{},
 		&entity.Student{},
 		&entity.StudentEducation{},
+		&entity.Condition{},
+		&entity.Building{},
+		&entity.Classroom{},
+		&entity.AssessmentType{},
+		&entity.GradeScale{},
+		&entity.StudentEvaluatio{},
 
 		//ระบบยื่นคำร้อง
 		&entity.Request{},
@@ -71,7 +77,7 @@ func SetupDatabase() {
 		// &entity.Room{},
 		// &entity.Schedule{},
 		// &entity.Status{},
-		// &entity.StatusActivity{},
+		&entity.StatusActivity{},
 		// &entity.StatusRequest{},
 		// &entity.Thesis{},
 	)
@@ -80,17 +86,101 @@ func SetupDatabase() {
 	GenderFemale := entity.Gender{Gender: "หญิง"}
 	GenderOther := entity.Gender{Gender: "อื่นๆ"}
 
+	Degree0 := entity.Degree{Degree: "มัธยมปลาย"}
 	Degree1 := entity.Degree{Degree: "ปริญญาตรี"}
 	Degree2 := entity.Degree{Degree: "ปริญญาโท"}
 	Degree3 := entity.Degree{Degree: "ปริญญาเอก"}
 
-	Major1:= entity.Major{MajorName: "1"}
-	Major2 := entity.Major{MajorName: "2"}
-	Major3 := entity.Major{MajorName: "3"}
+	faculties := []entity.Faculty{
+		{FacultyName: "สำนักวิทยาศาสตร์"},
+		{FacultyName: "สำนักวิศวกรรมศาสตร์"},
+		{FacultyName: "สำนักแพทยศาสตร์"},
+		{FacultyName: "สำนักพยาบาลศาสตร์"},
+		{FacultyName: "สำนักทันตแพทยศาสตร์"},
+		{FacultyName: "สำนักสาธารณสุขศาสตร์"},
+	}
 
-	StatusStaff1:= entity.StatusStaff{StatusStaff: "1"}
-	StatusStaff2 := entity.StatusStaff{StatusStaff: "2"}
-	StatusStaff3 := entity.StatusStaff{StatusStaff: "3"}
+	facultyID1 := uint(1)
+	facultyID2 := uint(2)
+	facultyID3 := uint(3)
+	facultyID4 := uint(4)
+	facultyID5 := uint(5)
+	facultyID6 := uint(6)
+
+	majors := []entity.Major{
+		{MajorName: "คณิตศาสตร์", FacultyID: &facultyID1},
+		{MajorName: "เคมี", FacultyID: &facultyID1},
+		{MajorName: "ชีววิทยา", FacultyID: &facultyID1},
+		{MajorName: "ฟิสิกส์", FacultyID: &facultyID1},
+		{MajorName: "ภูมิสารสนเทศ", FacultyID: &facultyID1},
+		{MajorName: "จุลชีววิทยา", FacultyID: &facultyID1},
+		{MajorName: "วิทยาศาสตร์การแพทย์", FacultyID: &facultyID1},
+		{MajorName: "วิทยาศาสตร์การกีฬา", FacultyID: &facultyID1},
+		{MajorName: "วิทยาการคอมพิวเตอร์", FacultyID: &facultyID1},
+		{MajorName: "วิศวกรรมการผลิตอัตโนมัติและหุ่นยนต์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมเกษตรและอาหาร", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมขนส่งและโลจิสติกส์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมคอมพิวเตอร์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมเคมี", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมเครื่องกล", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมเซรามิก", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมโทรคมนาคม", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมธรณี", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมปิโตรเลียมและเทคโนโลยีธรณี", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมพอลิเมอร์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมอุตสาหการ", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมโยธา", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมโลหการ", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมสิ่งแวดล้อม", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมอิเล็กทรอนิกส์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมไฟฟ้า", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมยานยนต์", FacultyID: &facultyID2},
+		{MajorName: "วิศวกรรมอากาศยาน", FacultyID: &facultyID2},
+		{MajorName: "แพทยศาสตรบัณฑิต", FacultyID: &facultyID3},
+		{MajorName: "พยาบาลศาสตรบัณฑิต", FacultyID: &facultyID4},
+		{MajorName: "ทันตแพทยศาสตรบัณฑิต", FacultyID: &facultyID5},
+		{MajorName: "อนามัยสิ่งแวดล้อม", FacultyID: &facultyID6},
+		{MajorName: "อาชีวอนามัยและความปลอดภัย", FacultyID: &facultyID6},
+		{MajorName: "โภชนวิทยาและการกำหนดอาหาร", FacultyID: &facultyID6},
+	}
+
+	Positions := []entity.Position{
+		{Position: "อธิการบดี"},
+		{Position: "รองอธิการบดี"},
+		{Position: "คณบดี"},
+		{Position: "ผู้ช่วยอธิการบดี"},
+		{Position: "หัวหน้าแผนก"},
+		{Position: "อาจารย์ผู้สอน"},
+	}
+
+
+	Statusstaffs := []entity.StatusStaff{
+		{StatusStaff: "ทำงานอยู่"},
+		{StatusStaff: "ศึกษาอยู่"},
+		{StatusStaff: "ลาออก"},
+	}
+
+	db.FirstOrCreate(&Degree0, &entity.Degree{Degree: "มัธยมปลาย"})
+	db.FirstOrCreate(&Degree1, &entity.Degree{Degree: "ปริญญาตรี"})
+	db.FirstOrCreate(&Degree2, &entity.Degree{Degree: "ปริญญาโท"})
+	db.FirstOrCreate(&Degree3, &entity.Degree{Degree: "ปริญญาเอก"})
+
+	for _, faculty := range faculties {
+		db.FirstOrCreate(&faculty, &entity.Faculty{FacultyName: faculty.FacultyName})
+	}
+
+	for _, position := range Positions {
+		db.FirstOrCreate(&position, &entity.Position{Position: position.Position})
+	}
+
+	for _, statusstaff := range Statusstaffs {
+		db.FirstOrCreate(&statusstaff, &entity.StatusStaff{StatusStaff: statusstaff.StatusStaff})
+	}
+
+	for _, major := range majors {
+		db.FirstOrCreate(&major, entity.Major{MajorName: major.MajorName, FacultyID: major.FacultyID})
+	}
+
 
    db.FirstOrCreate(&GenderMale, &entity.Gender{Gender: "ชาย"})
    db.FirstOrCreate(&GenderFemale, &entity.Gender{Gender: "หญิง"})
@@ -100,13 +190,6 @@ func SetupDatabase() {
 	db.FirstOrCreate(&Degree2, &entity.Degree{Degree: "ปริญญาโท"})
 	db.FirstOrCreate(&Degree3, &entity.Degree{Degree: "ปริญญาเอก"})
 
-	db.FirstOrCreate(&Major1, &entity.Major{MajorName: "computer"})
-	db.FirstOrCreate(&Major2, &entity.Major{MajorName: "CE"})
-	db.FirstOrCreate(&Major3, &entity.Major{MajorName: "ME"})
-
-	db.FirstOrCreate(&StatusStaff1, &entity.StatusStaff{StatusStaff: "11"})
-	db.FirstOrCreate(&StatusStaff2, &entity.StatusStaff{StatusStaff: "22"})
-	db.FirstOrCreate(&StatusStaff3, &entity.StatusStaff{StatusStaff: "33"})
 
 	//Select RequestType
 	RequestTypeName1 := entity.RequestType{RequestTypeName: "1"}
@@ -129,6 +212,15 @@ func SetupDatabase() {
 	db.FirstOrCreate(&StatusRequest2, &entity.StatusRequest{StatusRequestName: "2"})
 	db.FirstOrCreate(&StatusRequest3, &entity.StatusRequest{StatusRequestName: "3"})
 	db.FirstOrCreate(&StatusRequest4, &entity.StatusRequest{StatusRequestName: "4"})
+
+
+	//Select StatusActivity
+	StatusActivity1 := entity.StatusActivity{StatusActivityName: "ว่าง"}
+	StatusActivity2 := entity.StatusActivity{StatusActivityName: "เต็ม"}
+
+
+	db.FirstOrCreate(&StatusActivity1, &entity.StatusActivity{StatusActivityName: "ว่าง"})
+	db.FirstOrCreate(&StatusActivity2, &entity.StatusActivity{StatusActivityName: "เต็ม"})
 
 
 	hashedPassword, _ := HashPassword("123456")

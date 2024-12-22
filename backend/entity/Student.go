@@ -26,4 +26,7 @@ type Student struct {
 	StatusStaff   StatusStaff `gorm:"foreignKey:StatusStaffID"`
 
 	StudentEducation []StudentEducation `gorm:"foreignKey:student_id"`
+	Request []Request `gorm:"foreignKey:StudentID"`
+
+	Activity   []Activity `gorm:"many2many:enrolment;" json:"activity"`
 }

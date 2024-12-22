@@ -18,8 +18,7 @@ type Activity struct {
 	MaxParticipants int
 	 
 
-	StudentID uint
-	Student   Student `gorm:"foreignKey:StudentID"`
+	Student   []Student `gorm:"many2many:enrolment;" json:"student"`
 
 	AdminID uint
 	Admin   Admin `gorm:"foreignKey:AdminID"`
@@ -29,5 +28,7 @@ type Activity struct {
 
 	StatusActivityID uint
 	StatusActivity StatusActivity `gorm:"foreignKey:StatusActivityID"`
+
+
 }
  

@@ -55,6 +55,12 @@ func main() {
 		router.PATCH("/add", controller.UpdateRequest)
 		router.POST("/createrequest", controller.CreateRequest)
 
+		//Activity
+		router.GET("/activity", controller.GetActivity)
+		router.POST("/createActivity", controller.CreateActivity)
+		router.PATCH("/updateactivity", controller.UpdateActivity)
+		router.DELETE("/deleteactivity",controller.DeleteActivity)
+
 		//PrintStory
 		router.GET("/print", func(c *gin.Context) {
 			pdfData, err := pdf.GeneratePDF()

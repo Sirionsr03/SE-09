@@ -1228,6 +1228,7 @@ func getRedColor() color.Color {
 
 
 //มาจาก chatgpt
+
 func CreatePrintStory(c *gin.Context) {
 	// รับไฟล์จาก request
 	file, err := c.FormFile("pdf")
@@ -1263,7 +1264,7 @@ func CreatePrintStory(c *gin.Context) {
 
 	// สร้าง entity PrintStory
 	printStory := entity.PrintStory{
-		PrintStoryCode: "SomeCode",      // ตัวอย่างข้อมูล
+		PrintStoryCode: "R00",      // ตัวอย่างข้อมูล
 		DocumentPath:   savePath,       // เก็บ path ของไฟล์
 		CreateAt:       time.Now(),     // วันที่สร้าง
 		RequestID:      123,            // ตัวอย่าง RequestID

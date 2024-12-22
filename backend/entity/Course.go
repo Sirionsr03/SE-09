@@ -20,4 +20,6 @@ type Course struct{
 	LecturerID *uint
 	Lecturer   Lecturer `gorm:"foreignKey:LecturerID"`
 
+	Request []Request `gorm:"foreignKey:CourseID"`
+
 }
