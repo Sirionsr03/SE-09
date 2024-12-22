@@ -20,6 +20,9 @@ type Activity struct {
 
 	StudentID uint
 	Student   Student `gorm:"foreignKey:StudentID"`
+
+	AdminID uint
+	Admin   Admin `gorm:"foreignKey:AdminID"`
     
 	DormitoryID uint
 	Dormitory Dormitory `gorm:"foreignKey:DormitoryID "`

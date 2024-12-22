@@ -334,7 +334,12 @@ package pdf
 
 import (
 	"bytes"
+	"os"
 	"time"
+
+	// "io"
+	"path/filepath"
+	// "time"
 
 	"net/http"
 
@@ -1097,30 +1102,179 @@ func getRedColor() color.Color {
 	}
 }
 
+
+
+//เดิม 
+// func CreatePrintStory(c *gin.Context) {
+//     var PrintStory entity.PrintStory
+
+// 	// Bind the request data to the Request struct
+// 	if err := c.ShouldBindJSON(&PrintStory); err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+// 		return
+// 	}
+
+//     db := config.DB()
+
+//     // สร้าง PrintStory entity
+//     printStory := entity.PrintStory{
+//         PrintStoryCode: PrintStory.PrintStoryCode,
+//         DocumentPath:   PrintStory.DocumentPath,
+//         CreateAt:       time.Now(),
+//         RequestID:      PrintStory.RequestID, // เชื่อมโยงกับ Request ที่ดึงมา
+//     }
+
+//  	// Save the new Request to the database
+// 	 if err := db.Create(&printStory).Error; err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+// 		return
+// 	}
+
+// 	c.JSON(http.StatusCreated, gin.H{"message": "Created successfully", "data": printStory})
+// }
+
+
+
+
+//Test 1
+
+// func CreatePrintStory(c *gin.Context) {
+//     var PrintStory entity.PrintStory
+
+//     // รับไฟล์จากการอัพโหลด
+//     file, err := c.FormFile("document")
+//     if err != nil {
+//         c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to get file: " + err.Error()})
+//         return
+//     }
+
+//     // เปิดไฟล์ที่อัพโหลดมา
+//     openedFile, err := file.Open()
+//     if err != nil {
+//         c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to open file: " + err.Error()})
+//         return
+//     }
+//     defer openedFile.Close()
+
+//     // อ่านไฟล์เป็นบิตไบต์
+//     fileBytes, err := io.ReadAll(openedFile)
+//     if err != nil {
+//         c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to read file: " + err.Error()})
+//         return
+//     }
+
+//     // เชื่อมต่อฐานข้อมูล
+//     db := config.DB()
+
+//     // สร้าง PrintStory entity พร้อมข้อมูลไฟล์
+//     printStory := entity.PrintStory{
+//         PrintStoryCode: c.PostForm("print_story_code"),
+//         DocumentPath:   file.Filename, // เก็บชื่อไฟล์ในกรณีที่ต้องการ
+//         DocumentFile:   fileBytes,    // เก็บไฟล์ในฐานข้อมูล
+//         CreateAt:       time.Now(),
+//         RequestID:      c.PostForm("request_id"), // ดึงจากฟอร์ม
+//     }
+
+//     // บันทึก PrintStory ลงฐานข้อมูล
+//     if err := db.Create(&printStory).Error; err != nil {
+//         c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+//         return
+//     }
+
+//     c.JSON(http.StatusCreated, gin.H{"message": "Created successfully", "data": printStory})
+// }
+
+
+
+
+//Test 2 ของแพ็ค
+// func CreatePrintStory(c *gin.Context) {
+// 	// รับไฟล์จาก request
+// 	file, err := c.FormFile("picture")
+// 	if err != nil {
+// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to upload file"})
+// 		return
+// 	}
+
+// 	// กำหนด path ที่จะบันทึกไฟล์
+// 	filename := filepath.Base(file.Filename) // ชื่อไฟล์
+// 	savePath := filepath.Join("uploads", filename) // uploads/filename.jpg
+
+// 	// บันทึกไฟล์ลงเซิร์ฟเวอร์
+// 	if err := c.SaveUploadedFile(file, savePath); err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
+// 		return
+// 	}
+
+// 	// เก็บ path ลงในฐานข้อมูล
+// 	var print_story entity.PrintStory
+// 	if err := config.DB().First(&print_story, c.Param("id")).Error; err != nil {
+// 		c.JSON(http.StatusNotFound, gin.H{"error": "Building not found"})
+// 		return
+// 	}
+
+// 	print_story.DocumentPath = savePath // เก็บ path ของไฟล์
+// 	if err := config.DB().Save(&print_story).Error; err != nil {
+// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save building"})
+// 		return
+// 	}
+
+// 	// ตอบกลับผลลัพธ์
+// 	c.JSON(http.StatusOK, gin.H{"message": "File uploaded successfully", "path": savePath})
+// }
+
+
+
+
+
+//มาจาก chatgpt
 func CreatePrintStory(c *gin.Context) {
-    var PrintStory entity.PrintStory
-
-	// Bind the request data to the Request struct
-	if err := c.ShouldBindJSON(&PrintStory); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// รับไฟล์จาก request
+	file, err := c.FormFile("pdf")
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to upload file"})
 		return
 	}
 
-    db := config.DB()
-
-    // สร้าง PrintStory entity
-    printStory := entity.PrintStory{
-        PrintStoryCode: PrintStory.PrintStoryCode,
-        DocumentPath:   PrintStory.DocumentPath,
-        CreateAt:       time.Now(),
-        RequestID:      PrintStory.RequestID, // เชื่อมโยงกับ Request ที่ดึงมา
-    }
-
- 	// Save the new Request to the database
-	 if err := db.Create(&printStory).Error; err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+	// ตรวจสอบประเภทไฟล์
+	if file.Header.Get("Content-Type") != "application/pdf" {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "File must be a PDF"})
 		return
 	}
 
-	c.JSON(http.StatusCreated, gin.H{"message": "Created successfully", "data": printStory})
+	// สร้างโฟลเดอร์ uploads หากยังไม่มี
+	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
+		err = os.Mkdir("uploads", os.ModePerm)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
+			return
+		}
+	}
+
+	// กำหนด path ที่จะบันทึกไฟล์
+	filename := filepath.Base(file.Filename)
+	savePath := filepath.Join("uploads", filename)
+
+	// บันทึกไฟล์ PDF ลงเซิร์ฟเวอร์
+	if err := c.SaveUploadedFile(file, savePath); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
+		return
+	}
+
+	// สร้าง entity PrintStory
+	printStory := entity.PrintStory{
+		PrintStoryCode: "SomeCode",      // ตัวอย่างข้อมูล
+		DocumentPath:   savePath,       // เก็บ path ของไฟล์
+		CreateAt:       time.Now(),     // วันที่สร้าง
+		RequestID:      123,            // ตัวอย่าง RequestID
+	}
+
+	// บันทึกข้อมูลลงฐานข้อมูล
+	if err := config.DB().Create(&printStory).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
+		return
+	}
+
+	// ตอบกลับผลลัพธ์
+	c.JSON(http.StatusOK, gin.H{"message": "File uploaded successfully", "data": printStory})
 }
