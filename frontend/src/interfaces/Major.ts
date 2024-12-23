@@ -1,6 +1,6 @@
 export interface MajorInterface {
     ID: number;
-    MajorName: string;
+    major_name: string;
     MajorPhone?: string;
     MajorEmail?: string;
     FacultyID: number;

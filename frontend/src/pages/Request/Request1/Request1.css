@@ -371,10 +371,10 @@ select::-ms-expand {
 
 
 
-.selectsubject::-ms-expand {
+.selectfaculty::-ms-expand {
   display: none;
 }
-.selectsubject {
+.selectfaculty {
   position: relative;
   display: flex;
   width: 25em;
@@ -388,7 +388,7 @@ select::-ms-expand {
   margin-right: 10px;
   
 }
-.selectsubject::after {
+.selectfaculty::after {
   content: '\25BC';
   position: absolute;
   top: 0;
@@ -400,7 +400,7 @@ select::-ms-expand {
   transition:.25s all ease;
   margin-top: -7px;
 }
-.selectsubject:hover::after {
+.selectfaculty:hover::after {
   color: #060a78;
 }
 

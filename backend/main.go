@@ -45,6 +45,9 @@ func main() {
 
 		//Student
 		router.GET("/student", controller.GetStudent)
+		router.GET("/degree", controller.GetDegrees)
+		router.GET("/faculty", controller.GetFaculty)
+		router.GET("/majorbyfacultyid/:id", controller.GetMajorByFacultyID)
 
 		//Course
 		router.GET("/course", controller.GetCourse)
