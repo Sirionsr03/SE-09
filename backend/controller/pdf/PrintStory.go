@@ -2114,7 +2114,26 @@
 
 // //Test เกี่ยวกับการดึงข้อมูลที่ป้อนจาก UI มาแสดง    เซฟ pdf ลงฐานได้แต่ข้อมูลไม่มา  end =============================================================================================================
 
-//Test เซฟโดยไม่ดึงข้อมูล
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Test เซฟได้แล้ว มีข้อมูลแล้ว แต่ยังไม่ต่อ frontend
 
 package pdf
 
@@ -3138,24 +3157,3 @@ func CreatePrintStory(c *gin.Context) {
 }
 
 
-func UploadFile(c *gin.Context) {
-    file, err := c.FormFile("pdf")
-    if err != nil {
-        c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to upload file"})
-        return
-    }
-
-    if file.Header.Get("Content-Type") != "application/pdf" {
-        c.JSON(http.StatusBadRequest, gin.H{"error": "File must be a PDF"})
-        return
-    }
-
-    savePath := filepath.Join("uploads", file.Filename)
-
-    if err := c.SaveUploadedFile(file, savePath); err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
-        return
-    }
-
-    c.JSON(http.StatusOK, gin.H{"message": "File uploaded successfully", "filePath": savePath})
-}
