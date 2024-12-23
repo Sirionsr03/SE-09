@@ -2508,7 +2508,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			m.Row(1, func() {})
 
 			m.Col(13, func() {
-				m.Text("Approved" , props.Text{
+				m.Text("⬛ Approved" , props.Text{
 					Top: 1,
 					Size:  11,
 					Align: consts.Left,
@@ -2518,7 +2518,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			})
 			m.Row(0.5, func() {})
 			m.Col(13, func() {
-				m.Text("NotApproved", props.Text{
+				m.Text("⬛ NotApproved", props.Text{
 					Top: 1,
 					Size:  11,
 					Align: consts.Left,
@@ -2579,7 +2579,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			})
 
 			//ส่วนของอาจารย์
-			m.Text("annotation", props.Text{
+			m.Text("  ", props.Text{         //เหตุผล ของอาจารย์ กรอกในส่วนของอาจารย์
 				Top:   20.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2606,7 +2606,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			})
 
 			// ส่วนของอาจารย์
-			m.Text("อาจารย์ สิริอร ศรีเมือง", props.Text{
+			m.Text("          ", props.Text{            //ชื่ออาจารย์ ของอาจารย์ กรอกในส่วนของอาจารย์
 				Top:   27.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2787,13 +2787,6 @@ func getHeader() []string {
 	return []string{"", "Product", "Quantity", "Price"}
 }
 
-func getContents() [][]string {
-	return [][]string{
-		{"1", "อะแดปเตอร์แปลงไฟ Apple USB-C ขนาด 20 วัตต์", "1", "R$ 4,00"},
-		{"2", "iPad Air มีทั้งจอภาพ Liquid Retina ขนาด 10.9 นิ้ว", "1", "R$ 8,00"},
-		{"3", "JBL GO 2 ลำโพงบลูทูธแบบพกพา", "1", "R$ 30,00"},
-	}
-}
 
 func getDarkGrayColor() color.Color {
 	return color.Color{
@@ -2826,252 +2819,6 @@ func getRedColor() color.Color {
 		Blue:  10,
 	}
 }
-
-
-// func CreatePrintStory(c *gin.Context) {
-// 	// // รับข้อมูลจาก UI ผ่าน JSON payload
-// 	var requestData struct {
-// 		InputName        string `json:"inputName"`
-// 		InputStudentID   string `json:"inputStudentID"`
-// 		Degree           string `json:"degree"`
-// 		Faculty          string `json:"faculty"`
-// 		Major            string `json:"major"`
-// 		Details          string `json:"details"`
-// 		CourseCode       string `json:"courseCode"`
-// 		CourseTitle      string `json:"courseTitle"`
-// 		Group            string `json:"group"`
-// 		OldGroup         string `json:"oldGroup"`
-// 		NewGroup         string `json:"newGroup"`
-// 		SpecifyReason    string `json:"specifyReason"`
-// 		InputPhoneNumber string `json:"inputPhoneNumber"`
-// 		Date             string `json:"date"`
-// 	}
-
-// 	// Bind JSON input
-// 	if err := c.ShouldBindJSON(&requestData); err != nil {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input data"})
-// 		return
-// 	}
-
-// 	// Generate PDF using the provided data
-// 	pdfData, err := GeneratePDF(
-// 		requestData.InputName,
-// 		requestData.InputStudentID,
-// 		requestData.Degree,
-// 		requestData.Faculty,
-// 		requestData.Major,
-// 		requestData.Details,
-// 		requestData.CourseCode,
-// 		requestData.CourseTitle,
-// 		requestData.Group,
-// 		requestData.OldGroup,
-// 		requestData.NewGroup,
-// 		requestData.SpecifyReason,
-// 		requestData.InputPhoneNumber,
-// 		requestData.Date,
-// 	)
-
-// 	if err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate PDF"})
-// 		return
-// 	}
-
-
-
-
-// 	// สร้างโฟลเดอร์ uploads หากยังไม่มี
-// 	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
-// 		err = os.Mkdir("uploads", os.ModePerm)
-// 		if err != nil {
-// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
-// 			return
-// 		}
-// 	}
-
-
-// 	// Generate a unique PrintStoryCode
-// 	var newPrintStoryCode string
-// 	for {
-// 		// Generate a random PrintStoryCode
-// 		newPrintStoryCode = fmt.Sprintf("R%09d", rand.Intn(1000000000))
-
-
-// 		var existingPrintStory entity.PrintStory
-// 		db := config.DB().Session(&gorm.Session{Logger: logger.Default.LogMode(logger.Silent)}) //ปิดการแสดง record not found
-// 		err := db.Where("print_story_code = ?", newPrintStoryCode).First(&existingPrintStory).Error
-		
-// 		if errors.Is(err, gorm.ErrRecordNotFound) {
-			
-// 			break
-// 		} else if err != nil {
-// 			// Handle other database errors
-// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error when checking print story code"})
-// 			return
-// 		}
-// 	}
-
-
-// 	// Set the file name for the PDF
-// 	filename := fmt.Sprintf("%s.pdf", "B6505066")
-// 	savePath := filepath.Join("uploads", filename)
-
-// 	// Save the generated PDF to the server
-// 	if err := os.WriteFile(savePath, pdfData.Bytes(), 0644); err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
-// 		return
-// 	}
-
-// 	// Create a new PrintStory entity
-// 	printStory := entity.PrintStory{
-// 		PrintStoryCode: newPrintStoryCode, // Assign the generated PrintStoryCode
-// 		DocumentPath:   savePath,          // Save the file path
-// 		CreateAt:       time.Now(),        // Timestamp of creation
-// 		RequestID:      1,                 // Example RequestID; adjust based on your logic
-// 	}
-
-// 	// Save the PrintStory entity to the database
-// 	if err := config.DB().Create(&printStory).Error; err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
-// 		return
-// 	}
-
-// 	// Return a success response
-// 	c.JSON(http.StatusOK, gin.H{"message": "File uploaded and saved successfully", "data": printStory})
-// }
-
-
-
-
-
-
-//code ที่เหมือนจะได้
-// func CreatePrintStory(c *gin.Context) {
-
-
-// 	// // รับข้อมูลจาก UI ผ่าน JSON payload
-// 	var requestData struct {
-// 		InputName        string `json:"inputName"`
-// 		InputStudentID   string `json:"inputStudentID"`
-// 		Degree           string `json:"degree"`
-// 		Faculty          string `json:"faculty"`
-// 		Major            string `json:"major"`
-// 		Details          string `json:"details"`
-// 		CourseCode       string `json:"courseCode"`
-// 		CourseTitle      string `json:"courseTitle"`
-// 		Group            string `json:"group"`
-// 		OldGroup         string `json:"oldGroup"`
-// 		NewGroup         string `json:"newGroup"`
-// 		SpecifyReason    string `json:"specifyReason"`
-// 		InputPhoneNumber string `json:"inputPhoneNumber"`
-// 		Date             string `json:"date"`
-// 	}
-
-// 	// Bind JSON input
-// 	if err := c.ShouldBindJSON(&requestData); err != nil {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input data"})
-// 		return
-// 	}
-
-// 	// Generate PDF using the provided data
-// 	pdfData, err := GeneratePDF(
-// 		requestData.InputName,
-// 		requestData.InputStudentID,
-// 		requestData.Degree,
-// 		requestData.Faculty,
-// 		requestData.Major,
-// 		requestData.Details,
-// 		requestData.CourseCode,
-// 		requestData.CourseTitle,
-// 		requestData.Group,
-// 		requestData.OldGroup,
-// 		requestData.NewGroup,
-// 		requestData.SpecifyReason,
-// 		requestData.InputPhoneNumber,
-// 		requestData.Date,
-// 	)
-
-// 	if err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate PDF"})
-// 		return
-// 	}
-
-
-// 	// รับไฟล์จาก request
-// 	file, err := c.FormFile("pdf")
-// 	if err != nil {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "Failed to upload file"})
-// 		return
-// 	}
-
-// 	// ตรวจสอบประเภทไฟล์
-// 	if file.Header.Get("Content-Type") != "application/pdf" {
-// 		c.JSON(http.StatusBadRequest, gin.H{"error": "File must be a PDF"})
-// 		return
-// 	}
-
-// 	// สร้างโฟลเดอร์ uploads หากยังไม่มี
-// 	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
-// 		err = os.Mkdir("uploads", os.ModePerm)
-// 		if err != nil {
-// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
-// 			return
-// 		}
-// 	}
-
-// 	// Generate a unique PrintStoryCode
-// 	var newPrintStoryCode string
-// 	for {
-// 		// Generate a random PrintStoryCode
-// 		newPrintStoryCode = fmt.Sprintf("R%09d", rand.Intn(1000000000))
-
-
-// 		var existingPrintStory entity.PrintStory
-// 		db := config.DB().Session(&gorm.Session{Logger: logger.Default.LogMode(logger.Silent)}) //ปิดการแสดง record not found
-// 		err := db.Where("print_story_code = ?", newPrintStoryCode).First(&existingPrintStory).Error
-		
-// 		if errors.Is(err, gorm.ErrRecordNotFound) {
-			
-// 			break
-// 		} else if err != nil {
-// 			// Handle other database errors
-// 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Database error when checking print story code"})
-// 			return
-// 		}
-// 	}
-
-
-// 	// Set the file name for the PDF
-// 	filename := fmt.Sprintf("%s_%s.pdf", requestData.InputName,requestData.InputStudentID)
-// 	savePath := filepath.Join("uploads", filename)
-
-// 	// Save the generated PDF to the server
-// 	if err := os.WriteFile(savePath, pdfData.Bytes(), 0644); err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save file"})
-// 		return
-// 	}
-
-// 	// Create a new PrintStory entity
-// 	printStory := entity.PrintStory{
-// 		PrintStoryCode: newPrintStoryCode, // Assign the generated PrintStoryCode
-// 		DocumentPath:   savePath,          // Save the file path
-// 		CreateAt:       time.Now(),        // Timestamp of creation
-// 		RequestID:      1,                 // Example RequestID; adjust based on your logic
-// 	}
-
-// 	// Save the PrintStory entity to the database
-// 	if err := config.DB().Create(&printStory).Error; err != nil {
-// 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
-// 		return
-// 	}
-
-// 	// Return a success response
-// 	c.JSON(http.StatusOK, gin.H{"message": "File uploaded and saved successfully", "data": printStory})
-// }
-
-
-
-
-
 
 
 func CreatePrintStory(c *gin.Context) {
@@ -3122,7 +2869,7 @@ func CreatePrintStory(c *gin.Context) {
     }
 
     // Save the PDF file
-    filename := fmt.Sprintf("%s_%s.pdf", requestData.InputName, requestData.InputStudentID)
+    filename := fmt.Sprintf("%s_%s.pdf", requestData.InputStudentID,requestData.InputName)
     savePath := filepath.Join("uploads", filename)
 
     if _, err := os.Stat("uploads"); os.IsNotExist(err) {
@@ -3155,5 +2902,4 @@ func CreatePrintStory(c *gin.Context) {
 
     c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
 }
-
 

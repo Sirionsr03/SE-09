@@ -25,8 +25,8 @@ const FullLayout: React.FC = () => {
       <NavbarHome />
       <Layout style={{ minHeight: "100vh", backgroundColor: "#F5F5F5" }}>
         <Layout style={{ backgroundColor: "#434343", minHeight: "100vh" }}>
-          <Content style={{ margin: "0 30px", marginTop: "20px", display: "flex", justifyContent: "center" }}>
-            <Breadcrumb style={{ margin: "16px 0" }} />
+          <Content style={{ margin: "0 0px", marginTop: "0px", display: "flex", justifyContent: "center" }}>
+            <Breadcrumb style={{ margin: "0px 0" }} />
             <div
               // style={{
               //   padding: 24,

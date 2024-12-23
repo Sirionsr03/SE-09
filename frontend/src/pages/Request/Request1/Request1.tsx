@@ -1148,178 +1148,507 @@
 
 //Test ลองดึงข้อมูล
 
-import React, { useEffect, useState } from 'react';
-import { DatePicker, Space } from 'antd';
-import { Form } from 'react-router-dom';
-import { DegreeInterface } from '../../../interfaces/Degree';
-import { GeneratePDF, GetDegree } from '../../../services/https';
+import React, { useState } from 'react';
+import { DatePicker, DatePickerProps, Space,  theme } from 'antd';
+import "./Request1.css"
 
 
-import './Request1.css';
+
+// const { Header, Content  } = Layout;
+
+const items = new Array(15).fill(null).map((_, index) => ({
+  key: index + 1,
+  label: `nav ${index + 1}`,
+}));
+
+const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+    console.log(date, dateString);
+  };
+
+interface Data {
+  inputName?: string
+  inputStudentID?: string
+  degree?: string
+  faculty?: string
+  major?: string
+  details?: string
+  courseCode?: string
+  courseTitle?: string
+  group?: string
+  oldGroup?: string
+  newGroup?: string
+  specifyReason?: string    
+  inputPhoneNumber?: string
+  date?: string             
+} 
+
 
 const Request1: React.FC = () => {
-  const [degree, setDegree] = useState<DegreeInterface[]>([]);
 
-  const [formData, setFormData] = useState({
-    fullName: '',
-    studentId: '',
-    degree: '',
-    faculty: '',
-    major: '',
-    courseCode: '',
-    courseTitle: '',
-    groupNo: '',
-    reason: '',
-    oldGroupNo: '',
-    newGroupNo: '',
-    inputPhonenumber:'',
-    telNo: '',
-    date: null,
-  });
+  const [inputName, setInputName] = useState("")
+  const [inputStudentID, setInputStudentID] = useState("")
+  const [degree, setdegree] = useState("")
+  const [faculty, setfaculty] = useState("")
+  const [major, setmajor] = useState("")
+  const [details, setdetails] = useState("")
+  const [courseCode, setcourseCode] = useState("")
+  const [courseTitle, setcourseTitle] = useState("")
+  const [group, setgroup] = useState("")
+  const [oldGroup, setoldGroup] = useState("")
+  const [newGroup, setnewGroup] = useState("")
+  const [specifyReason, setspecifyReason] = useState("")
+  const [inputPhoneNumber, setinputPhoneNumber] = useState("")
+  const [date, setdate] = useState("")
+  
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page reload
-    try {
-      const response = await GeneratePDF(formData); // Pass form data to GeneratePDF function
-
-      if (response && response.data) {
-        const pdfBlob = new Blob([response.data], { type: 'application/pdf' });
-        const pdfUrl = URL.createObjectURL(pdfBlob);
-        window.open(pdfUrl); // Opens the generated PDF in a new tab
-      }
-    } catch (error) {
-      console.error("Error generating PDF:", error);
+  
+  async function Summit (){
+    const data1: Data = {
+      inputName: inputName,
+      inputStudentID: inputStudentID
     }
-  };
+    console.log(data1)
 
-  const getDegree = async () => {
-    const res = await GetDegree();
-    if (res) {
-      setDegree(res);
+    const url = "http://localhost:8000/CreatePrintStory"
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(data1),        //json to string
+      headers: {'Content-Type': 'application/json; charset=UTF-8'} });
+    
+    if (response.ok) { /* Handle */ 
+      alert("ส่งสำเร็จ")
     }
-  };
 
-  useEffect(() => {
-    getDegree();
-  }, []);
+    
+    // If you care about a response:
+    // if (response.body !== null) {
+    //   // body is ReadableStream<Uint8Array>
+    //   // parse as needed, e.g. reading directly, or
+    //   const asString = new TextDecoder("utf-8").decode(response.body);
+    //   // and further:
+    //   const asJSON = JSON.parse(asString);  //strintg to json
+    // }
 
-  const onChange = (date, dateString) => {
-    setFormData({ ...formData, date: dateString });
-  };
-
-  function moment(date: never): unknown {
-    throw new Error('Function not implemented.');
   }
 
+
+
+  const {
+    token: { colorBgContainer, borderRadiusLG },
+  } = theme.useToken();
+
+
   return (
-    <section style={{ marginTop: '70px', padding: '40px 60px', backgroundColor: '#f7f8fc', minHeight: '100vh' }}>
-      <div style={{ background: '#1a2e5a', padding: '15px 20px', color: 'white', display: 'flex', alignItems: 'center', borderRadius: '10px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-        <div style={{ display: "flex", alignItems: "center", color: "#fff", margin: 0 }}>
-          <i className="fa-solid fa-print fa-2xl" style={{ color: "#fff", marginRight: "20px" }}></i>
-          <div style={{ flex: 1 }}>
-            <h3>คำร้องขอลงทะเบียนเพิ่ม / เปลี่ยนกลุ่ม กรณีกลุ่มเต็ม / ลดรายวิชา</h3>
-            <h4 style={{ marginTop: "0px" }}>Request to Register for Additional Credits / to Change Study Group / to Reduce Courses</h4>
+    <>
+      <section
+          style={{
+            marginTop: '70px',
+            padding: '40px 60px',
+            backgroundColor: '#f7f8fc',
+            minHeight: '100vh',
+          }}
+      >
+        {/* Header */}
+        <div
+          style={{
+            background: '#1a2e5a',
+            padding: '15px 20px',
+            color: 'white',
+            display: 'flex',
+            alignItems: 'center',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+          }}
+        >
+
+
+          <div style={{ display: "flex", alignItems: "center", color: "#fff", margin: 0 }}>
+            {/* ไอคอนพิมพ์ */}
+            <i
+              className="fa-solid fa-print fa-2xl"
+              style={{ color: "#fff", marginRight: "20px" }}
+            ></i>
+
+            {/* ข้อความ */}
+            <div style={{ flex: 1 }}>
+              <h3>คำร้องขอลงทะเบียนเพิ่ม / เปลี่ยนกลุ่ม กรณีกลุ่มเต็ม / ลดรายวิชา</h3>
+              <h4 style={{ marginTop: "0px" }}>
+                Request to Register for Additional Credits / to Change Study Group / to Reduce Courses
+              </h4>
+            </div>
+
+            {/* ไอคอนย้อนกลับ */}
+            <i
+              className="fa-solid fa-circle-left fa-2xl"
+              style={{ color: "#fff", marginLeft: "580px" }}
+            ></i>
+
           </div>
-        </div>
-      </div>
 
-      <div style={{ marginTop: '10px', backgroundColor: '#ffffff', borderRadius: '10px', padding: '25px 35px', boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)' }}>
-        <Form onSubmit={handleSubmit}>
-          <div className="form-input" style={{ margin: 0, fontSize: "17px", fontWeight: "900" }}>
-            <div style={{ marginTop: "30px", display: "flex" }}>
-              ข้าพเจ้า 
-              <input 
-                style={{ marginTop: "0px", marginRight: "20px" }} 
-                type="text" 
-                name="fullName" 
-                value={formData.fullName} 
-                onChange={handleChange} 
-                className="input" 
-                placeholder="กรุณาหรอกชื่อและนามสกุล" 
-              />
-              เลขประจำตัว 
-              <input 
-                style={{ marginTop: "0px", marginRight: "20px" }} 
-                type="text" 
-                name="studentId" 
-                value={formData.studentId} 
-                onChange={handleChange} 
-                className="input" 
-                placeholder="กรุณากรอกรหัสนักศึกษา" 
-              />
-              เป็นนักศึกษาระดับ
-              <select 
-                name="degree" 
-                value={formData.degree} 
-                onChange={handleChange} 
-                className="selectdegree"
-              >
-                <option selected disabled>เลือกระดับ</option>
-                <option value="ปริญญาตรี">ปริญญาตรี</option>
-                <option value="ปริญญาโท">ปริญญาโท</option>
-                <option value="ปริญญาเอก">ปริญญาเอก</option>
-              </select>
-            </div>
+        </div> {/* <-- Header end*/}
+          
+ 
+        {/* Content */}
+        <div
+          style={{
+            marginTop: '10px',
+            backgroundColor: '#ffffff',
+            borderRadius: '10px',
+            padding: '25px 35px',
+            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
+          }}
+        >
 
-            <div style={{ marginTop: "30px", display: "flex" }}>
-              สังกัดสำนักวิชา the Institute of        
-              <select 
-                name="faculty" 
-                value={formData.faculty} 
-                onChange={handleChange} 
-                className="select"
-              >
-                <option selected disabled>Choose Faculty</option>
-                <option value="faculty1">Faculty 1</option>
-                <option value="faculty2">Faculty 2</option>
-              </select>
-              สาขาวิชา / หลักสูตร School of
-              <select 
-                name="major" 
-                value={formData.major} 
-                onChange={handleChange} 
-                className="select"
-              >
-                <option selected disabled>Choose Major</option>
-                <option value="major1">Major 1</option>
-                <option value="major2">Major 2</option>
-              </select>
-            </div>
 
-            <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
-              <span>ระบุเหตุผล Specify reason</span>
-              <input 
-                style={{ marginTop: "0px", marginRight: "20px", width: "480px" }} 
-                type="text" 
-                name="reason" 
-                value={formData.reason} 
-                onChange={handleChange} 
-                className="input" 
-                placeholder="เหตุผล" 
-              />
-            </div>
+            {/* ส่วนของการกรอกข้อมูล */}
+            <div className='form-input' 
+                style=
+                {{
+                    margin:0,
+                    fontSize:"17px",
+                    fontWeight:"900"
+                   
+                }}
+            >
+                <p style={{
+                      marginTop:"0px",
+                      display:"flex"
+                    }}>
+                      เรียน อาจารย์ผู้รับผิดชอบวิชารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา Dear Instructor / Course coordinator 
+                </p>
+                  <p style={{
+                      marginTop:"30px",
+                      display:"flex"
+                    }}>
+                    ข้าพเจ้า <input 
+                              value={inputName} // ...force the input's value to match the state variable...
+                              onChange={e => setInputName(e.target.value)}
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px"
+                              }}type="text" name="text" className="input" placeholder="กรุณาหรอกชื่อและนามสกุล"></input> 
+                    เลขประจำตัว <input 
+                              value={inputStudentID} // ...force the input's value to match the state variable...
+                              onChange={e => setInputStudentID(e.target.value)}
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px"
+                              }} type="text" name="text" className="input" placeholder="กรุณากรอกรหัสนักศึกษา"></input>
+                    เป็นนักศึกษาระดับ a student at 
+                    <div className="selectdegree">
+                        <select name="format" id="format">
+                           <option selected disabled>เลือกระดับ</option>
+                           <option value="ปริญญาตรี">ปริญญาตรี</option>
+                           <option value="ปริญญาโท">ปริญญาโท</option>
+                           <option value="ปริญญาเอก">ปริญญาเอก</option>
+                        </select>
+                    </div>
+                  </p>
 
-            <div style={{ marginTop: "30px", marginBottom: "20px" }}>
-              วันที่ 
-              <Space direction="vertical" style={{ color: "#9999", marginTop: "-16px" }}>
-                <DatePicker 
-                  onChange={onChange} 
-                  value={formData.date ? moment(formData.date) : null} 
-                  className="custom-datepicker" 
-                />
-              </Space>
-            </div>
+                  <p style={{
+                      marginTop:"30px",
+                      display:"flex"
+                    }}>
+                  สังกัดสำนักวิชา the Institute of        
+                    <div className="select">
+                      <select name="format" id="format">
+                          <option selected disabled>Choose a book format</option>
+                          <option value="pdf">PDF</option>
+                          <option value="txt">txt</option>
+                          <option value="epub">ePub</option>
+                          <option value="fb2">fb2</option>
+                          <option value="mobi">mobi</option>
+                      </select>
+                    </div>
+                    สาขาวิชา / หลักสูตร School of
+                    <div className="select">
+                      <select name="format" id="format">
+                          <option selected disabled>Choose a book format</option>
+                          <option value="pdf">PDF</option>
+                          <option value="txt">txt</option>
+                          <option value="epub">ePub</option>
+                          <option value="fb2">fb2</option>
+                          <option value="mobi">mobi</option>
+                      </select>
+                    </div>
+                  </p>
 
-            <button type="submit">Submit</button>
-          </div>
-        </Form>
-      </div>
-    </section>
+                  <p style={{
+                      marginTop:"30px",
+                      display:"flex",
+                      marginBottom:"20px"
+                    }}>
+                    มีความประสงค์จะลงทะเบียน wish to register :
+                  </p>
+
+                  {/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
+                  <div style={{display:"flex",justifyContent:"center",marginTop:"30px",}}>
+                    <div
+                      style={{
+                        background: '#8096BC',
+                        padding: '10px 20px',
+                        // color: "black",
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                        width:"790px"
+                      }}
+                    >
+                      <p >1. รายการ Details </p>
+                    </div>
+                      {/* ส่วนของอาจารย์ */}
+                    {/* <div
+                      style={{
+                        background: '#8096BC',
+                        padding: '10px 40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                        width:"500px"
+                      }}
+                    >
+                      <p>2. ผลการพิจารณา Decision Made</p>
+                    </div> */}
+
+                  </div>
+
+
+                  {/* กล่องสี่เหลี่ยมใน cotent*/}
+                  <div style={{display:"flex",justifyContent:"center"}}>
+                    {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 1 */}
+                    <div
+                      style={{
+                        background: '#DFDFE2',
+                        padding: '10px 20px',
+                        // color: 'white',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
+                        width:"790px"
+                      }}
+                    >
+
+
+                    {/* ส่วนของ Checkbox */}
+                      <div style={{ marginTop: "15px", marginBottom: "20px" }}>
+                        {/* Radio Buttons */}
+                        <div style={{ display: "flex", gap: "20px" }}>
+
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio1"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio1">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">เพิ่มวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio2"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio2">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">ลดรายวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+
+
+                          <div className="radio-input">
+                            <div className="radio-b">
+                              <input
+                                type="radio"
+                                className="radio-b__input"
+                                id="radio3"
+                                name="radio-group"
+                              />
+                              <label className="radio-b__label" htmlFor="radio3">
+                                <div className="radio-b__custom">
+                                  <span className="radio-b__custom-fill"></span>
+                                </div>
+                                <span className="radio-b__text">เปลี่ยนกลุ่มวิชา</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        {/* Course Code */}
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>รหัสวิชา Course Code</span>
+                          <div className="selectdegree">
+                            <select name="format" id="format" style={{ padding: "5px" }}>
+                              <option selected disabled>เลือกรหัสวิชา</option>
+                              <option value="ปริญญาตรี">ปริญญาตรี</option>
+                              <option value="ปริญญาโท">ปริญญาโท</option>
+                              <option value="ปริญญาเอก">ปริญญาเอก</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        {/* Course Title */}
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>ชื่อวิชำ(ภาษาอังกฤษ) Course Title</span>
+                          <div className="selectsubject">
+                            <select name="format" id="format" style={{ padding: "5px" }}>
+                              <option selected disabled>เลือกรหัสวิชา</option>
+                              <option value="ปริญญาตรี">ปริญญาตรี</option>
+                              <option value="ปริญญาโท">ปริญญาโท</option>
+                              <option value="ปริญญาเอก">ปริญญาเอก</option>
+                            </select>
+                          </div>
+                        </div>
+
+
+                        {/* Course Title */}
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>กลุ่ม Group No.</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
+
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px",color:"red" }}>
+                          <span>กรณีเปลี่ยนกลุ่ม In the case of changing study group</span>
+                        </div>
+
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" ,justifyContent:"center"}}>
+                          <span>กลุ่มเดิมคือกลุ่ม the old group no. is</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
+
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px",justifyContent:"center" }}>
+                          <span>กลุ่มใหม่คือกลุ่ม the new group no. is </span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"60px"
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                        </div>
+
+                        <div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+                          <span>ระบุเหตุผล Specify reason</span>
+                          <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                                width:"480px"
+                              }}type="text" name="text" className="input" placeholder="เหตุผล"></input> 
+                        </div>
+
+                      </div> {/* <<--ส่วนของ Checkbox  end*/}
+
+                    </div> {/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 1 end/}
+
+                    
+                    
+                    //ส่วนของอาจารย์
+                    {/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 */}
+                    {/*<div
+                      style={{
+                        background: '#DFDFE2',
+                        padding: '10px 40px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        borderRadius: '0px',
+                        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+                        width:"500px"
+                        
+                      }}
+                    >
+
+                        <div style={{ marginTop: "200px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent:"center" }}>
+                          <span>อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา 
+                          Instructor / Course coordinator
+                          </span>
+                          
+                        </div>
+
+                    </div> */}{/* <--กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 2 end*/}
+
+                  </div> {/* <-- กล่องสี่เหลี่ยมใน cotent end*/}
+
+              <p style={{
+                  marginTop:"30px",
+                  display:"flex",
+                  marginBottom:"20px",
+                  marginLeft:"50px"
+                }}>
+                จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.
+              </p>
+
+              <p style={{
+                  marginTop:"30px",
+                  display:"flex",
+                  marginBottom:"20px",
+                  marginLeft:"150px"
+                }}>
+
+                นักศึกษาลงชื่อ Signature
+                <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                            
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+
+                โทรศัพท์ Tel. No.
+                <input 
+                              style={{
+                                marginTop:"0px",
+                                marginRight:"20px",
+                            
+                              }}type="text" name="text" className="input" placeholder="กลุ่ม"></input> 
+                 วันที่ <Space direction="vertical" style={{color:"#9999",marginTop:"-16px"}}>
+                            <DatePicker onChange={onChange} 
+                              className="custom-datepicker" />
+                      </Space>
+                
+
+                 
+              </p>
+
+                                       
+            </div> {/* <-- ส่วนของการกรอกข้อมูล end*/}
+
+        </div> {/* <-- Content end*/}
+
+
+
+        <button type="button" onClick={Summit} > summit</button>
+
+
+      </section>
+
+
+    </>
   );
 };
 
