@@ -61,17 +61,71 @@ func main() {
 		router.PATCH("/updateactivity", controller.UpdateActivity)
 		router.DELETE("/deleteactivity",controller.DeleteActivity)
 
-		//PrintStory
+
+
+
+		//เดิม ที่ดึง pdf และข้อมูลมาได้  start
 		router.GET("/print", func(c *gin.Context) {
-			pdfData, err := pdf.GeneratePDF()
+			inputName := ""
+			inputStudentID := ""
+			Degree := ""
+			Faculty := ""
+			Major := ""
+			Details := ""
+			CourseCode := ""
+			CourseTitle := ""
+			Group := ""
+			OldGroup := ""
+			NewGroup := ""
+			SpecifyReason := ""
+			inputPhoneNumber := ""
+			Date := ""
+			pdfData, err := pdf.GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date)
 			if err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
 				return
 			}
 			c.Data(http.StatusOK, "application/pdf", pdfData.Bytes())
 		})
+		//เดิม ที่ดึง pdf และข้อมูลมาได้  end
+
+
+
+		// //เซฟลงฐานได้ แต่ข้อมูลไม่ม่  start  
+		// //PrintStory
+		// router.GET("/print", func(c *gin.Context) {
+			
+		// 	inputName := c.DefaultQuery("name", "")
+		// 	inputStudentID := c.DefaultQuery("student_id", "")
+		// 	Degree := c.DefaultQuery("degree", "")
+		// 	Faculty := c.DefaultQuery("faculty", "")
+		// 	Major := c.DefaultQuery("major", "")
+		// 	Details := c.DefaultQuery("details", "")
+		// 	CourseCode := c.DefaultQuery("course_code", "")
+		// 	CourseTitle := c.DefaultQuery("course_title", "")
+		// 	Group := c.DefaultQuery("group", "")
+		// 	OldGroup := c.DefaultQuery("old_group", "")
+		// 	NewGroup := c.DefaultQuery("new_group", "")
+		// 	SpecifyReason := c.DefaultQuery("reason", "")
+		// 	inputPhoneNumber := c.DefaultQuery("phone_number", "")
+		// 	Date := c.DefaultQuery("date", "")
+		
+
+		// 	pdfData, err := pdf.GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date)
+		// 	if err != nil {
+		// 		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		// 		return
+		// 	}
+		
+		// 	c.Data(http.StatusOK, "application/pdf", pdfData.Bytes())
+		// })
+
 		router.PATCH("/pdf", pdf.PatchPDF)
 		router.POST("/CreatePrintStory",pdf.CreatePrintStory)
+		// router.DELETE("/printstory/:id", pdf.DeletePrintStory)
+
+		//เซฟลงฐานได้ แต่ข้อมูลไม่ม่  end
+
 
 		//RequestType
 		router.GET("/requestType", controller.GetRequestType)

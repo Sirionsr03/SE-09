@@ -8,10 +8,10 @@ import (
 type Lecturer struct {
 	gorm.Model
 	LecturerCode string
-	FirstName    string `json:"first_name"`
-	LastName     string `json:"last_name"`
-	Age          int
-	Email        string `json:"email"`
+	FirstName    string
+	LastName     string
+	BirthDay     time.Time
+	Email        string
 	Password     string
 	Phone        string
 	Profile      string `gorm:"type:longtext"`

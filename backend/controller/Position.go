@@ -8,10 +8,10 @@ import (
 	"github.com/sut67/team09/entity"
 )
 
-func GetGenders(c *gin.Context) {
-	var genders []entity.Gender
+func GetPositions(c *gin.Context) {
+	var position []entity.Position
 
 	db := config.DB()
-	db.Find(&genders)
-	c.JSON(http.StatusOK, &genders)
+	db.Find(&position)
+	c.JSON(http.StatusOK, &position)
 }

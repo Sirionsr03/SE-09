@@ -1,6 +1,6 @@
 import axios from "axios";
+import { LecturerInterface } from "../../interfaces/Lecturer";
 import { PrintStoryInterface } from "../../interfaces/PrintStory";
-// import { LecturerInterface } from "../../interfaces/Lecturer";
 
 const apiUrl = "http://localhost:8000";
 const Authorization = localStorage.getItem("token");
@@ -18,8 +18,6 @@ const requestOptions = {
   
   };
 
-
-
 async function GetFaculty() {
     return await axios
         .get(`${apiUrl}/faculty`)
@@ -34,24 +32,12 @@ async function GetMajorByFacultyID(id: number) {
         .catch((e) => e.response);
 }
 
-// async function CreateLecturer(data: LecturerInterface) {
-//     const requestOptions = {
-//         method: "POST",
-//         headers: { "Content-Type": "application/json" },
-//         body: JSON.stringify(data),
-//     };
-
-//     let res = await fetch(`${apiUrl}/lecturer`, requestOptions)
-//         .then((res) => {
-//             if (res.status == 201) {
-//                 return res.json();
-//             } else {
-//                 return false;
-//             }
-//         });
-
-//     return res;
-// }
+async function CreateLecturers(data: LecturerInterface) {
+    return await axios
+      .post(`${apiUrl}/lecturer`, data)
+      .then((res) => res)
+      .catch((e) => e.response);
+  }
 
 async function GetGenders() {
     return await axios
@@ -74,6 +60,42 @@ async function GetDegrees() {
         .catch((e) => e.response);
 }
 
+async function GetPositions() {
+    return await axios
+        .get(`${apiUrl}/position`)
+        .then((res) => res)
+        .catch((e) => e.response);
+}
+
+async function GetStatusStaffs() {
+    return await axios
+        .get(`${apiUrl}/statusstaff`)
+        .then((res) => res)
+        .catch((e) => e.response);
+}
+
+
+async function GetDegree() {
+    const requestOptions = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+  
+    let res = await fetch(`${apiUrl}/degree`, requestOptions)
+      .then((res) => {
+        if (res.status == 200) {
+          return res.json();
+        } else {
+          return false;
+        }
+      });
+  
+    return res;
+  }
+
+
 
 
 
@@ -90,16 +112,19 @@ async function GeneratePDF(data: PrintStoryInterface) {
   
   }
 
+
 export {
     GetFaculty,
     GetMajorByFacultyID,
-    // CreateLecturer,
+    CreateLecturers,
     GetGenders,
     GetLecturerByMajorID,
     GetDegrees,
+    GetPositions,
+    GetStatusStaffs,
+    GetDegree,
 
-    
 
-    //Request  Jiw
-    GeneratePDF
+    //Request  JIW
+    GeneratePDF,
 };
