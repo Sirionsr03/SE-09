@@ -2849,7 +2849,7 @@ func CreatePrintStory(c *gin.Context) {
         Degree           string `json:"degree" valid:"required~Degree is required"`
         Faculty          string `json:"faculty" valid:"required~Faculty is required"`
         Major            string `json:"major" valid:"required~Major is required"`
-        Details          string `json:"details1" valid:"required~Details is required"`
+        Details          string `json:"details" valid:"required~Details is required"`
 		//เพิ่มส่วนนี้ 2024-12-24 20.06 น.
 		// Details2          string `json:"details2" valid:"required~Details2 is required"`
 		// Details3          string `json:"details3" valid:"required~Details3 is required"`

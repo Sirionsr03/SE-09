@@ -1810,17 +1810,11 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-// const { Header, Content  } = Layout;
-
 const items = new Array(15).fill(null).map((_, index) => ({
 	key: index + 1,
 	label: `nav ${index + 1}`,
 }));
 
-// const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-// 	setdate(dateString)
-// 	console.log(date, dateString);
-// };
 
 interface Data {
 	inputName?: string
@@ -1828,11 +1822,7 @@ interface Data {
 	degree?: string
 	faculty?: string
 	major?: string
-
 	details?: string
-	// details2?: string	
-	// details3?: string
-
 	courseCode?: string
 	courseTitle?: string
 	group?: string
@@ -1848,8 +1838,6 @@ const Request1: React.FC = () => {
 
 	const navigate = useNavigate(); 
   
-
-
 	const [inputName, setInputName] = useState("");
 	const [inputStudentID, setInputStudentID] = useState("")
 
@@ -1862,10 +1850,7 @@ const Request1: React.FC = () => {
 	const [major, setMajor] = useState<MajorInterface[]>([]);
 	const [selectmajor, setSelectmajor] = useState("")
 
-	const [details, setdetails] = useState("")
-	// const [details2, setdetails2] = useState("")
-	// const [details3, setdetails3] = useState("")
-	
+	const [details, setdetails] = useState('')
 	const isGroupChangeDisabled = details === "radio1" || details === "radio2" ;
 
 	const [courseCode, setcourseCode] = useState("")
@@ -1878,18 +1863,27 @@ const Request1: React.FC = () => {
 	const [date, setdate] = useState("")
 
 
+	const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+		setdate(dateString.toString())
+		console.log(date, dateString);
+	};
 
 
 	async function Summit() {
+		
+		const formattedDetails = 
+    		details === "radio1" ? "เพิ่มวิชา Add more courses" : 
+    		details === "radio2" ? "ลดรายวิชา Change study group" : 
+    		details === "radio3" ? "เปลี่ยนกลุ่มวิชา Reduce courses" : 
+    		details;
+			
 		const data1: Data = {
 			inputName: inputName,
 			inputStudentID: inputStudentID,
 			degree: selectDegree,
 			faculty: selectfaculty,
 			major: selectmajor,
-			details: details,
-			// details2: details2,
-			// details3: details3,
+			details: formattedDetails,
 			courseCode: courseCode,
 			courseTitle: courseTitle,
 			group: group,
@@ -1898,8 +1892,9 @@ const Request1: React.FC = () => {
 			specifyReason: specifyReason,
 			inputPhoneNumber: inputPhoneNumber,
 			date: date
+
 		}
-		console.log(data1)
+		console.log("data all",data1)
 
 
 		const url = "http://localhost:8000/CreatePrintStory"
@@ -1909,12 +1904,11 @@ const Request1: React.FC = () => {
 			headers: { 'Content-Type': 'application/json; charset=UTF-8' }
 		});
 
-		if (response.ok) { /* Handle */
+		if (response.ok) {
 			alert("ส่งสำเร็จ")
 			navigate('/');
 		}
 		else {
-			// Handle error response
 			alert("ส่งข้อมูลไม่สำเร็จ");
 		  }
 
@@ -1928,14 +1922,6 @@ const Request1: React.FC = () => {
 		// }
 
 	}
-
-
-
-	const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-		setdate(dateString.toString())
-		console.log(date, dateString);
-	};
-
 
 
 	const getdegree = async () => {
@@ -1997,7 +1983,7 @@ const Request1: React.FC = () => {
 
 
 	const handleBackHome = () => {
-		navigate('/homeRequest'); // Navigate to ApplyToSeller page
+		navigate('/homeRequest'); 
 		};
 
 
@@ -2088,9 +2074,10 @@ const Request1: React.FC = () => {
 						}}>
 							ข้าพเจ้า 
 							<input
-								value={inputName} // ...force the input's value to match the state variable...
+								value={inputName} 
 								onChange={e => setInputName(e.target.value)}
 								required
+								
 								style={{
 									marginTop: "0px",
 									marginRight: "20px"
@@ -2106,7 +2093,7 @@ const Request1: React.FC = () => {
 
 							เลขประจำตัว 
 							<input
-								value={inputStudentID} // ...force the input's value to match the state variable...
+								value={inputStudentID} 
 								onChange={e => setInputStudentID(e.target.value)}
 								required
 								style={{
@@ -2242,10 +2229,8 @@ const Request1: React.FC = () => {
 										<div className="radio-input">
 											<div className="radio-b">
 												<input
-													value="radio1" // ...force the input's value to match the state variable...
+													value="radio1"
 													onChange={e => setdetails(e.target.value)}
-
-													
 													type="radio"
 													className="radio-b__input"
 													id="radio1"
@@ -2259,11 +2244,12 @@ const Request1: React.FC = () => {
 												</label>
 											</div>
 										</div>
+										
 
 										<div className="radio-input">
 											<div className="radio-b">
 												<input
-													value="radio2" // ...force the input's value to match the state variable...
+													value="radio2" 
 													onChange={e => setdetails(e.target.value)}
 													type="radio"
 													className="radio-b__input"
@@ -2287,7 +2273,7 @@ const Request1: React.FC = () => {
 													className="radio-b__input"
 													id="radio3"
 													name="radio-group"
-													value="radio3" // ...force the input's value to match the state variable...
+													value="radio3" 
 													onChange={e => setdetails(e.target.value)}
 												/>
 												<label className="radio-b__label" htmlFor="radio3">
@@ -2306,7 +2292,7 @@ const Request1: React.FC = () => {
 										<span>รหัสวิชา Course Code</span>
 										<div >
 											<input
-												value={courseCode} // ...force the input's value to match the state variable...
+												value={courseCode} 
 												onChange={e => setcourseCode(e.target.value)}
 											
 												style={{
@@ -2323,7 +2309,7 @@ const Request1: React.FC = () => {
 										<span>ชื่อวิชา(ภาษาอังกฤษ) Course Title</span>
 										<div className="selectsubject">
 											<input
-												value={courseTitle} // ...force the input's value to match the state variable...
+												value={courseTitle} 
 												required
 												onChange={e => setcourseTitle(e.target.value)}
 												
@@ -2341,7 +2327,7 @@ const Request1: React.FC = () => {
 									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
 										<span>กลุ่ม Group No.</span>
 										<input
-											value={group} // ...force the input's value to match the state variable...
+											value={group} 
 											required
 											onChange={e => setgroup(e.target.value)}
 										
@@ -2361,7 +2347,7 @@ const Request1: React.FC = () => {
 									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent: "center" }}>
 										<span>กลุ่มเดิมคือกลุ่ม the old group no. is</span>
 										<input
-											value={oldGroup} // ...force the input's value to match the state variable...
+											value={oldGroup} 
 											onChange={e => setoldGroup(e.target.value)}
 											disabled={isGroupChangeDisabled}
 											style={{
@@ -2375,7 +2361,7 @@ const Request1: React.FC = () => {
 									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent: "center" }}>
 										<span>กลุ่มใหม่คือกลุ่ม the new group no. is </span>
 										<input
-											value={newGroup} // ...force the input's value to match the state variable...
+											value={newGroup} 
 											onChange={e => setnewGroup(e.target.value)}
 											disabled={isGroupChangeDisabled}
 											style={{
@@ -2389,7 +2375,7 @@ const Request1: React.FC = () => {
 									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
 										<span>ระบุเหตุผล Specify reason</span>
 										<input
-											value={specifyReason} // ...force the input's value to match the state variable...
+											value={specifyReason} 
 											onChange={e => setspecifyReason(e.target.value)}
 											disabled={isGroupChangeDisabled}
 											style={{
@@ -2450,7 +2436,7 @@ const Request1: React.FC = () => {
 
 							นักศึกษาลงชื่อ Signature
 							<input
-								value={inputName} // ...force the input's value to match the state variable...
+								value={inputName} 
 								onChange={e => setInputName(e.target.value)}
 								style={{
 									marginTop: "0px",
@@ -2460,7 +2446,7 @@ const Request1: React.FC = () => {
 
 							โทรศัพท์ Tel. No.
 							<input
-								value={inputPhoneNumber} // ...force the input's value to match the state variable...
+								value={inputPhoneNumber} 
 								onChange={e => setinputPhoneNumber(e.target.value)}
 								style={{
 									marginTop: "0px",
