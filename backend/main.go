@@ -74,7 +74,13 @@ func main() {
 			Degree := ""
 			Faculty := ""
 			Major := ""
+			
+			//เพิ่มส่วนนี้ 2024-12-24 20.10 น.
 			Details := ""
+			// Details2 := ""
+			// Details3 := ""
+			//เพิ่มส่วนนี้ 2024-12-24 20.10 น. end
+
 			CourseCode := ""
 			CourseTitle := ""
 			Group := ""

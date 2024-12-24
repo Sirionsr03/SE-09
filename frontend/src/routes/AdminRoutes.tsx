@@ -5,6 +5,7 @@ import { RouteObject } from "react-router-dom";
 import FullLayout from "../components/FullLayout/FullLayout.tsx";
 import { lazy } from "react";
 import Loadable from "../third-party/Loadable.tsx";
+import HomeRequest from "../home/HomeRequest/HomeRequest.tsx";
 
 // const ManageLecturer = Loadable(lazy(() => import("../pages/ManageLecturer/ManageLecturer")));
 // const LecturerList = Loadable(lazy(() => import("../pages/ManageLecturer/LecturerList/LecturerList")));
@@ -30,6 +31,10 @@ const AdminRoutes = (): RouteObject => {
     //     path: "/managelecturer/create",
     //     element: <CreateLecturer />,
     //   },
+    {
+      path: "/homeRequest",
+      element: <HomeRequest />,
+    },
 
       {
         path: "/request1",

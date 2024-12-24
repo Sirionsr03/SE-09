@@ -2537,6 +2537,26 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 				Style: consts.Bold, // Bold inputName text
 				Color: getBlueColor(),
 			})
+			//เพิ่มส่วนนี้ 2024-12-24 20.07 น.
+			// m.Text(Details2, props.Text{
+			// 	Top:   1.5,
+			// 	Size:  11,
+			// 	Align: consts.Left,
+			// 	Left:  3,
+			// 	Style: consts.Bold, // Bold inputName text
+			// 	Color: getBlueColor(),
+			// })
+			// m.Text(Details3, props.Text{
+			// 	Top:   1.5,
+			// 	Size:  11,
+			// 	Align: consts.Left,
+			// 	Left:  3,
+			// 	Style: consts.Bold, // Bold inputName text
+			// 	Color: getBlueColor(),
+			// })
+
+			//เพิ่มส่วนนี้ 2024-12-24 20.07 น. end
+
 			m.Text("รหัสวิชำ Course Code  ", props.Text{
 				Top:   1.5,
 				Size:  11,
@@ -2824,20 +2844,24 @@ func getRedColor() color.Color {
 func CreatePrintStory(c *gin.Context) {
     // Parse JSON input
     var requestData struct {
-        InputName        string `json:"inputName"`
-        InputStudentID   string `json:"inputStudentID"`
-        Degree           string `json:"degree"`
-        Faculty          string `json:"faculty"`
-        Major            string `json:"major"`
-        Details          string `json:"details"`
-        CourseCode       string `json:"courseCode"`
-        CourseTitle      string `json:"courseTitle"`
-        Group            string `json:"group"`
-        OldGroup         string `json:"oldGroup"`
-        NewGroup         string `json:"newGroup"`
-        SpecifyReason    string `json:"specifyReason"`
-        InputPhoneNumber string `json:"inputPhoneNumber"`
-        Date             string `json:"date"`
+        InputName        string `json:"inputName" valid:"required~InputName is required"`
+		InputStudentID   string `json:"inputStudentID" valid:"required~InputStudentID is required, matches(^[BMD]\\d{7}$)"`
+        Degree           string `json:"degree" valid:"required~Degree is required"`
+        Faculty          string `json:"faculty" valid:"required~Faculty is required"`
+        Major            string `json:"major" valid:"required~Major is required"`
+        Details          string `json:"details1" valid:"required~Details is required"`
+		//เพิ่มส่วนนี้ 2024-12-24 20.06 น.
+		// Details2          string `json:"details2" valid:"required~Details2 is required"`
+		// Details3          string `json:"details3" valid:"required~Details3 is required"`
+		//เพิ่มส่วนนี้ 2024-12-24 20.06 น. end
+        CourseCode       string `json:"courseCode" valid:"required~CourseCode is required"`
+        CourseTitle      string `json:"courseTitle" valid:"required~CourseTitle is required"`
+        Group            string `json:"group" valid:"required~Group is required"`
+        OldGroup         string `json:"oldGroup" valid:"required~OldGroup is required"`
+        NewGroup         string `json:"newGroup" valid:"required~NewGroup is required"`
+        SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
+        InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
+        Date             string `json:"date" valid:"required~Date is required"`
     }
 
     if err := c.ShouldBindJSON(&requestData); err != nil {
@@ -2853,6 +2877,10 @@ func CreatePrintStory(c *gin.Context) {
         requestData.Faculty,
         requestData.Major,
         requestData.Details,
+		//เพิ่มส่วนนี้ 2024-12-24
+		// requestData.Details2,
+		// requestData.Details3,
+		//เพิ่มส่วนนี้ 2024-12-24 end
         requestData.CourseCode,
         requestData.CourseTitle,
         requestData.Group,

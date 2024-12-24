@@ -86,6 +86,7 @@ func SetupDatabase() {
 	GenderFemale := entity.Gender{Gender: "หญิง"}
 	GenderOther := entity.Gender{Gender: "อื่นๆ"}
 
+	Degree := entity.Degree{Degree: ""}
 	Degree0 := entity.Degree{Degree: "มัธยมปลาย"}
 	Degree1 := entity.Degree{Degree: "ปริญญาตรี"}
 	Degree2 := entity.Degree{Degree: "ปริญญาโท"}
@@ -160,6 +161,7 @@ func SetupDatabase() {
 		{StatusStaff: "ลาออก"},
 	}
 
+	db.FirstOrCreate(&Degree, &entity.Degree{Degree: ""})
 	db.FirstOrCreate(&Degree0, &entity.Degree{Degree: "มัธยมปลาย"})
 	db.FirstOrCreate(&Degree1, &entity.Degree{Degree: "ปริญญาตรี"})
 	db.FirstOrCreate(&Degree2, &entity.Degree{Degree: "ปริญญาโท"})
