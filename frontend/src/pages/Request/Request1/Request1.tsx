@@ -1974,18 +1974,11 @@ const Request1: React.FC = () => {
 		getmajor();
 	  }, [selectfaculty]);
 
-	//   console.log(major)
-
-
-	// const {
-	//   token: { colorBgContainer, borderRadiusLG },
-	// } = theme.useToken();
 
 
 	const handleBackHome = () => {
 		navigate('/homeRequest'); 
 		};
-
 
 
 	return (
@@ -2068,6 +2061,7 @@ const Request1: React.FC = () => {
 						}}>
 							เรียน อาจารย์ผู้รับผิดชอบวิชารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา Dear Instructor / Course coordinator
 						</p>
+
 						<p style={{
 							marginTop: "30px",
 							display: "flex"
@@ -2099,8 +2093,13 @@ const Request1: React.FC = () => {
 								style={{
 									marginTop: "0px",
 									marginRight: "20px"
-								}} type="text" name="text" className="input" placeholder="กรุณากรอกรหัสนักศึกษา">
+								}} 
+								type="text" 
+								name="text" 
+								className="input" 
+								placeholder="กรุณากรอกรหัสนักศึกษา">
 							</input>
+
 
 							เป็นนักศึกษาระดับ a student at
 							<div className="selectdegree">
@@ -2121,10 +2120,12 @@ const Request1: React.FC = () => {
 							</div>
 						</p>
 
+
 						<p style={{
 							marginTop: "30px",
 							display: "flex"
-						}}>
+						}}
+						>
 							สังกัดสำนักวิชา the Institute of
 							<div className="selectfaculty">
 								<select name="format" 
@@ -2145,6 +2146,7 @@ const Request1: React.FC = () => {
 								</select>
 
 							</div>
+
 							สาขาวิชา / หลักสูตร School of
 							<div className="select">
 							<select name="format" 
@@ -2162,13 +2164,17 @@ const Request1: React.FC = () => {
 							</div>
 						</p>
 
+
 						<p style={{
 							marginTop: "30px",
 							display: "flex",
 							marginBottom: "20px"
-						}}>
+							}}
+						>
 							มีความประสงค์จะลงทะเบียน wish to register :
 						</p>
+
+
 
 						{/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
 						<div style={{ display: "flex", justifyContent: "center", marginTop: "30px", }}>
@@ -2226,6 +2232,7 @@ const Request1: React.FC = () => {
 									{/* Radio Buttons */}
 									<div style={{ display: "flex", gap: "20px" }}>
 
+										{/* Checkbox 1 เพิ่มวิชา  start*/}
 										<div className="radio-input">
 											<div className="radio-b">
 												<input
@@ -2243,9 +2250,9 @@ const Request1: React.FC = () => {
 													<span className="radio-b__text">เพิ่มวิชา</span>
 												</label>
 											</div>
-										</div>
+										</div> {/* <<-- Checkbox 1 เพิ่มวิชา */}
 										
-
+										{/* Checkbox  ลดรายวิชา  start*/}
 										<div className="radio-input">
 											<div className="radio-b">
 												<input
@@ -2263,9 +2270,10 @@ const Request1: React.FC = () => {
 													<span className="radio-b__text">ลดรายวิชา</span>
 												</label>
 											</div>
-										</div>
+										</div> {/* <<-- Checkbox  ลดรายวิชา  start*/}
 
 
+										{/* Checkbox  เปลี่ยนกลุ่มวิชา  start*/}
 										<div className="radio-input">
 											<div className="radio-b">
 												<input
@@ -2283,12 +2291,21 @@ const Request1: React.FC = () => {
 													<span className="radio-b__text">เปลี่ยนกลุ่มวิชา</span>
 												</label>
 											</div>
-										</div>
+										</div> {/* <<-- Checkbox  เปลี่ยนกลุ่มวิชา  start*/}
+
 									</div>
 
 
-									{/* Course Code */}
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+									{/* Course Code start*/}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px" 
+										}}
+									>
 										<span>รหัสวิชา Course Code</span>
 										<div >
 											<input
@@ -2298,14 +2315,27 @@ const Request1: React.FC = () => {
 												style={{
 													marginTop: "0px",
 													marginRight: "20px"
-												}} type="text" name="text" className="input" placeholder="กรุณากรอกรหัสวิชา">
+												}} type="text" 
+												name="text" 
+												className="input" 
+												placeholder="กรุณากรอกรหัสวิชา">
 
 											</input>
 										</div>
-									</div>
+									</div> {/* Course Code end*/}
 
-									{/* Course Title */}
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+
+
+									{/* Course Title start */}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px" 
+										}}
+									>
 										<span>ชื่อวิชา(ภาษาอังกฤษ) Course Title</span>
 										<div className="selectsubject">
 											<input
@@ -2316,15 +2346,28 @@ const Request1: React.FC = () => {
 												style={{
 													marginTop: "0px",
 													marginRight: "20px"
-												}} type="text" name="text" className="input" placeholder="กรุณากรอกชื่อวิชา">
+												}} 
+
+												type="text" 
+												name="text" 
+												className="input" 
+												placeholder="กรุณากรอกชื่อวิชา">
 
 											</input>
 										</div>
-									</div>
+									</div> {/* <<-- Course Title end */}
 
 
-									{/* Course Title */}
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+									{/* Group start*/}
+									<div 
+										style={{ 
+											marginTop: "30px",
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px" 
+										}}
+									>
 										<span>กลุ่ม Group No.</span>
 										<input
 											value={group} 
@@ -2335,16 +2378,42 @@ const Request1: React.FC = () => {
 												marginTop: "0px",
 												marginRight: "20px",
 												width: "60px"
-											}} type="text" name="text" className="input" placeholder="กลุ่ม">
+											}} 
+											type="text" 
+											name="text" 
+											className="input" 
+											placeholder="กลุ่ม">
 											
 										</input>
-									</div>
+									</div> {/* <<---Group end*/}
 
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", color: "red" }}>
+
+									{/* ข้อความธรรมดาเฉยๆ กรณีเปลี่ยนกลุ่ม start*/}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px", 
+											color: "red" 
+										}}
+									>
 										<span>กรณีเปลี่ยนกลุ่ม In the case of changing study group</span>
-									</div>
+									</div> {/* <<-- ข้อความธรรมดาเฉยๆ กรณีเปลี่ยนกลุ่ม start*/}
 
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent: "center" }}>
+
+									{/* input กลุ่มเดิมคือกลุ่ม start*/}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px", 
+											justifyContent: "center" 
+										}}
+									>
 										<span>กลุ่มเดิมคือกลุ่ม the old group no. is</span>
 										<input
 											value={oldGroup} 
@@ -2355,10 +2424,27 @@ const Request1: React.FC = () => {
 												marginRight: "20px",
 												width: "60px",
 												cursor: isGroupChangeDisabled ? "not-allowed" : "auto",
-											}} type="text" name="text" className="input" placeholder="กลุ่ม"></input>
-									</div>
+											}} 
+											type="text" 
+											name="text" 
+											className="input" 
+											placeholder="กลุ่ม">
 
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px", justifyContent: "center" }}>
+										</input>
+									</div> {/* <<-- input กลุ่มเดิมคือกลุ่ม end*/}
+
+
+									{/* input กลุ่มใหม่คือกลุ่ม start*/}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px", 
+											justifyContent: "center" 
+										}}
+									>
 										<span>กลุ่มใหม่คือกลุ่ม the new group no. is </span>
 										<input
 											value={newGroup} 
@@ -2369,10 +2455,26 @@ const Request1: React.FC = () => {
 												marginRight: "20px",
 												width: "60px",
 												cursor: isGroupChangeDisabled ? "not-allowed" : "auto",
-											}} type="text" name="text" className="input" placeholder="กลุ่ม"></input>
-									</div>
+											}} 
+											type="text" 
+											name="text" 
+											className="input" 
+											placeholder="กลุ่ม">
 
-									<div style={{ marginTop: "30px", marginBottom: "20px", display: "flex", alignItems: "center", gap: "10px" }}>
+										</input>
+									</div> 	{/* <<-- input กลุ่มใหม่คือกลุ่ม end*/}
+
+
+									{/* <<-- input ระบุเหตุผล start*/}
+									<div 
+										style={{ 
+											marginTop: "30px", 
+											marginBottom: "20px", 
+											display: "flex", 
+											alignItems: "center", 
+											gap: "10px" 
+										}}
+									>
 										<span>ระบุเหตุผล Specify reason</span>
 										<input
 											value={specifyReason} 
@@ -2383,8 +2485,15 @@ const Request1: React.FC = () => {
 												marginRight: "20px",
 												width: "480px",
 												cursor: isGroupChangeDisabled ? "not-allowed" : "auto",
-											}} type="text" name="text" className="input" placeholder="เหตุผล"></input>
-									</div>
+											}} 
+											type="text" 
+											name="text" 
+											className="input" 
+											placeholder="เหตุผล">
+
+										</input>
+
+									</div> {/* <<-- input ระบุเหตุผล end*/}
 
 								</div> {/* <<--ส่วนของ Checkbox  end*/}
 
@@ -2418,6 +2527,8 @@ const Request1: React.FC = () => {
 
 						</div> {/* <-- กล่องสี่เหลี่ยมใน cotent end*/}
 
+
+						{/* <<-- ข้อความเฉยๆ start*/}
 						<p style={{
 							marginTop: "30px",
 							display: "flex",
@@ -2425,14 +2536,18 @@ const Request1: React.FC = () => {
 							marginLeft: "50px"
 						}}>
 							จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.
-						</p>
+						</p>  {/* <<-- ข้อความเฉยๆ end*/}
 
-						<p style={{
-							marginTop: "30px",
-							display: "flex",
-							marginBottom: "20px",
-							marginLeft: "150px"
-						}}>
+
+						{/* ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง start*/}
+						<p 
+							style={{
+								marginTop: "30px",
+								display: "flex",
+								marginBottom: "20px",
+								marginLeft: "150px"
+							}}
+						>
 
 							นักศึกษาลงชื่อ Signature
 							<input
@@ -2442,7 +2557,13 @@ const Request1: React.FC = () => {
 									marginTop: "0px",
 									marginRight: "20px",
 
-								}} type="text" name="text" className="input" placeholder="ลงชื่อ"></input>
+								}} 
+								type="text" 
+								name="text" 
+								className="input" 
+								placeholder="ลงชื่อ">
+							</input>
+
 
 							โทรศัพท์ Tel. No.
 							<input
@@ -2452,113 +2573,126 @@ const Request1: React.FC = () => {
 									marginTop: "0px",
 									marginRight: "20px",
 
-								}} type="text" name="text" className="input" placeholder="กรุณากรอกเบอร์โทรศัพท์">
-
+								}} 
+								type="text" 
+								name="text" 
+								className="input" 
+								placeholder="กรุณากรอกเบอร์โทรศัพท์"
+							>
 							</input>
 
-							วันที่ <Space direction="vertical" style={{ color: "#9999", marginTop: "-16px" }}>
-								<DatePicker onChange={onChange}
 
-									className="custom-datepicker" />
-							</Space>
+							วันที่ <Space 
+									direction="vertical" 
+									style={{ 
+										color: "#9999", 
+										marginTop: "-16px" 
+									}}
+								>
+									<DatePicker onChange={onChange}  className="custom-datepicker" />
+								</Space>
 							 
-						</p>
+						</p> {/* <<-- ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง end*/}
 
 
+
+						{/* button print start*/}
 						<button 
 							className="Documents-btn" 
 							type="submit" 
 							value="Submit"
 							onClick={Summit} 
 						>
-						<span className="folderContainer">
-							<svg
-							className="fileBack"
-							width="146"
-							height="113"
-							viewBox="0 0 146 113"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							>
-							<path
-								d="M0 4C0 1.79086 1.79086 0 4 0H50.3802C51.8285 0 53.2056 0.627965 54.1553 1.72142L64.3303 13.4371C65.2799 14.5306 66.657 15.1585 68.1053 15.1585H141.509C143.718 15.1585 145.509 16.9494 145.509 19.1585V109C145.509 111.209 143.718 113 141.509 113H3.99999C1.79085 113 0 111.209 0 109V4Z"
-								fill="url(#paint0_linear_117_4)"
-							></path>
-							<defs>
-								<linearGradient
-								id="paint0_linear_117_4"
-								x1="0"
-								y1="0"
-								x2="72.93"
-								y2="95.4804"
-								gradientUnits="userSpaceOnUse"
+							<span className="folderContainer">
+								<svg
+									className="fileBack"
+									width="146"
+									height="113"
+									viewBox="0 0 146 113"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
 								>
-								<stop stop-color="#8F88C2"></stop>
-								<stop offset="1" stop-color="#5C52A2"></stop>
-								</linearGradient>
-							</defs>
-							</svg>
-							<svg
-							className="filePage"
-							width="88"
-							height="99"
-							viewBox="0 0 88 99"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							>
-							<rect width="88" height="99" fill="url(#paint0_linear_117_6)"></rect>
-							<defs>
-								<linearGradient
-								id="paint0_linear_117_6"
-								x1="0"
-								y1="0"
-								x2="81"
-								y2="160.5"
-								gradientUnits="userSpaceOnUse"
+								<path
+									d="M0 4C0 1.79086 1.79086 0 4 0H50.3802C51.8285 0 53.2056 0.627965 54.1553 1.72142L64.3303 13.4371C65.2799 14.5306 66.657 15.1585 68.1053 15.1585H141.509C143.718 15.1585 145.509 16.9494 145.509 19.1585V109C145.509 111.209 143.718 113 141.509 113H3.99999C1.79085 113 0 111.209 0 109V4Z"
+									fill="url(#paint0_linear_117_4)"
 								>
-								<stop stop-color="white"></stop>
-								<stop offset="1" stop-color="#686868"></stop>
-								</linearGradient>
-							</defs>
-							</svg>
+								</path>
 
-							<svg
-							className="fileFront"
-							width="160"
-							height="79"
-							viewBox="0 0 160 79"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg"
-							>
-							<path
-								d="M0.29306 12.2478C0.133905 9.38186 2.41499 6.97059 5.28537 6.97059H30.419H58.1902C59.5751 6.97059 60.9288 6.55982 62.0802 5.79025L68.977 1.18034C70.1283 0.410771 71.482 0 72.8669 0H77H155.462C157.87 0 159.733 2.1129 159.43 4.50232L150.443 75.5023C150.19 77.5013 148.489 79 146.474 79H7.78403C5.66106 79 3.9079 77.3415 3.79019 75.2218L0.29306 12.2478Z"
-								fill="url(#paint0_linear_117_5)"
-							></path>
-							<defs>
-								<linearGradient
-								id="paint0_linear_117_5"
-								x1="38.7619"
-								y1="8.71323"
-								x2="66.9106"
-								y2="82.8317"
-								gradientUnits="userSpaceOnUse"
+								<defs>
+									<linearGradient
+										id="paint0_linear_117_4"
+										x1="0"
+										y1="0"
+										x2="72.93"
+										y2="95.4804"
+										gradientUnits="userSpaceOnUse"
 								>
-								<stop stop-color="#C3BBFF"></stop>
-								<stop offset="1" stop-color="#51469A"></stop>
-								</linearGradient>
-							</defs>
-							</svg>
-						</span>
-						<p className="text">Print</p>
-						</button>
+									<stop stop-color="#8F88C2"></stop>
+									<stop offset="1" stop-color="#5C52A2"></stop>
+									</linearGradient>
+								</defs>
+								</svg>
+								<svg
+								className="filePage"
+								width="88"
+								height="99"
+								viewBox="0 0 88 99"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								>
+								<rect width="88" height="99" fill="url(#paint0_linear_117_6)"></rect>
+								<defs>
+									<linearGradient
+									id="paint0_linear_117_6"
+									x1="0"
+									y1="0"
+									x2="81"
+									y2="160.5"
+									gradientUnits="userSpaceOnUse"
+									>
+									<stop stop-color="white"></stop>
+									<stop offset="1" stop-color="#686868"></stop>
+									</linearGradient>
+								</defs>
+								</svg>
 
+								<svg
+									className="fileFront"
+									width="160"
+									height="79"
+									viewBox="0 0 160 79"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+								<path
+									d="M0.29306 12.2478C0.133905 9.38186 2.41499 6.97059 5.28537 6.97059H30.419H58.1902C59.5751 6.97059 60.9288 6.55982 62.0802 5.79025L68.977 1.18034C70.1283 0.410771 71.482 0 72.8669 0H77H155.462C157.87 0 159.733 2.1129 159.43 4.50232L150.443 75.5023C150.19 77.5013 148.489 79 146.474 79H7.78403C5.66106 79 3.9079 77.3415 3.79019 75.2218L0.29306 12.2478Z"
+									fill="url(#paint0_linear_117_5)"
+								></path>
+
+								<defs>
+									<linearGradient
+									id="paint0_linear_117_5"
+									x1="38.7619"
+									y1="8.71323"
+									x2="66.9106"
+									y2="82.8317"
+									gradientUnits="userSpaceOnUse"
+								>
+									<stop stop-color="#C3BBFF"></stop>
+									<stop offset="1" stop-color="#51469A"></stop>
+									</linearGradient>
+								</defs>
+								</svg>
+							</span>
+							<p className="text">Print</p>
+						</button> {/* <<-- button print start*/}
+						
 
 					</div> {/* <-- ส่วนของการกรอกข้อมูล end*/}
 
 				</div> {/* <-- Content end*/}
 
 			</section>
-
 
 		</>
 	);
