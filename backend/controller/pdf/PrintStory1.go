@@ -2225,7 +2225,7 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 	return m.Output()
 }
 
-func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date string) (bytes.Buffer, error) {
+func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber string, Date time.Time) (bytes.Buffer, error) {
 	// begin := time.Now()
 	darkGrayColor := getDarkGrayColor()
 
@@ -2237,6 +2237,12 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 	m.AddUTF8Font("THSarabun", consts.BoldItalic, "./font/THSarabun Bold Italic.ttf")
 	m.SetDefaultFontFamily("THSarabun")
 	m.SetPageMargins(10, 15, 10)
+
+	if Date.IsZero() {
+        Date = time.Now()
+    }
+
+	formattedDate := Date.Format("2006-01-02")
 
 	// inputName := "Sirion Srimueang"
 	// inputStudentID := "B6505066"
@@ -2783,7 +2789,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Left:  138, // Indent the text slightly to the right
 			})
 
-			m.Text("วันที่ Date", props.Text{
+			m.Text("วันที่ Date :", props.Text{
 				Top:   27.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2791,7 +2797,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Left:  158, // Indent the text slightly to the right
 			})
 
-			m.Text(Date, props.Text{
+			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
 				Top:   27.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2859,7 +2865,7 @@ func CreatePrintStory(c *gin.Context) {
 		NewGroup         string `json:"newGroup" valid:"required~NewGroup is required"`
 		SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
 		InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
-		Date             string `json:"date" valid:"required~Date is required"`
+		Date             time.Time `json:"date"`
 	}
 
 	if err := c.ShouldBindJSON(&requestData); err != nil {

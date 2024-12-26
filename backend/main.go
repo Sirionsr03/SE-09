@@ -2,6 +2,8 @@ package main
 
 import (
 	"net/http"
+	"time"
+
 	"github.com/gin-gonic/gin"
 	"github.com/sut67/team09/config"
 	"github.com/sut67/team09/controller"
@@ -67,7 +69,7 @@ func main() {
 			NewGroup := ""
 			SpecifyReason := ""
 			inputPhoneNumber := ""
-			Date := ""
+			Date := time.Now()
 
 			pdfData, err := pdf.GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date)
 			if err != nil {

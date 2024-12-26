@@ -1085,6 +1085,7 @@
 
 
 
+
 // //25-12-2024 03.36 น.
 // // ส่งตัว checkbox ได้แล้ว เหลือส่งสำนักกับสาขาให้เป็นตัวหนังสือ + เพิ่ม บังคับกรอกข้อมูลด้วย
 
@@ -2022,13 +2023,9 @@
 
 
 
+// //  การบังคับกรอกข้อมูล เหลือเปลียนสำนักกับสาขาเป็นตัวหนังสือกับเซ็ตวันที่ 2024-12-26 20.55  ทำได้แล้วจ้าาาาาาาาา
 
-
-
-//25-12-2024 15.09 น.
-// Test การสร้าง input require
-
-// import React, { useEffect, useRef, useState } from 'react';
+// import React, { useEffect, useState } from 'react';
 // import { DatePicker, DatePickerProps, message, Space } from 'antd';
 // import "./Request1.css"
 // import { FacultyInterface} from '../../../interfaces/Faculty';
@@ -2036,6 +2033,7 @@
 // import { GetDegree, GetFaculty, GetMajorByFacultyID} from '../../../services/https';
 // import { MajorInterface} from '../../../interfaces/Major';
 // import { useNavigate } from 'react-router-dom';
+
 
 
 // const items = new Array(15).fill(null).map((_, index) => ({
@@ -2064,8 +2062,8 @@
 
 // const Request1: React.FC = () => {
 
-// 	const formRef = useRef(null);
-	
+// 	// 	const formRef = useRef(null);
+
 // 	const navigate = useNavigate(); 
   
 // 	const [inputName, setInputName] = useState("");
@@ -2093,6 +2091,7 @@
 // 	const [date, setdate] = useState("")
 
 
+
 // 	const onChange: DatePickerProps['onChange'] = (date, dateString) => {
 // 		setdate(dateString.toString())
 // 		console.log(date, dateString);
@@ -2100,69 +2099,73 @@
 
 
 
-// 	async function Submit() {
-
-// 		// if (!inputName) {
-// 		// 	message.error("กรุณากรอกชื่อและนามสกุล"); 
-// 		// 	return; 
-// 		// }
-// 		// if (!inputStudentID) {
-// 		// 	message.error("กรุณากรอกรหัสนักศึกษา"); 
-// 		// 	return; 
-// 		// }
-// 		// if (!selectDegree) {
-// 		// 	message.error("กรุณาเลือกระดับการศึกษา");
-// 		// 	return;
-// 		// }
-
-// 		// if (!selectfaculty) {
-// 		// 	message.error("กรุณาเลือกสำนักวิชา");
-// 		// 	return;
-// 		// }
-// 		// if (!selectmajor) {
-// 		// 	message.error("กรุณาเลือกสาขาวิชา");
-// 		// 	return;
-// 		// }
+// 	async function Summit() {
 
 
+// 		if (!inputName) {
+// 			message.error("กรุณากรอกชื่อและนามสกุล"); 
+// 			return; 
+// 		}
+// 		if (!inputStudentID) {
+// 			message.error("กรุณากรอกรหัสนักศึกษา"); 
+// 			return; 
+// 		}
+
+// 		if (!selectDegree) {
+// 			message.error("กรุณาเลือกระดับการศึกษา");
+// 			return;
+// 		}
+
+// 		if (!selectfaculty) {
+// 			message.error("กรุณาเลือกสำนักวิชา");
+// 			return;
+// 		}
+// 		if (!selectmajor) {
+// 			message.error("กรุณาเลือกสาขาวิชา");
+// 			return;
+// 		}
+				
 // 		const formattedDetails = 
 //     		details === "radio1" ? "เพิ่มวิชา Add more courses" : 
 //     		details === "radio2" ? "ลดรายวิชา Change study group" : 
 //     		details === "radio3" ? "เปลี่ยนกลุ่มวิชา Reduce courses" : 
 //     		details;
 
-// 		// if (!formattedDetails) {
-// 		// 	message.error("กรุณาเลือกประเภทคำร้องที่ต้องการยื่น เช่น เพิ่มวิชา ลดวิชา หรือเปลี่ยนกลุ่ม");
-// 		// 	return;
-// 		// }
-// 		// if (!courseCode) {
-// 		// 	message.error("กรุณากรอกรหัสวิชา");
-// 		// 	return;
-// 		// }
-// 		// if (!courseTitle) {
-// 		// 	message.error("กรุณากรอกชื่อวิชา");
-// 		// 	return;
-// 		// }
-// 		// if (!group) {
-// 		// 	message.error("กรุณากรอกกลุ่มเรียน");
-// 		// 	return;
-// 		// }
-// 		// if (!oldGroup) {
-// 		// 	message.error("กรุณากรอกกลุ่มเรียนกลุ่มเดิม");
-// 		// 	return;
-// 		// }
-// 		// if (!newGroup) {
-// 		// 	message.error("กรุณากรอกกลุ่มเรียนกลุ่มใหม่");
-// 		// 	return;
-// 		// }
-// 		// if (!specifyReason) {
-// 		// 	message.error("กรุณากรอกเหตุผล");
-// 		// 	return;
-// 		// }
-// 		// if (!inputPhoneNumber) {
-// 		// 	message.error("กรุณากรอกเบอร์โทรศัพท์");
-// 		// 	return;
-// 		// }
+// 		if (!formattedDetails) {
+// 			message.error("กรุณาเลือกประเภทคำร้องที่ต้องการยื่น เช่น เพิ่มวิชา ลดวิชา หรือเปลี่ยนกลุ่ม");
+// 			return;
+// 		}
+// 		if (!courseCode) {
+// 			message.error("กรุณากรอกรหัสวิชา");
+// 			return;
+// 		}
+// 		if (!courseTitle) {
+// 			message.error("กรุณากรอกชื่อวิชา");
+// 			return;
+// 		}
+// 		if (!group) {
+// 			message.error("กรุณากรอกกลุ่มเรียน");
+// 			return;
+// 		}
+
+// 		if (!oldGroup && !isGroupChangeDisabled) {
+// 			message.error("กรุณากรอกกลุ่มเรียนกลุ่มเดิม");
+// 			return;
+// 		}
+// 		if (!newGroup && !isGroupChangeDisabled) {
+// 			message.error("กรุณากรอกกลุ่มเรียนกลุ่มใหม่");
+// 			return;
+// 		}
+
+// 		if (!specifyReason && !isGroupChangeDisabled) {
+// 			message.error("กรุณากรอกเหตุผล");
+// 			return;
+// 		}
+
+// 		if (!inputPhoneNumber) {
+// 			message.error("กรุณากรอกเบอร์โทรศัพท์");
+// 			return;
+// 		}
 		
 // 		const data1: Data = {
 // 			inputName: inputName,
@@ -2181,7 +2184,10 @@
 // 			date: date
 
 // 		}
+
 // 		console.log("data all",data1)
+
+
 
 
 // 		const url = "http://localhost:8000/CreatePrintStory"
@@ -2193,13 +2199,12 @@
 
 // 		if (response.ok) {
 // 			alert("ส่งสำเร็จ")
-
 // 			navigate('/');
-
 // 		}
 // 		else {
 // 			alert("ส่งข้อมูลไม่สำเร็จ");
 // 		  }
+
 
 // 	}
 
@@ -2261,7 +2266,6 @@
 // 	};
 
 
-
 // 	return (
 // 		<>
 			
@@ -2315,7 +2319,6 @@
 // 				</div> {/* <-- Header end*/}
 
 
-// 				<form ref={formRef} onSubmit={Submit}>
 // 				{/* Content */}
 // 				<div
 // 					style={{
@@ -2327,7 +2330,7 @@
 // 					}}
 // 				>
 
-				
+
 // 					{/* ส่วนของการกรอกข้อมูล */}
 // 					<div className='form-input'
 // 						style=
@@ -2353,8 +2356,7 @@
 // 							<input
 // 								value={inputName} 
 // 								onChange={e => setInputName(e.target.value)}
-// 								// required
-								
+// 								required
 // 								style={{
 // 									marginTop: "0px",
 // 									marginRight: "20px"
@@ -2363,7 +2365,6 @@
 // 								name="text" 
 // 								className="input" 
 // 								placeholder="กรุณาหรอกชื่อและนามสกุล">
-
 										
 // 							</input>
 		
@@ -2372,7 +2373,7 @@
 // 							<input
 // 								value={inputStudentID} 
 // 								onChange={e => setInputStudentID(e.target.value)}
-// 								// required
+// 								required
 // 								style={{
 // 									marginTop: "0px",
 // 									marginRight: "20px"
@@ -2388,7 +2389,7 @@
 // 							<div className="selectdegree">
 // 								<select 
 // 									name="format" 
-// 									// required
+// 									required
 // 									onChange={(e) => setSelectDegree(e.target.value)}>
 // 									<option value="" disabled selected>กรุณาเลือกระดับการศึกษา</option>
 // 									{...degree.map((item, index) => {
@@ -2413,7 +2414,7 @@
 // 							สังกัดสำนักวิชา the Institute of
 // 							<div className="selectfaculty">
 // 								<select name="format" 
-// 								// required
+// 								required
 // 								onChange={(e) => setSelectFaculty(e.target.value)}>
 // 									<option value="" disabled selected>กรุณาเลือกสำนักวิชา</option>
 // 									{
@@ -2434,9 +2435,9 @@
 // 							สาขาวิชา / หลักสูตร School of
 // 							<div className="select">
 // 							<select name="format" 
-// 									// required
+// 									required
 // 									onChange={(e) => setSelectmajor(e.target.value)}>
-// 									<option value="" disabled selected>กรุณาเลือกสาขาวิชา</option>
+// 									<option value="" disabled selected>กรุณาเลือกสาขา</option>
 // 									{
 // 										major.map((item, index) => {
 // 											console.log(item)
@@ -2458,6 +2459,7 @@
 // 						>
 // 							มีความประสงค์จะลงทะเบียน wish to register :
 // 						</p>
+
 
 
 // 						{/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
@@ -2494,7 +2496,6 @@
 // 						</div>
 
 
-
 // 						{/* กล่องสี่เหลี่ยมใน cotent*/}
 // 						<div style={{ display: "flex", justifyContent: "center" }}>
 // 							{/* กล่องสี่เหลี่ยมใน cotent ส่วน ส่วนข้อมูล ช่องที่ 1 */}
@@ -2512,7 +2513,6 @@
 // 							>
 
 
-
 // 								{/* ส่วนของ Checkbox */}
 // 								<div style={{ marginTop: "15px", marginBottom: "20px" }}>
 // 									{/* Radio Buttons */}
@@ -2523,8 +2523,13 @@
 // 											<div className="radio-b">
 // 												<input
 // 													value="radio1"
-// 													onChange={e => setdetails(e.target.value)}
-// 													// required
+// 													onChange={e => {
+// 														setdetails(e.target.value); // ตั้งค่าข้อมูลใหม่ให้ details
+// 														setoldGroup(""); // รีเซ็ต oldGroup
+// 														setnewGroup("");
+// 														setspecifyReason("");
+// 													  }}
+// 													required
 // 													type="radio"
 // 													className="radio-b__input"
 // 													id="radio1"
@@ -2538,16 +2543,19 @@
 // 												</label>
 // 											</div>
 // 										</div> {/* <<-- Checkbox 1 เพิ่มวิชา */}
-
-
 										
 // 										{/* Checkbox  ลดรายวิชา  start*/}
 // 										<div className="radio-input">
 // 											<div className="radio-b">
 // 												<input
 // 													value="radio2" 
-// 													onChange={e => setdetails(e.target.value)}
-// 													// required
+// 													onChange={e => {
+// 														setdetails(e.target.value); // ตั้งค่าข้อมูลใหม่ให้ details
+// 														setoldGroup(""); // รีเซ็ต oldGroup
+// 														setnewGroup("");
+// 														setspecifyReason("");
+// 													  }}
+// 													required
 // 													type="radio"
 // 													className="radio-b__input"
 // 													id="radio2"
@@ -2573,7 +2581,7 @@
 // 													name="radio-group"
 // 													value="radio3" 
 // 													onChange={e => setdetails(e.target.value)}
-// 													// required
+// 													required
 // 												/>
 // 												<label className="radio-b__label" htmlFor="radio3">
 // 													<div className="radio-b__custom">
@@ -2602,7 +2610,7 @@
 // 											<input
 // 												value={courseCode} 
 // 												onChange={e => setcourseCode(e.target.value)}
-// 												// required
+// 												required
 // 												style={{
 // 													marginTop: "0px",
 // 													marginRight: "20px"
@@ -2631,8 +2639,9 @@
 // 										<div className="selectsubject">
 // 											<input
 // 												value={courseTitle} 
-// 												// required
+									
 // 												onChange={e => setcourseTitle(e.target.value)}
+// 												required
 // 												style={{
 // 													marginTop: "0px",
 // 													marginRight: "20px"
@@ -2648,7 +2657,6 @@
 // 									</div> {/* <<-- Course Title end */}
 
 
-
 // 									{/* Group start*/}
 // 									<div 
 // 										style={{ 
@@ -2662,8 +2670,9 @@
 // 										<span>กลุ่ม Group No.</span>
 // 										<input
 // 											value={group} 
+											
 // 											onChange={e => setgroup(e.target.value)}
-// 											// required
+// 											required
 // 											style={{
 // 												marginTop: "0px",
 // 												marginRight: "20px",
@@ -2676,7 +2685,6 @@
 											
 // 										</input>
 // 									</div> {/* <<---Group end*/}
-
 
 
 // 									{/* ข้อความธรรมดาเฉยๆ กรณีเปลี่ยนกลุ่ม start*/}
@@ -2692,7 +2700,6 @@
 // 									>
 // 										<span>กรณีเปลี่ยนกลุ่ม In the case of changing study group</span>
 // 									</div> {/* <<-- ข้อความธรรมดาเฉยๆ กรณีเปลี่ยนกลุ่ม start*/}
-
 
 
 // 									{/* input กลุ่มเดิมคือกลุ่ม start*/}
@@ -2711,7 +2718,7 @@
 // 											value={oldGroup} 
 // 											onChange={e => setoldGroup(e.target.value)}
 // 											disabled={isGroupChangeDisabled}
-// 											// required
+// 											required
 // 											style={{
 // 												marginTop: "0px",
 // 												marginRight: "20px",
@@ -2721,11 +2728,10 @@
 // 											type="text" 
 // 											name="text" 
 // 											className="input" 
-// 											placeholder="กลุ่ม">
+// 											placeholder="กลุ่มเดิม">
 
 // 										</input>
 // 									</div> {/* <<-- input กลุ่มเดิมคือกลุ่ม end*/}
-
 
 
 // 									{/* input กลุ่มใหม่คือกลุ่ม start*/}
@@ -2744,7 +2750,7 @@
 // 											value={newGroup} 
 // 											onChange={e => setnewGroup(e.target.value)}
 // 											disabled={isGroupChangeDisabled}
-// 											// required
+// 											required
 // 											style={{
 // 												marginTop: "0px",
 // 												marginRight: "20px",
@@ -2754,11 +2760,10 @@
 // 											type="text" 
 // 											name="text" 
 // 											className="input" 
-// 											placeholder="กลุ่ม">
+// 											placeholder="กลุ่มใหม่">
 
 // 										</input>
 // 									</div> 	{/* <<-- input กลุ่มใหม่คือกลุ่ม end*/}
-
 
 
 // 									{/* <<-- input ระบุเหตุผล start*/}
@@ -2776,7 +2781,7 @@
 // 											value={specifyReason} 
 // 											onChange={e => setspecifyReason(e.target.value)}
 // 											disabled={isGroupChangeDisabled}
-// 											// required
+// 											required
 // 											style={{
 // 												marginTop: "0px",
 // 												marginRight: "20px",
@@ -2836,7 +2841,6 @@
 // 						</p>  {/* <<-- ข้อความเฉยๆ end*/}
 
 
-
 // 						{/* ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง start*/}
 // 						<p 
 // 							style={{
@@ -2851,7 +2855,7 @@
 // 							<input
 // 								value={inputName} 
 // 								onChange={e => setInputName(e.target.value)}
-// 								// required
+// 								required
 // 								style={{
 // 									marginTop: "0px",
 // 									marginRight: "20px",
@@ -2868,7 +2872,7 @@
 // 							<input
 // 								value={inputPhoneNumber} 
 // 								onChange={e => setinputPhoneNumber(e.target.value)}
-// 								// required
+// 								required
 // 								style={{
 // 									marginTop: "0px",
 // 									marginRight: "20px",
@@ -2881,32 +2885,17 @@
 // 							>
 // 							</input>
 
-// 							<Space direction="vertical" 
-// 								   size={12}									
-// 								   style={{ 
-//  								   		color: "#9999", 
-// 								   		marginTop: "-16px" 
-// 								   	}}>
-//     						  วันที่
-//     						  <DatePicker
 
-// 								className="custom-datepicker"
-// 								onChange={onChange}
-    				   
-//     						  />
-//     						</Space>
+// 							วันที่ <Space 
+// 									direction="vertical" 
 
-// 							{/* วันที่  */}
-// 							{/* <Space
-//     						  direction="vertical"
-//     						  style={{
-//     						    color: "#9999",
-//     						    marginTop: "-16px"
-//     						  }}
-//     						>
-//     						  <DatePicker defaultValue={dayjs()} format={dateFormat} disabled />
-//     						</Space> */}
-
+// 									style={{ 
+// 										color: "#9999", 
+// 										marginTop: "-16px" 
+// 									}}
+// 								>
+// 									<DatePicker onChange={onChange}  className="custom-datepicker" />
+// 								</Space>
 							 
 // 						</p> {/* <<-- ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง end*/}
 
@@ -2917,7 +2906,7 @@
 // 							className="Documents-btn" 
 // 							type="submit" 
 // 							value="Submit"
-// 							onClick={Submit} 
+// 							onClick={Summit} 
 // 						>
 // 							<span className="folderContainer">
 // 								<svg
@@ -3003,10 +2992,10 @@
 // 							<p className="text">Print</p>
 // 						</button> {/* <<-- button print start*/}
 
+
 // 					</div> {/* <-- ส่วนของการกรอกข้อมูล end*/}
-					
+
 // 				</div> {/* <-- Content end*/}
-// 			</form>
 
 // 			</section>
 
@@ -3026,11 +3015,10 @@
 
 
 
-
-// // Test การบังคับกรอกข้อมูล 2024-12-26 20.55
+// Test เซ็ตวันที่ และเปลียนสำนักกับสาขาเป็นตัวหนังสือ
 
 import React, { useEffect, useState } from 'react';
-import { DatePicker, DatePickerProps, message, Space } from 'antd';
+import { message} from 'antd';
 import "./Request1.css"
 import { FacultyInterface} from '../../../interfaces/Faculty';
 import { DegreeInterface } from '../../../interfaces/Degree';
@@ -3040,10 +3028,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const items = new Array(15).fill(null).map((_, index) => ({
-	key: index + 1,
-	label: `nav ${index + 1}`,
-}));
+// const items = new Array(15).fill(null).map((_, index) => ({
+// 	key: index + 1,
+// 	label: `nav ${index + 1}`,
+// }));
 
 
 interface Data {
@@ -3060,13 +3048,12 @@ interface Data {
 	newGroup?: string
 	specifyReason?: string
 	inputPhoneNumber?: string
-	date?: string
+	// date?: string
 }
 
 
 const Request1: React.FC = () => {
 
-	// 	const formRef = useRef(null);
 
 	const navigate = useNavigate(); 
   
@@ -3092,14 +3079,14 @@ const Request1: React.FC = () => {
 	const [newGroup, setnewGroup] = useState("")
 	const [specifyReason, setspecifyReason] = useState("")
 	const [inputPhoneNumber, setinputPhoneNumber] = useState("")
-	const [date, setdate] = useState("")
+	// const [date, setdate] = useState("")
 
 
 
-	const onChange: DatePickerProps['onChange'] = (date, dateString) => {
-		setdate(dateString.toString())
-		console.log(date, dateString);
-	};
+	// const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+	// 	setdate(dateString.toString())
+	// 	console.log(date, dateString);
+	// };
 
 
 
@@ -3185,7 +3172,7 @@ const Request1: React.FC = () => {
 			newGroup: newGroup,
 			specifyReason: specifyReason,
 			inputPhoneNumber: inputPhoneNumber,
-			date: date
+			// date: date
 
 		}
 
@@ -3467,7 +3454,7 @@ const Request1: React.FC = () => {
 
 
 						{/* กล่องสี่เหลี่ยมใน cotent ส่วน header */}
-						<div style={{ display: "flex", justifyContent: "center", marginTop: "30px", }}>
+						<div style={{ display: "flex", justifyContent: "center", marginTop: "30px"}}>
 							<div
 								style={{
 									background: '#8096BC',
@@ -3475,7 +3462,7 @@ const Request1: React.FC = () => {
 									// color: "black",
 									display: 'flex',
 									alignItems: 'center',
-									borderRadius: '0px',
+									borderRadius: '10px',
 									boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
 									width: "790px"
 								}}
@@ -3507,10 +3494,11 @@ const Request1: React.FC = () => {
 								style={{
 									background: '#DFDFE2',
 									padding: '10px 20px',
+									marginTop:'5px',
 									// color: 'white',
 									display: 'flex',
 									alignItems: 'center',
-									borderRadius: '0px',
+									borderRadius: '10px',
 									boxShadow: '0 4px 10px rgba(0, 0, 0, 0.1)',
 									width: "790px"
 								}}
@@ -3726,7 +3714,7 @@ const Request1: React.FC = () => {
 											style={{
 												marginTop: "0px",
 												marginRight: "20px",
-												width: "60px",
+												width: "80px",
 												cursor: isGroupChangeDisabled ? "not-allowed" : "auto",
 											}} 
 											type="text" 
@@ -3758,7 +3746,7 @@ const Request1: React.FC = () => {
 											style={{
 												marginTop: "0px",
 												marginRight: "20px",
-												width: "60px",
+												width: "80px",
 												cursor: isGroupChangeDisabled ? "not-allowed" : "auto",
 											}} 
 											type="text" 
@@ -3889,17 +3877,6 @@ const Request1: React.FC = () => {
 							>
 							</input>
 
-
-							วันที่ <Space 
-									direction="vertical" 
-
-									style={{ 
-										color: "#9999", 
-										marginTop: "-16px" 
-									}}
-								>
-									<DatePicker onChange={onChange}  className="custom-datepicker" />
-								</Space>
 							 
 						</p> {/* <<-- ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง end*/}
 
