@@ -1225,10 +1225,6 @@
 // 	c.JSON(http.StatusOK, gin.H{"message": "File uploaded successfully", "data": printStory})
 // }
 
-
-
-
-
 // //Test เกี่ยวกับการดึงข้อมูลที่ป้อนจาก UI มาแสดง    เซฟ pdf ลงฐานได้แต่ข้อมูลไม่มา  start =============================================================================================================
 
 // package pdf
@@ -2114,25 +2110,6 @@
 
 // //Test เกี่ยวกับการดึงข้อมูลที่ป้อนจาก UI มาแสดง    เซฟ pdf ลงฐานได้แต่ข้อมูลไม่มา  end =============================================================================================================
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //Test เซฟได้แล้ว มีข้อมูลแล้ว แต่ยังไม่ต่อ frontend
 
 package pdf
@@ -2155,7 +2132,6 @@ import (
 	"github.com/johnfercher/maroto/pkg/props"
 	"github.com/sut67/team09/config"
 	"github.com/sut67/team09/entity"
-
 	// "github.com/sut67/team09/config"
 	// "github.com/sut67/team09/entity"
 	// "github.com/sut67/team09/config"
@@ -2249,7 +2225,7 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 	return m.Output()
 }
 
-func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date string) (bytes.Buffer, error) {
+func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date string) (bytes.Buffer, error) {
 	// begin := time.Now()
 	darkGrayColor := getDarkGrayColor()
 
@@ -2372,7 +2348,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 				Align: consts.Left,
 				Left:  61, // Indent the text slightly to the right
 			})
-			m.Text(Faculty, props.Text{
+			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 				Top:   13.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2404,81 +2380,82 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			// Add some space before the "Transactions" section
 			m.Row(33, func() {})
 
-				m.SetBackgroundColor(darkGrayColor)
+			m.SetBackgroundColor(darkGrayColor)
 
-				//เส้นคั้นตารางตรงกลาง
-				m.Text("|", props.Text{
-					Top:   5.4,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   7.8,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   10.2,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   12.6,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   15,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   17.4,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   19.8,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   22.2,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   24.6,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   27,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   29.4,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
-				m.Text("|", props.Text{
-					Top:   31.8,
-					Style: consts.Bold,
-					Left:  110.7,
-					Color: darkGrayColor,
-				})
+			//เส้นคั้นตารางตรงกลาง
+			m.Text("|", props.Text{
+				Top:   5.4,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   7.8,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   10.2,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   12.6,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   15,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   17.4,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   19.8,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   22.2,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   24.6,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   27,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   29.4,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Text("|", props.Text{
+				Top:   31.8,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+
 
 			m.Row(7, func() {
 				m.Col(7, func() {
@@ -2508,8 +2485,8 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			m.Row(1, func() {})
 
 			m.Col(13, func() {
-				m.Text("⬛ Approved" , props.Text{
-					Top: 1,
+				m.Text("⬛ Approved", props.Text{
+					Top:   1,
 					Size:  11,
 					Align: consts.Left,
 					Style: consts.Bold,
@@ -2519,7 +2496,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			m.Row(0.5, func() {})
 			m.Col(13, func() {
 				m.Text("⬛ NotApproved", props.Text{
-					Top: 1,
+					Top:   1,
 					Size:  11,
 					Align: consts.Left,
 					Style: consts.Bold,
@@ -2599,7 +2576,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			})
 
 			//ส่วนของอาจารย์
-			m.Text("  ", props.Text{         //เหตุผล ของอาจารย์ กรอกในส่วนของอาจารย์
+			m.Text("  ", props.Text{ //เหตุผล ของอาจารย์ กรอกในส่วนของอาจารย์
 				Top:   20.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2626,7 +2603,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 			})
 
 			// ส่วนของอาจารย์
-			m.Text("          ", props.Text{            //ชื่ออาจารย์ ของอาจารย์ กรอกในส่วนของอาจารย์
+			m.Text("          ", props.Text{ //ชื่ออาจารย์ ของอาจารย์ กรอกในส่วนของอาจารย์
 				Top:   27.5,
 				Size:  11,
 				Align: consts.Left,
@@ -2724,7 +2701,35 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 				Left:  110.7,
 				Color: darkGrayColor,
 			})
-			m.Row(2 , func() {})
+			m.Row(2, func() {})
+			m.Text("|", props.Text{
+				Top:   25.5,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Row(2.2, func() {})
+			m.Text("|", props.Text{
+				Top:   25.5,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Row(2.4, func() {})
+			m.Text("|", props.Text{
+				Top:   25.5,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Row(2.5, func() {})
+			m.Text("|", props.Text{
+				Top:   25.5,
+				Style: consts.Bold,
+				Left:  110.7,
+				Color: darkGrayColor,
+			})
+			m.Row(2.5, func() {})
 			m.Text("|", props.Text{
 				Top:   25.5,
 				Style: consts.Bold,
@@ -2732,7 +2737,7 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 				Color: darkGrayColor,
 			})
 
-			m.Row(7.5 , func() {})
+			m.Row(6.5, func() {})
 			m.Line(1, props.Line{
 
 				Width: 0.1, // ความหนาของเส้น 2
@@ -2795,7 +2800,6 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 				Left:  174, // Indent the text slightly to the right
 			})
 
-
 		})
 
 	})
@@ -2806,7 +2810,6 @@ func GeneratePDF (inputName, inputStudentID, Degree, Faculty, Major, Details, Co
 func getHeader() []string {
 	return []string{"", "Product", "Quantity", "Price"}
 }
-
 
 func getDarkGrayColor() color.Color {
 	return color.Color{
@@ -2840,94 +2843,88 @@ func getRedColor() color.Color {
 	}
 }
 
-
 func CreatePrintStory(c *gin.Context) {
-    // Parse JSON input
-    var requestData struct {
-        InputName        string `json:"inputName" valid:"required~InputName is required"`
-		InputStudentID   string `json:"inputStudentID" valid:"required~InputStudentID is required, matches(^[BMD]\\d{7}$)"`
-        Degree           string `json:"degree" valid:"required~Degree is required"`
-        Faculty          string `json:"faculty" valid:"required~Faculty is required"`
-        Major            string `json:"major" valid:"required~Major is required"`
-        Details          string `json:"details" valid:"required~Details is required"`
-		//เพิ่มส่วนนี้ 2024-12-24 20.06 น.
-		// Details2          string `json:"details2" valid:"required~Details2 is required"`
-		// Details3          string `json:"details3" valid:"required~Details3 is required"`
-		//เพิ่มส่วนนี้ 2024-12-24 20.06 น. end
-        CourseCode       string `json:"courseCode" valid:"required~CourseCode is required"`
-        CourseTitle      string `json:"courseTitle" valid:"required~CourseTitle is required"`
-        Group            string `json:"group" valid:"required~Group is required"`
-        OldGroup         string `json:"oldGroup" valid:"required~OldGroup is required"`
-        NewGroup         string `json:"newGroup" valid:"required~NewGroup is required"`
-        SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
-        InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
-        Date             string `json:"date" valid:"required~Date is required"`
-    }
+	// Parse JSON input
+	var requestData struct {
+		InputName      string `json:"inputName" valid:"required~InputName is required"`
+		InputStudentID string `json:"inputStudentID" valid:"required~InputStudentID is required, matches(^[BMD]\\d{7}$)"`
+		Degree         string `json:"degree" valid:"required~Degree is required"`
+		Faculty        string `json:"faculty" valid:"required~Faculty is required"`
+		Major          string `json:"major" valid:"required~Major is required"`
+		Details        string `json:"details" valid:"required~Details is required"`
+		CourseCode       string `json:"courseCode" valid:"required~CourseCode is required"`
+		CourseTitle      string `json:"courseTitle" valid:"required~CourseTitle is required"`
+		Group            string `json:"group" valid:"required~Group is required"`
+		OldGroup         string `json:"oldGroup" valid:"required~OldGroup is required"`
+		NewGroup         string `json:"newGroup" valid:"required~NewGroup is required"`
+		SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
+		InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
+		Date             string `json:"date" valid:"required~Date is required"`
+	}
 
-    if err := c.ShouldBindJSON(&requestData); err != nil {
-        c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input data"})
-        return
-    }
+	if err := c.ShouldBindJSON(&requestData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid input data"})
+		return
+	}
 
-    // Generate PDF
-    pdfData, err := GeneratePDF(
-        requestData.InputName,
-        requestData.InputStudentID,
-        requestData.Degree,
-        requestData.Faculty,
-        requestData.Major,
-        requestData.Details,
-		//เพิ่มส่วนนี้ 2024-12-24
-		// requestData.Details2,
-		// requestData.Details3,
-		//เพิ่มส่วนนี้ 2024-12-24 end
-        requestData.CourseCode,
-        requestData.CourseTitle,
-        requestData.Group,
-        requestData.OldGroup,
-        requestData.NewGroup,
-        requestData.SpecifyReason,
-        requestData.InputPhoneNumber,
-        requestData.Date,
-    )
+	// var Faculty entity.Faculty
+	// db := config.DB()
+	// db.Where("id", requestData.Faculty).First(&Faculty)
 
-    if err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate PDF"})
-        return
-    }
+	// Generate PDF
+	pdfData, err := GeneratePDF(
+		requestData.InputName,
+		requestData.InputStudentID,
+		requestData.Degree,
+		requestData.Faculty,
+		requestData.Major,
+		requestData.Details,
+		requestData.CourseCode,
+		requestData.CourseTitle,
+		requestData.Group,
+		requestData.OldGroup,
+		requestData.NewGroup,
+		requestData.SpecifyReason,
+		requestData.InputPhoneNumber,
+		requestData.Date,
+	)
 
-    // Save the PDF file
-    filename := fmt.Sprintf("%s_%s.pdf", requestData.InputStudentID,requestData.InputName)
-    savePath := filepath.Join("uploads", filename)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to generate PDF"})
+		return
+	}
 
-    if _, err := os.Stat("uploads"); os.IsNotExist(err) {
-        if err := os.Mkdir("uploads", os.ModePerm); err != nil {
-            c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
-            return
-        }
-    }
+	// บันทึกไฟล์ตามชื่อ
+	filename := fmt.Sprintf("%s_%s.pdf", requestData.InputStudentID, requestData.InputName)
+	savePath := filepath.Join("uploads", filename)
 
-    if err := os.WriteFile(savePath, pdfData.Bytes(), 0644); err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save PDF"})
-        return
-    }
+	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
+		if err := os.Mkdir("uploads", os.ModePerm); err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
+			return
+		}
+	}
 
-    // Generate a unique PrintStoryCode
-    newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
+	if err := os.WriteFile(savePath, pdfData.Bytes(), 0644); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save PDF"})
+		return
+	}
 
-    // Save to database
-    printStory := entity.PrintStory{
-        PrintStoryCode: newPrintStoryCode,
-        DocumentPath:   savePath,
-        CreateAt:       time.Now(),
-        RequestID:      1,
-    }
+	// สุ่ม Code pdf 
+	newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
 
-    if err := config.DB().Create(&printStory).Error; err != nil {
-        c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
-        return
-    }
+	// บันทึกลง databases
+	printStory := entity.PrintStory{
+		PrintStoryCode: newPrintStoryCode,
+		DocumentPath:   savePath,
+		CreateAt:       time.Now(),
+		RequestID:      1,
+	}
 
-    c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
+	if err := config.DB().Create(&printStory).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
 }
-

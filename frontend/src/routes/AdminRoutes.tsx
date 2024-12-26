@@ -6,6 +6,7 @@ import FullLayout from "../components/FullLayout/FullLayout.tsx";
 import { lazy } from "react";
 import Loadable from "../third-party/Loadable.tsx";
 import HomeRequest from "../home/HomeRequest/HomeRequest.tsx";
+import Request5 from "../pages/Request/Request5/Request5.tsx";
 
 // const ManageLecturer = Loadable(lazy(() => import("../pages/ManageLecturer/ManageLecturer")));
 // const LecturerList = Loadable(lazy(() => import("../pages/ManageLecturer/LecturerList/LecturerList")));
@@ -39,6 +40,11 @@ const AdminRoutes = (): RouteObject => {
       {
         path: "/request1",
         element: <Request1 />,
+      },
+
+      {
+        path: "/request5",
+        element: <Request5 />,
       },
 
     ],

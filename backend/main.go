@@ -2,12 +2,10 @@ package main
 
 import (
 	"net/http"
-
 	"github.com/gin-gonic/gin"
 	"github.com/sut67/team09/config"
 	"github.com/sut67/team09/controller"
 	"github.com/sut67/team09/controller/pdf"
-
 )
 
 const PORT = "8000"
@@ -23,19 +21,6 @@ func main() {
 
 	r := gin.Default()
     r.Use(CORSMiddleware())
-
-	
-	// engine := gin.Default()
-
-	// engine.GET("/order/bill", func(ctx *gin.Context) {
-	// 	bilePDF, err := controller.GeneratePDF()
-	// 	if err != nil {
-	// 		ctx.JSON(http.StatusInternalServerError, gin.H{"error": err})
-	// 		return
-	// 	}
-	// 	ctx.Data(http.StatusOK, "application/pdf", bilePDF.Bytes())
-	// })
-	// engine.Run(":8000")
 
 	router := r.Group("/")
 	{	
@@ -71,16 +56,10 @@ func main() {
 		router.GET("/print", func(c *gin.Context) {
 			inputName := ""
 			inputStudentID := ""
-			Degree := ""
+			Degree :=""
 			Faculty := ""
 			Major := ""
-			
-			//เพิ่มส่วนนี้ 2024-12-24 20.10 น.
 			Details := ""
-			// Details2 := ""
-			// Details3 := ""
-			//เพิ่มส่วนนี้ 2024-12-24 20.10 น. end
-
 			CourseCode := ""
 			CourseTitle := ""
 			Group := ""
@@ -89,6 +68,7 @@ func main() {
 			SpecifyReason := ""
 			inputPhoneNumber := ""
 			Date := ""
+
 			pdfData, err := pdf.GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date)
 			if err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})

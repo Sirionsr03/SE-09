@@ -341,7 +341,7 @@ select::-ms-expand {
 .selectdegree {
   position: relative;
   display: flex;
-  width: 10em;
+  width: 15em;
   height: 30px;
   line-height: 3;
   background: #fff7f5;
