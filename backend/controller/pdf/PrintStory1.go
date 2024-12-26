@@ -2244,21 +2244,6 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 
 	formattedDate := Date.Format("2006-01-02")
 
-	// inputName := "Sirion Srimueang"
-	// inputStudentID := "B6505066"
-	// Degree := "ปริญญาตรี"
-	// Faculty := "สำนักวิชาศาสตร์และศิลป์ดิจิทัล"
-	// Major := "หลักสูตรการบริหารงานก่อสร้างและสาธารณูปโภค"
-	// Details := "เพิ่มรายวิชา Add more courses"
-	// CourseCode := "ENG23 3052"
-	// CourseTitle := "COMPUTER AND COMMUNICATION"
-	// Group := "1"
-	// OldGroup := "3"
-	// NewGroup := "2"
-	// SpecifyReason := "ต้องการเปลี่ยนกลุ่ม"
-	// inputPhoneNumber := "0651018312"
-	// Date := "2024-12-20"
-
 	// Form Header
 	m.Row(15, func() {
 
