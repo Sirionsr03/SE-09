@@ -552,7 +552,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -566,7 +566,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, // Indent the text slightly to the right
+// 				Left:  61, 
 // 			})
 // 			m.Text(Institute, props.Text{
 // 				Top:   13.5,
@@ -580,7 +580,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(SchoolOf, props.Text{
 // 				Top:   19.5,
@@ -594,7 +594,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -738,7 +738,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, // Indent the text slightly to the right
+// 				Left:  44, 
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -755,7 +755,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -771,7 +771,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, // Indent the text slightly to the right
+// 				Left:  119, 
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -790,7 +790,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -818,7 +818,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -826,7 +826,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, // Indent the text slightly to the right
+// 				Left:  125, 
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -835,7 +835,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -843,7 +843,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, // Indent the text slightly to the right
+// 				Left:  50, 
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -852,7 +852,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, // Indent the text slightly to the right
+// 				Left:  55, 
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -860,7 +860,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, // Indent the text slightly to the right
+// 				Left:  103, 
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -868,7 +868,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, // Indent the text slightly to the right
+// 				Left:  127, 
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -876,7 +876,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -884,7 +884,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, // Indent the text slightly to the right
+// 				Left:  38, 
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -920,7 +920,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, // Indent the text slightly to the right
+// 				Left:  23, 
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -928,7 +928,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, // Indent the text slightly to the right
+// 				Left:  49, 
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -936,14 +936,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, // Indent the text slightly to the right
+// 				Left:  80, 
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, // Indent the text slightly to the right
+// 				Left:  115, 
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -951,7 +951,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, // Indent the text slightly to the right
+// 				Left:  138, 
 // 			})
 
 // 			m.Text("วันที่ Date", props.Text{
@@ -959,7 +959,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, // Indent the text slightly to the right
+// 				Left:  158, 
 // 			})
 
 // 			m.Text(Date, props.Text{
@@ -968,7 +968,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, // Indent the text slightly to the right
+// 				Left:  174, 
 // 			})
 
 // 			// m.SetBackgroundColor(whiteColor)
@@ -1454,7 +1454,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -1468,7 +1468,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, // Indent the text slightly to the right
+// 				Left:  61, 
 // 			})
 // 			m.Text(Faculty, props.Text{
 // 				Top:   13.5,
@@ -1482,7 +1482,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Major, props.Text{
 // 				Top:   19.5,
@@ -1496,7 +1496,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -1640,7 +1640,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, // Indent the text slightly to the right
+// 				Left:  44, 
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -1657,7 +1657,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -1673,7 +1673,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, // Indent the text slightly to the right
+// 				Left:  119, 
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -1692,7 +1692,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -1719,7 +1719,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -1727,7 +1727,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, // Indent the text slightly to the right
+// 				Left:  125, 
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -1736,7 +1736,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -1744,7 +1744,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, // Indent the text slightly to the right
+// 				Left:  50, 
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -1753,7 +1753,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, // Indent the text slightly to the right
+// 				Left:  55, 
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -1761,7 +1761,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, // Indent the text slightly to the right
+// 				Left:  103, 
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -1769,7 +1769,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, // Indent the text slightly to the right
+// 				Left:  127, 
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -1777,7 +1777,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -1785,7 +1785,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, // Indent the text slightly to the right
+// 				Left:  38, 
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -1821,7 +1821,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, // Indent the text slightly to the right
+// 				Left:  23, 
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -1829,7 +1829,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, // Indent the text slightly to the right
+// 				Left:  49, 
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -1837,14 +1837,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, // Indent the text slightly to the right
+// 				Left:  80, 
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, // Indent the text slightly to the right
+// 				Left:  115, 
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -1852,7 +1852,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, // Indent the text slightly to the right
+// 				Left:  138, 
 // 			})
 
 // 			m.Text("วันที่ Date", props.Text{
@@ -1860,7 +1860,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, // Indent the text slightly to the right
+// 				Left:  158, 
 // 			})
 
 // 			m.Text(Date, props.Text{
@@ -1869,7 +1869,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, // Indent the text slightly to the right
+// 				Left:  174, 
 // 			})
 
 // 		})
@@ -2330,7 +2330,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -2344,7 +2344,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, // Indent the text slightly to the right
+// 				Left:  61, 
 // 			})
 // 			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 // 				Top:   13.5,
@@ -2358,7 +2358,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Major, props.Text{
 // 				Top:   19.5,
@@ -2372,7 +2372,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -2537,7 +2537,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, // Indent the text slightly to the right
+// 				Left:  44, 
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -2554,7 +2554,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -2570,7 +2570,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, // Indent the text slightly to the right
+// 				Left:  119, 
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -2589,7 +2589,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -2617,7 +2617,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -2625,7 +2625,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, // Indent the text slightly to the right
+// 				Left:  125, 
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -2634,7 +2634,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -2642,7 +2642,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, // Indent the text slightly to the right
+// 				Left:  50, 
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -2651,7 +2651,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, // Indent the text slightly to the right
+// 				Left:  55, 
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -2659,7 +2659,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, // Indent the text slightly to the right
+// 				Left:  103, 
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -2667,7 +2667,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, // Indent the text slightly to the right
+// 				Left:  127, 
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -2675,7 +2675,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, // Indent the text slightly to the right
+// 				Left:  3, 
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -2683,7 +2683,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, // Indent the text slightly to the right
+// 				Left:  38, 
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -2747,7 +2747,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, // Indent the text slightly to the right
+// 				Left:  23, 
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -2755,7 +2755,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, // Indent the text slightly to the right
+// 				Left:  49, 
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -2763,14 +2763,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, // Indent the text slightly to the right
+// 				Left:  80, 
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, // Indent the text slightly to the right
+// 				Left:  115, 
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -2778,7 +2778,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, // Indent the text slightly to the right
+// 				Left:  138, 
 // 			})
 
 // 			m.Text("วันที่ Date :", props.Text{
@@ -2786,7 +2786,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, // Indent the text slightly to the right
+// 				Left:  158, 
 // 			})
 
 // 			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
@@ -2795,7 +2795,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, // Indent the text slightly to the right
+// 				Left:  174, 
 // 			})
 
 // 		})
@@ -2959,7 +2959,7 @@
 
 
 
-//Test เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ม่ใช่ตัวเลข
+// เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ไม่ใช่ตัวเลข  ทำได้แล้วจ้าาาาาาาาาาา
 package pdf
 
 import (
@@ -3007,8 +3007,6 @@ func PatchPDF(c *gin.Context) {
 }
 
 func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
-	// กำหนดส่วนหัวใหม่
-	header := getHeader()
 
 	// ใช้ฟังก์ชัน GeneratePDF เดิม แต่แทนที่เนื้อหา
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
@@ -3047,27 +3045,11 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 		})
 	})
 
-	// สร้างตารางใหม่
-	m.TableList(header, contents, props.TableList{
-		HeaderProp: props.TableListContent{
-			Size:      9,
-			GridSizes: []uint{3, 4, 2, 3},
-		},
-		ContentProp: props.TableListContent{
-			Size:      8,
-			GridSizes: []uint{3, 4, 2, 3},
-		},
-		// AlternatedBackground: &getGrayColor(),
-		HeaderContentSpace: 1,
-		Line:               true,
-	})
-
-	// ส่งออก PDF
 	return m.Output()
 }
 
 func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber string, Date time.Time) (bytes.Buffer, error) {
-	// begin := time.Now()
+
 	darkGrayColor := getDarkGrayColor()
 
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
@@ -3135,7 +3117,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   7.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  10, // Add a slight indentation to the left (move the text to the right)
+				Left:  10, 
 			})
 
 			m.Text(inputName, props.Text{
@@ -3150,7 +3132,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   7.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  123, // Add a slight indentation to the left (move the text to the right)
+				Left:  123, 
 			})
 			m.Text(inputStudentID, props.Text{
 				Top:   7.5,
@@ -3164,7 +3146,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   13.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(Degree, props.Text{
 				Top:   13.5,
@@ -3178,7 +3160,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   13.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  61, // Indent the text slightly to the right
+				Left:  61, 
 			})
 			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 				Top:   13.5,
@@ -3192,7 +3174,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   19.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(Major, props.Text{
 				Top:   19.5,
@@ -3206,7 +3188,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Top:   25.5,
 				Size:  11,
 				Align: consts.Left,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 
 			// Add some space before the "Transactions" section
@@ -3352,7 +3334,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  44, // Indent the text slightly to the right
+				Left:  44, 
 			})
 			m.Text(CourseCode, props.Text{
 				Top:   1.5,
@@ -3369,7 +3351,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(CourseTitle, props.Text{
 				Top:   20.5,
@@ -3385,7 +3367,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  119, // Indent the text slightly to the right
+				Left:  119, 
 			})
 
 			//ส่วนของอาจารย์
@@ -3404,7 +3386,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(Group, props.Text{
 				Top:   27.5,
@@ -3432,7 +3414,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getRedColor(),
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 
 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -3440,7 +3422,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  125, // Indent the text slightly to the right
+				Left:  125, 
 			})
 
 			m.Row(5.5, func() {})
@@ -3449,7 +3431,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(OldGroup, props.Text{
 				Top:   27.5,
@@ -3457,7 +3439,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  50, // Indent the text slightly to the right
+				Left:  50, 
 			})
 
 			// m.Row(5, func() {})
@@ -3466,7 +3448,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  55, // Indent the text slightly to the right
+				Left:  55, 
 			})
 			m.Text(NewGroup, props.Text{
 				Top:   27.5,
@@ -3474,7 +3456,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  103, // Indent the text slightly to the right
+				Left:  103, 
 			})
 
 			m.Text("Instructor / Course coordinator", props.Text{
@@ -3482,7 +3464,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  127, // Indent the text slightly to the right
+				Left:  127, 
 			})
 			m.Row(5.5, func() {})
 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -3490,7 +3472,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  3, // Indent the text slightly to the right
+				Left:  3, 
 			})
 			m.Text(SpecifyReason, props.Text{
 				Top:   27.5,
@@ -3498,7 +3480,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  38, // Indent the text slightly to the right
+				Left:  38, 
 			})
 			m.Row(0.6, func() {})
 			m.Text("|", props.Text{
@@ -3562,7 +3544,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  23, // Indent the text slightly to the right
+				Left:  23, 
 			})
 			m.Row(3, func() {})
 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -3570,7 +3552,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  49, // Indent the text slightly to the right
+				Left:  49, 
 			})
 			m.Text(inputName, props.Text{
 				Top:   27.5,
@@ -3578,14 +3560,14 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  80, // Indent the text slightly to the right
+				Left:  80, 
 			})
 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 				Top:   27.5,
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  115, // Indent the text slightly to the right
+				Left:  115, 
 			})
 			m.Text(inputPhoneNumber, props.Text{
 				Top:   27.5,
@@ -3593,7 +3575,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  138, // Indent the text slightly to the right
+				Left:  138, 
 			})
 
 			m.Text("วันที่ Date :", props.Text{
@@ -3601,7 +3583,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Size:  11,
 				Align: consts.Left,
 				Style: consts.Bold,
-				Left:  158, // Indent the text slightly to the right
+				Left:  158, 
 			})
 
 			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
@@ -3610,7 +3592,7 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 				Align: consts.Left,
 				Style: consts.Bold,
 				Color: getBlueColor(),
-				Left:  174, // Indent the text slightly to the right
+				Left:  174, 
 			})
 
 		})
@@ -3620,23 +3602,12 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 	return m.Output()
 }
 
-func getHeader() []string {
-	return []string{"", "Product", "Quantity", "Price"}
-}
 
 func getDarkGrayColor() color.Color {
 	return color.Color{
 		Red:   55,
 		Green: 55,
 		Blue:  55,
-	}
-}
-
-func getGrayColor() color.Color {
-	return color.Color{
-		Red:   200,
-		Green: 200,
-		Blue:  200,
 	}
 }
 
@@ -3748,4 +3719,4 @@ func CreatePrintStory(c *gin.Context) {
 }
 
 
-//Test เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ม่ใช่ตัวเลข
+// เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ไม่ใช่ตัวเลข  ทำได้แล้วจ้าาาาาาาาาาา
