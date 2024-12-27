@@ -48,26 +48,26 @@
   
   .button-menu {
    display: grid;
-   grid-template-columns: repeat(2, 1fr); /* Two buttons per row */
-   gap: 35px; /* Space between buttons */
-   padding: 20px; /* Padding around the container */
-   justify-content: center; /* Center the grid horizontally */
+   grid-template-columns: repeat(2, 1fr); 
+   gap: 35px; 
+   padding: 20px; 
+   justify-content: center; 
  }
  
  .btn-donate {
-   background-color: #fff; /* Button background color */
-   color: #000; /* Text color */
+   background-color: #fff; 
+   color: #000; 
    border: none;
    border-radius: 10px;
    padding: 20px 20px;
    font-size: 16px;
    cursor: pointer;
-   text-align: left; /* Align text to the left */
-   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+   text-align: left; 
+   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
  }
  
  .btn-donate:hover {
-   background-color: #f0f0f0; /* Light hover effect */
+   background-color: #f0f0f0;
  }
  
  

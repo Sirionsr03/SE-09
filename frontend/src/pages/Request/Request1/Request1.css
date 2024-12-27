@@ -406,35 +406,6 @@ select::-ms-expand {
 
 
 
-.custom-datepicker {
-  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
-  background-color: #ffffff23; /* สีของกล่อง */
-  border-color: #999999;    /* สีของขอบ */
-  color: #333333;           /* สีข้อความ */
-  border-radius: 20px;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.custom-datepicker1 {
-  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
-  background-color: #ffffff; /* สีของกล่อง */
-  border-color: #999999;    /* สีของขอบ */
-  color: #333333;           /* สีข้อความ */
-  border-radius: 20px;
-  margin-top: 15px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
-.custom-datepicker .ant-picker-input > input {
-  color: #333333;           /* สีข้อความที่พิมพ์ในกล่อง */
-}
-.ant-picker ant-picker-outlined css-dev-only-do-not-override-1x0dypw custom-datepicker1{
-  border-color: #ffffff;
-}
-  
 .responsive-div {
   background-color: #9db2c4;
   padding: 10px;
@@ -448,22 +419,19 @@ select::-ms-expand {
   justify-content: center;
 }
 
-/* ปรับ layout สำหรับหน้าจอขนาดใหญ่ */
+
 @media (min-width: 768px) {
   .responsive-div {
-    flex-direction: row; /* เปลี่ยนเป็นการจัดเรียงในแนวนอน */
+    flex-direction: row; 
     justify-content: space-between;
   }
 }
 
 
-/* From Uiverse.io by Lu2ovic */ 
+
 .radio-input {
   display: flex;
-  gap: 16px; /* Espace entre les lignes */
-  /* margin-left: 0px;
-  margin-bottom: 20px;
-  margin-top: 15px; */
+  gap: 16px; 
 
 }
 
@@ -483,7 +451,7 @@ select::-ms-expand {
 .radio-b__label {
   display: flex;
   align-items: center;
-  gap: 12px; /* Espace entre le carré et le texte */
+  gap: 12px; 
   font-size: 15px;
   color: #000000;
   font-weight: 600;
@@ -523,8 +491,8 @@ select::-ms-expand {
 }
 
 .radio-b__input:checked + .radio-b__label .radio-b__custom {
-  border: none; /* Supprime les bordures noires */
-  transition: all 0.3s ease; /* Assure une transition fluide */
+  border: none; 
+  transition: all 0.3s ease; 
 }
 
 .radio-b__input:hover + .radio-b__label .radio-b__custom {
@@ -536,7 +504,7 @@ select::-ms-expand {
   );
 }
 
-/* Optionnel : style pour le texte */
+
 .radio-b__text {
   font-size: 15px;
   color: #000000;

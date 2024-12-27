@@ -83,7 +83,7 @@ async function GetDegree() {
       },
     };
   
-    let res = await fetch(`${apiUrl}/degree`, requestOptions)
+    const res = await fetch(`${apiUrl}/degree`, requestOptions)
       .then((res) => {
         if (res.status == 200) {
           return res.json();

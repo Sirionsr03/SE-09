@@ -3,14 +3,6 @@ import React from 'react';
 import NavbarHome from '../../../components/Navbar';
 
 
-
-
-
-const items = new Array(15).fill(null).map((_, index) => ({
-  key: index + 1,
-  label: `nav ${index + 1}`,
-}));
-
 const Request: React.FC = () => {
 
 

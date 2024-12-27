@@ -26,7 +26,7 @@ const NavbarHome = () => {
                                     <a href="#">นักศึกษา</a>
                                     <ul>
                                         <li><a href="#">ข้อมูลนักศึกษา</a></li>
-                                        <li onClick={handleToHomeRequest}> <a href="#">ยื่นคำร้อง2</a></li>
+                                        <li onClick={handleToHomeRequest}> <a href="#">ยื่นคำร้อง</a></li>
                                         <li><a href="#">ยื่นคำร้อง3</a></li>
                                         <li><a href="#">ยื่นคำร้อง4</a></li>
                                     </ul>
