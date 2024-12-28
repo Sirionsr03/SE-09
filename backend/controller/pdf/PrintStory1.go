@@ -2306,7 +2306,7 @@ func CreatePrintStory(c *gin.Context) {
 		SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
 		InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
 		Date             time.Time `json:"date"`
-		
+		RequestID uint `json:"RequestID" valid:"-"`
 	}
 
 	if err := c.ShouldBindJSON(&requestData); err != nil {
