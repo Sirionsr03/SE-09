@@ -2,13 +2,13 @@ package controller
 
 import (
 	"net/http"
+	"time"
 
 	"github.com/sut67/team09/config"
 
 	"github.com/gin-gonic/gin"
 	"github.com/sut67/team09/entity"
 )
-
 
 // POST /Requests
 func CreateRequest(c *gin.Context) {
@@ -22,12 +22,10 @@ func CreateRequest(c *gin.Context) {
 
 	db := config.DB()
 
-
+	Request.RequestDate = time.Now()
 	// Create the new Request
 	newRequest := entity.Request{
-		RetryCount: Request.RetryCount, 
-		RequestDate: Request.RequestDate,
-		Status : Request.Status,
+		RequestDate: time.Now(),
 		Note : Request.Note ,    
 		StudentID:Request.StudentID, 
 		RequestTypeID: Request.RequestTypeID,

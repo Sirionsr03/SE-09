@@ -1,6 +1,7 @@
 import axios from "axios";
 import { LecturerInterface } from "../../interfaces/Lecturer";
 import { PrintStoryInterface } from "../../interfaces/PrintStory";
+import { RequestInterface } from "../../interfaces/Request";
 
 const apiUrl = "http://localhost:8000";
 const Authorization = localStorage.getItem("token");
@@ -100,6 +101,19 @@ async function GetDegree() {
 
 
 //Request  Jiw
+
+async function CreateRequest(data: RequestInterface) {
+
+  return await axios
+
+    .post(`${apiUrl}/createrequest`, data, requestOptions)
+
+    .then((res) => res)
+
+    .catch((e) => e.response);
+
+}
+
 async function GeneratePDF(data: PrintStoryInterface) {
 
     return await axios
@@ -126,5 +140,6 @@ export {
 
 
     //Request  JIW
+    CreateRequest,
     GeneratePDF,
 };

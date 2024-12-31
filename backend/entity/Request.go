@@ -8,9 +8,8 @@ import (
 
 type Request struct {
 	gorm.Model
-	RetryCount  int
+	// RetryCount  int
 	RequestDate time.Time
-	Status      string
 	Note        string
 
 	StudentID uint
