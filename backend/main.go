@@ -80,6 +80,34 @@ func main() {
 		})
 		//เดิม ที่ดึง pdf และข้อมูลมาได้  end
 
+
+
+		//เดิม ที่ดึง pdf และข้อมูลมาได้  start
+		router.GET("/print2", func(c *gin.Context) {
+			inputName := ""
+			inputStudentID := ""
+			Degree :=""
+			Faculty := ""
+			Major := ""
+			Details := ""
+			CourseCode := ""
+			CourseTitle := ""
+			Group := ""
+			OldGroup := ""
+			NewGroup := ""
+			SpecifyReason := ""
+			inputPhoneNumber := ""
+			Date := time.Now()
+	
+			pdfData, err := pdf.GeneratePDF2(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber, Date)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+				return
+			}
+			c.Data(http.StatusOK, "application/pdf", pdfData.Bytes())
+		})
+		//เดิม ที่ดึง pdf และข้อมูลมาได้  end
+
 		router.PATCH("/pdf", pdf.PatchPDF)
 		router.POST("/CreatePrintStory",pdf.CreatePrintStory)
 		// router.DELETE("/printstory/:id", pdf.DeletePrintStory)

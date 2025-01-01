@@ -2,7 +2,7 @@ package pdf
 
 import (
 	"bytes"
-	"errors"
+
 	"fmt"
 	"math/rand"
 	"net/http"
@@ -19,11 +19,11 @@ import (
 	"github.com/sut67/team09/entity"
 )
 
-type UpdateContentRequest struct {
+type UpdateContentRequest2 struct {
 	Contents [][]string `json:"contents"`
 }
 
-func PatchPDF(c *gin.Context) {
+func PatchPDF2(c *gin.Context) {
 	var request UpdateContentRequest
 
 	// ตรวจสอบข้อมูลที่เข้ามาใน Request
@@ -46,7 +46,7 @@ func PatchPDF(c *gin.Context) {
 	c.Data(http.StatusOK, "application/pdf", pdfBuffer.Bytes())
 }
 
-func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
+func GenerateUpdatedPDF2(contents [][]string) (bytes.Buffer, error) {
 
 	// ใช้ฟังก์ชัน GeneratePDF เดิม แต่แทนที่เนื้อหา
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
@@ -88,66 +88,67 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 	return m.Output()
 }
 
-func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber string, Date time.Time) (bytes.Buffer, error) {
+func GeneratePDF2(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber string, Date time.Time) (bytes.Buffer, error) {
 	
-	var output bytes.Buffer
-	if len(inputName) == 0 { 
-		return output, errors.New("InputName is required")
-	} 
+	// var output bytes.Buffer
+	// if len(inputName) == 0 { 
+	// 	return output, errors.New("InputName is required")
+	// } 
 
-	if len(inputStudentID) == 0 { 
-		return output, errors.New("InputStudentID is required")
-	} 
+	// if len(inputStudentID) == 0 { 
+	// 	return output, errors.New("InputStudentID is required")
+	// } 
 
-	if len(Degree) == 0 { 
-		return output, errors.New("Degree is required")
-	} 
+	// if len(Degree) == 0 { 
+	// 	return output, errors.New("Degree is required")
+	// } 
 
-	if len(Faculty) == 0 { 
-		return output, errors.New("Faculty is required")
-	} 
+	// if len(Faculty) == 0 { 
+	// 	return output, errors.New("Faculty is required")
+	// } 
 	
-	if len(Major) == 0 { 
-		return output, errors.New("Major is required")
-	} 
+	// if len(Major) == 0 { 
+	// 	return output, errors.New("Major is required")
+	// } 
 
-	if len(Details) == 0 { 
-		return output, errors.New("Details is required")
-	} 
+	// if len(Details) == 0 { 
+	// 	return output, errors.New("Details is required")
+	// } 
 
-	if len(CourseCode) == 0 { 
-		return output, errors.New("CourseCode is required")
-	} 
+	// if len(CourseCode) == 0 { 
+	// 	return output, errors.New("CourseCode is required")
+	// } 
 
-	if len(CourseTitle) == 0 { 
-		return output, errors.New("CourseTitle is required")
-	} 
+	// if len(CourseTitle) == 0 { 
+	// 	return output, errors.New("CourseTitle is required")
+	// } 
 
-	if len(Group) == 0 { 
-		return output, errors.New("Group is required")
-	} 
+	// if len(Group) == 0 { 
+	// 	return output, errors.New("Group is required")
+	// } 
 
-	if len(OldGroup) == 0 { 
-		return output, errors.New("OldGroup is required")
-	} 
+	// if len(OldGroup) == 0 { 
+	// 	return output, errors.New("OldGroup is required")
+	// } 
 
-	if len(NewGroup) == 0 { 
-		return output, errors.New("NewGroup is required")
-	} 
+	// if len(NewGroup) == 0 { 
+	// 	return output, errors.New("NewGroup is required")
+	// } 
 
-	if len(SpecifyReason) == 0 { 
-		return output, errors.New("SpecifyReason is required")
-	} 
+	// if len(SpecifyReason) == 0 { 
+	// 	return output, errors.New("SpecifyReason is required")
+	// } 
 
-	if len(inputPhoneNumber) == 0 { 
-		return output, errors.New("InputPhoneNumber is required")
-	} 
+	// if len(inputPhoneNumber) == 0 { 
+	// 	return output, errors.New("InputPhoneNumber is required")
+	// } 
 	
 	
 	
 	darkGrayColor := getDarkGrayColor()
 
 	m := pdf.NewMaroto(consts.Portrait, consts.A4)
+	
 
 	m.AddUTF8Font("THSarabun", consts.Normal, "./font/THSarabun.ttf")
 	m.AddUTF8Font("THSarabun", consts.Italic, "./font/THSarabun Italic.ttf")
@@ -692,13 +693,75 @@ func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, Cou
 
 		})
 
+		m.AddPage()
+
+		m.Row(1, func() {})
+		m.Text("จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.", props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Left:  23, 
+		})
+		m.Row(3, func() {})
+		m.Text("นักศึกษาลงชื่อ Signature", props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Left:  49, 
+		})
+		m.Text(inputName, props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Color: getBlueColor(),
+			Left:  80, 
+		})
+		m.Text("โทรศัพท์ Tel. No.", props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Left:  115, 
+		})
+		m.Text(inputPhoneNumber, props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Color: getBlueColor(),
+			Left:  138, 
+		})
+
+		m.Text("วันที่ Date :", props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Left:  158, 
+		})
+
+		m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
+			Top:   27.5,
+			Size:  11,
+			Align: consts.Left,
+			Style: consts.Bold,
+			Color: getBlueColor(),
+			Left:  174, 
+		})
+
+
 	})
+
+
 
 	return m.Output()
 }
 
 
-func getDarkGrayColor() color.Color {
+func getDarkGrayColor2() color.Color {
 	return color.Color{
 		Red:   55,
 		Green: 55,
@@ -706,7 +769,7 @@ func getDarkGrayColor() color.Color {
 	}
 }
 
-func getBlueColor() color.Color {
+func getBlueColor2() color.Color {
 	return color.Color{
 		Red:   10,
 		Green: 10,
@@ -714,7 +777,7 @@ func getBlueColor() color.Color {
 	}
 }
 
-func getRedColor() color.Color {
+func getRedColor2() color.Color {
 	return color.Color{
 		Red:   150,
 		Green: 10,
@@ -722,7 +785,7 @@ func getRedColor() color.Color {
 	}
 }
 
-func CreatePrintStory(c *gin.Context) {
+func CreatePrintStory2(c *gin.Context) {
 	// Parse JSON input
 	var requestData struct {
 		InputName      string `json:"inputName" valid:"required~InputName is required"`
@@ -784,8 +847,8 @@ func CreatePrintStory(c *gin.Context) {
 	filename := fmt.Sprintf("%s_%s.pdf", requestData.InputStudentID, requestData.InputName)
 	savePath := filepath.Join("uploads", filename)
 
-	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
-		if err := os.Mkdir("uploads", os.ModePerm); err != nil {
+	if _, err := os.Stat("UploadsPdf"); os.IsNotExist(err) {
+		if err := os.Mkdir("UploadsPdf", os.ModePerm); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
 			return
 		}
