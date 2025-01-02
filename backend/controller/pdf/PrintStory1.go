@@ -3181,10 +3181,10 @@ func CreatePrintStory(c *gin.Context) {
 
 	// บันทึกไฟล์ตามชื่อ
 	filename := fmt.Sprintf("%s_%s.pdf", requestData.InputStudentID, requestData.InputName)
-	savePath := filepath.Join("uploads", filename)
+	savePath := filepath.Join("uploads_pdf", filename)
 
-	if _, err := os.Stat("uploads"); os.IsNotExist(err) {
-		if err := os.Mkdir("uploads", os.ModePerm); err != nil {
+	if _, err := os.Stat("uploads_pdf"); os.IsNotExist(err) {
+		if err := os.Mkdir("uploads_pdf", os.ModePerm); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to create directory"})
 			return
 		}

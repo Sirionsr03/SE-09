@@ -195,6 +195,11 @@ const HomeRequest: React.FC = () => {
     navigate('/'); // Navigate to ApplyToSeller page
     };
 
+
+  const handleToRequest2 = () => {
+    navigate('/request2'); // Navigate to ApplyToSeller page
+    };
+
   return (
     <>
         <Header style={{backgroundColor:"#03194A",opacity:"0.91", borderRadius:"0px",width:"1440px",marginLeft:"48px"}}>
@@ -239,7 +244,7 @@ const HomeRequest: React.FC = () => {
           >
             <div className='button-menu' style={{marginTop:"-10px"}}>
               <button className="btn-donate" onClick={handleToRequest1}> <i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอลงทะเบียนเพิ่ม / เปลี่ยนกลุ่ม กรณีกลุ่มเต็ม / ลดรายวิชา </button>
-              <button className="btn-donate"><i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอลาระหว่างเรียน </button>
+              <button className="btn-donate" onClick={handleToRequest2}><i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอลาระหว่างเรียน </button>
               <button className="btn-donate"><i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอลาระหว่างสอบ</button>
               <button className="btn-donate"><i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอถอนรายวิชา ( ติด W ) </button>
               <button className="btn-donate"><i className ="fa-solid fa-play fa-xl" style={{marginRight:"10px"}}></i>คำร้องขอชำระเงินค่าลงทะเบียนเรียนล่าช้า </button>

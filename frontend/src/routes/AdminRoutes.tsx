@@ -13,6 +13,7 @@ import HomeRequest from "../home/HomeRequest/HomeRequest.tsx";
 // const CreateLecturer = Loadable(lazy(() => import("../pages/ManageLecturer/LecturerList/Create/index")));
 
 const Request1 = Loadable(lazy(() => import("../pages/Request/Request1/Request1.tsx")));
+const Request2 = Loadable(lazy(() => import("../pages/Request/Request2/Request2.tsx")));
 
 const AdminRoutes = (): RouteObject => {
   return {
@@ -42,10 +43,10 @@ const AdminRoutes = (): RouteObject => {
         element: <Request1 />,
       },
 
-      // {
-      //   path: "/request5",
-      //   element: <Request5 />,
-      // },
+      {
+        path: "/request2",
+        element: <Request2 />,
+      },
 
     ],
   };
