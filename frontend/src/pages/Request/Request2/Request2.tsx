@@ -94,7 +94,7 @@ const Request2: React.FC = () => {
 								style={{
 									marginTop: "0px",
 									marginRight: "20px",
-                                    width:"60vh"
+                                    width:"80vh"
 								}}
 								type="text"
 								name="text"
@@ -104,6 +104,112 @@ const Request2: React.FC = () => {
 							</input>
 
 						</p>
+
+
+                        <p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+							ข้าพเจ้า ( นาย / นาง / นางสาว ) I’m ( Mr. / Mrs. / Miss)
+							<input
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+                                    width:"350px"
+								}}
+								type="text"
+								name="text"
+								className="input"
+								placeholder="กรุณาหรอกชื่อและนามสกุล">
+
+							</input>
+
+
+							เลขประจำตัว Student ID
+							<input
+            				    style={{
+            				        marginTop: "0px",
+            				        marginRight: "20px",
+
+            				    }}
+								name='studentID'
+            				    type="text"
+            				    className="input"
+            				    placeholder="กรุณากรอกรหัสนักศึกษา"
+            				/>
+
+						</p>
+
+
+                        <p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+
+                            สังกัดสำนักวิชา the Institute of
+							<div className="selectfaculty">
+								<select name="format"
+									onChange={(e) => setSelectFaculty(e.target.value)}>
+									<option value="" disabled selected>กรุณาเลือกสำนักวิชา</option>
+								</select>
+
+							</div>
+
+                            สาขาวิชา / หลักสูตร School of
+							<div className="select">
+								<select name="format"
+									required
+									onChange={(e) => setSelectmajor(e.target.value)}>
+									<option value="" disabled selected>กรุณาเลือกสาขา</option>
+
+								</select>
+							</div>
+
+
+                        </p>
+
+                        <p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+                            อยู่ในความดูแลของ อาจารย์ที่ปรึกษา under the supervision of (advisor’s name)
+							<input
+            				    style={{
+            				        marginTop: "0px",
+            				        marginRight: "20px",
+                                    width:"400px"
+            				    }}
+								name='advisor'
+            				    type="text"
+            				    className="input"
+            				    placeholder="กรุณากรอกชื่อ อาจารยืที่ปรึกษา"
+            				/>
+
+                        </p>
+
+
+                        <p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+                            คะแนนเฉลี่ยสะสม GPAX
+							<input
+            				    style={{
+            				        marginTop: "0px",
+            				        marginRight: "20px",
+                                    width:"70px"
+            				    }}
+								name='advisor'
+            				    type="text"
+            				    className="input"
+            			
+            				/>
+
+                        </p>
 
                     </div> {/* <-- Content ส่วนกรอกข้อมูล end*/}
 
