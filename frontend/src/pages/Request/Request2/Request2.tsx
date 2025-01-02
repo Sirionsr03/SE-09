@@ -16,7 +16,7 @@ const Request2: React.FC = () => {
 			<section
 				style={{
 					marginTop: '70px',
-					padding: '40px 258px',
+					padding: '40px 260px',
 					backgroundColor: '#f7f8fc',
 					minHeight: '100vh',
 				}}
@@ -25,7 +25,8 @@ const Request2: React.FC = () => {
 				<div
 					style={{
 						background: '#1a2e5a',
-						padding: '15px 20px',
+						padding: '15px 10px',
+                        width:'1400px',
 						color: 'white',
 						display: 'flex',
 						alignItems: 'center',
@@ -39,7 +40,7 @@ const Request2: React.FC = () => {
 						{/* ไอคอนพิมพ์ */}
 						<i
 							className="fa-solid fa-print fa-2xl"
-							style={{ color: "#fff", marginRight: "20px" }}
+							style={{ color: "#fff", marginRight: "20px", marginLeft:"20px" }}
 						></i>
 
 						{/* ข้อความ */}
@@ -54,7 +55,7 @@ const Request2: React.FC = () => {
 						<div onClick={handleBackHome} >
 							<i
 								className="fa-solid fa-circle-left fa-2xl icon-style"
-								style={{ marginLeft: "665px" }}
+								style={{ marginLeft: "1030px" }}
 							></i>
 						</div>
 
