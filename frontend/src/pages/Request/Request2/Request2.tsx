@@ -211,6 +211,133 @@ const Request2: React.FC = () => {
 
                         </p>
 
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+							justifyContent:"center"
+						}}>
+							มีความประสงค์ขอลาระหว่างเรียนในภาคการศึกษาที่ 
+							<input
+            				    style={{
+            				        marginTop: "0px",
+            				        marginRight: "20px",
+                                    width:"40px"
+            				    }}
+								name='advisor'
+            				    type="text"
+            				    className="input"
+            				/>
+							<div style={{fontSize:'25px', marginLeft:'-10px', marginTop:'-2px'}}>
+								/
+							</div>
+
+							<input
+            				    style={{
+            				        marginTop: "0px",
+            				        marginRight: "20px",
+                                    width:"70px"
+            				    }}
+								name='advisor'
+            				    type="text"
+            				    className="input"
+            				/>
+							ในรายวิชาดังต่อไปนี้
+						</p>
+
+						<p style={{
+							marginTop: "20px",
+							display: "flex",
+							marginBottom: "30px",
+							justifyContent:"center"
+						}}>
+						Wish to request an absence from the class for the trimester year in the following course
+						</p>
+
+						<div style={{
+							background: '#DFDFE2',
+							padding: '15px 10px',
+							width:'1400px',
+							color: 'white',
+							display: 'flex',
+							alignItems: 'center',
+							borderRadius: '10px',
+							boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+							opacity:"80%"
+						}}>
+							<p style={{color:'black'}}>
+
+								รหัสวิชา Course code
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									
+								}} 
+								type="text"
+								name="text"
+								className="input"
+								placeholder="กรุณากรอกรหัสวิชา"
+							>								
+							</input>
+
+
+
+
+							ชื่อวิชา( ภาษาอังกฤษ ) Course name
+							<input
+
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px"
+								}}
+								type="text"
+								name="text"
+								className="input"
+								placeholder="กรุณากรอกชื่อวิชา"
+							>
+							</input>
+
+							กลุ่ม Section 
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "60px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กลุ่ม">
+							</input>
+
+							</p>
+						</div>
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						เนื่องจาก ( ระบุเหตุผลของการลา ) Specify the reason
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "920px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="ระบุเหตุผล">
+							</input>
+						</p>
+
                     </div> {/* <-- Content ส่วนกรอกข้อมูล end*/}
 
 
