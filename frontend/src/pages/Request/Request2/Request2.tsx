@@ -1,6 +1,8 @@
 import "./Request2.css"
 import { useNavigate } from 'react-router-dom';
+import { DatePicker, Space } from 'antd';
 
+const { RangePicker } = DatePicker;
 
 const Request2: React.FC = () => {
 
@@ -15,8 +17,12 @@ const Request2: React.FC = () => {
 
 			<section
 				style={{
+					// marginTop: '70px',
+					// padding: '40px 260px',
+					// backgroundColor: '#f7f8fc',
+					// minHeight: '100vh',
 					marginTop: '70px',
-					padding: '40px 260px',
+					padding: '40px 60px',
 					backgroundColor: '#f7f8fc',
 					minHeight: '100vh',
 				}}
@@ -24,9 +30,16 @@ const Request2: React.FC = () => {
 				{/* Header */}
 				<div
 					style={{
+						// background: '#1a2e5a',
+						// padding: '15px 10px',
+                        // width:'1470px',
+						// color: 'white',
+						// display: 'flex',
+						// alignItems: 'center',
+						// borderRadius: '10px',
+						// boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
 						background: '#1a2e5a',
-						padding: '15px 10px',
-                        width:'1400px',
+						padding: '15px 20px',
 						color: 'white',
 						display: 'flex',
 						alignItems: 'center',
@@ -55,7 +68,7 @@ const Request2: React.FC = () => {
 						<div onClick={handleBackHome} >
 							<i
 								className="fa-solid fa-circle-left fa-2xl icon-style"
-								style={{ marginLeft: "1030px" }}
+								style={{ marginLeft: "1100px" }}
 							></i>
 						</div>
 
@@ -67,6 +80,11 @@ const Request2: React.FC = () => {
 				{/* Content */}
 				<div
 					style={{
+						// marginTop: '10px',
+						// backgroundColor: '#ffffff',
+						// borderRadius: '10px',
+						// padding: '25px 35px',
+						// boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
 						marginTop: '10px',
 						backgroundColor: '#ffffff',
 						borderRadius: '10px',
@@ -335,6 +353,231 @@ const Request2: React.FC = () => {
 								name="group"
 								className="input"
 								placeholder="ระบุเหตุผล">
+							</input>
+						</p>
+
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						ตั้งแต่วันที่ 
+						<Space direction="vertical" size={12} style={{ color: "#9999", marginTop: "-19px" }}>
+							<RangePicker 
+							className="custom-datepicker"
+							/>
+						</Space>
+
+
+						พร้อมนี้ได้แนบหลักฐานประกอบการลาระหว่างเรียนมาด้วยแล้ว คือ
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "465px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+							>
+							</input>
+						</p>
+
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						ในระหว่างที่ลาระหว่างเรียนสามารถติดต่อข้าพเจ้าได้ที่ During the absence, I can be contacted at. บ้านเลขที่ House number
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "100px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+							>
+							</input>
+						</p>
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						หมู่ที่ Village No.
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "60px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+							>
+							</input>
+
+							ซอย Alley
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "360px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+							>
+							</input>
+
+							ถนน Road
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "360px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+							>
+							</input>	
+						</p>
+
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						ตำบล Subdistrict
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "260px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กรุณากรอตำบล"
+							>
+							</input>
+
+							อำเภอ District
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "260px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กรุณากรอกอำเภอ"
+							>
+							</input>
+
+							จังหวัด Province
+
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "260px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กรุณาเลือกจังหวัด"
+							>
+							</input>
+						</p>
+
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "10px",
+						}}>
+						รหัสไปรษณีย์ Post code
+						<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+									width: "160px"
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กรุณากรอกรหัสไปรษณีย์"
+							>
+							</input>
+
+							โทรศัพท์Tel. 
+							<input
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+						
+								}}
+								type="text"
+								name="group"
+								className="input"
+								placeholder="กรุณากรอกเบอร์โทรศัพท์"
+							>
+							</input>
+						</p>
+
+
+						{/* <<-- ข้อความเฉยๆ start*/}
+						<p style={{
+							marginTop: "30px",
+							display: "flex",
+							marginBottom: "20px",
+							marginLeft: "450px"
+						}}>
+							จึงเรียนมาเพื่อโปรดพิจารณา For your consideration.
+						</p>  {/* <<-- ข้อความเฉยๆ end*/}
+
+
+						{/* ส่วนบรรทัดสุดท้าย เช่น ลงชื่อ เบอร์ วันนี้สร้าง start*/}
+						<p
+							style={{
+								marginTop: "30px",
+								display: "flex",
+								marginBottom: "10px",
+								marginLeft: "750px"
+							}}
+						>
+
+							นักศึกษาลงชื่อ Signature
+							<input
+	
+								required
+								style={{
+									marginTop: "0px",
+									marginRight: "20px",
+
+								}}
+								type="text"
+								name="text"
+								className="input"
+								placeholder="ลงชื่อ">
 							</input>
 						</p>
 

@@ -586,6 +586,15 @@ select::-ms-expand {
   color: #F9CC4B;
 }
 
-  
+.custom-datepicker {
+  box-shadow: inset 4px 4px 4px rgba(15, 15, 15, 0.315),4px 4px 4px rgba(28, 28, 28, 0.13);
+  background-color: #ffffff23; /* สีของกล่อง */
+  border-color: #999999;    /* สีของขอบ */
+  color: #333333;           /* สีข้อความ */
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
   
   
