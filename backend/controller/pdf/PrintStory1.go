@@ -1620,8 +1620,9 @@
 
 
 
-// //2024-12-28 22.08 น.
-// // ดึง Request ID 
+// // //2024-12-28 22.08 น.
+// // // ดึง Request ID 
+
 // package pdf
 
 // import (
@@ -2395,13 +2396,15 @@
 
 
 
+// // 2024-12-28 22.08 น.
+// // code จาก git 
 // 2024-12-28 22.08 น.
-// code จาก git 
+// ดึง course code จาก git
 package pdf
 
 import (
 	"bytes"
-	"errors"
+	// "errors"
 	"fmt"
 	"math/rand"
 	"net/http"
@@ -2489,58 +2492,58 @@ func GenerateUpdatedPDF(contents [][]string) (bytes.Buffer, error) {
 
 func GeneratePDF(inputName, inputStudentID, Degree, Faculty, Major, Details, CourseCode, CourseTitle, Group, OldGroup, NewGroup, SpecifyReason, inputPhoneNumber string, Date time.Time) (bytes.Buffer, error) {
 	
-	var output bytes.Buffer
-	if len(inputName) == 0 { 
-		return output, errors.New("InputName is required")
-	} 
+	// var output bytes.Buffer
+	// if len(inputName) == 0 { 
+	// 	return output, errors.New("InputName is required")
+	// } 
 
-	if len(inputStudentID) == 0 { 
-		return output, errors.New("InputStudentID is required")
-	} 
+	// if len(inputStudentID) == 0 { 
+	// 	return output, errors.New("InputStudentID is required")
+	// } 
 
-	if len(Degree) == 0 { 
-		return output, errors.New("Degree is required")
-	} 
+	// if len(Degree) == 0 { 
+	// 	return output, errors.New("Degree is required")
+	// } 
 
-	if len(Faculty) == 0 { 
-		return output, errors.New("Faculty is required")
-	} 
+	// if len(Faculty) == 0 { 
+	// 	return output, errors.New("Faculty is required")
+	// } 
 	
-	if len(Major) == 0 { 
-		return output, errors.New("Major is required")
-	} 
+	// if len(Major) == 0 { 
+	// 	return output, errors.New("Major is required")
+	// } 
 
-	if len(Details) == 0 { 
-		return output, errors.New("Details is required")
-	} 
+	// if len(Details) == 0 { 
+	// 	return output, errors.New("Details is required")
+	// } 
 
-	if len(CourseCode) == 0 { 
-		return output, errors.New("CourseCode is required")
-	} 
+	// if len(CourseCode) == 0 { 
+	// 	return output, errors.New("CourseCode is required")
+	// } 
 
-	if len(CourseTitle) == 0 { 
-		return output, errors.New("CourseTitle is required")
-	} 
+	// if len(CourseTitle) == 0 { 
+	// 	return output, errors.New("CourseTitle is required")
+	// } 
 
-	if len(Group) == 0 { 
-		return output, errors.New("Group is required")
-	} 
+	// if len(Group) == 0 { 
+	// 	return output, errors.New("Group is required")
+	// } 
 
-	if len(OldGroup) == 0 { 
-		return output, errors.New("OldGroup is required")
-	} 
+	// if len(OldGroup) == 0 { 
+	// 	return output, errors.New("OldGroup is required")
+	// } 
 
-	if len(NewGroup) == 0 { 
-		return output, errors.New("NewGroup is required")
-	} 
+	// if len(NewGroup) == 0 { 
+	// 	return output, errors.New("NewGroup is required")
+	// } 
 
-	if len(SpecifyReason) == 0 { 
-		return output, errors.New("SpecifyReason is required")
-	} 
+	// if len(SpecifyReason) == 0 { 
+	// 	return output, errors.New("SpecifyReason is required")
+	// } 
 
-	if len(inputPhoneNumber) == 0 { 
-		return output, errors.New("InputPhoneNumber is required")
-	} 
+	// if len(inputPhoneNumber) == 0 { 
+	// 	return output, errors.New("InputPhoneNumber is required")
+	// } 
 	
 	
 	
@@ -3199,8 +3202,11 @@ func CreatePrintStory(c *gin.Context) {
 	newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
 
 
-	var Request entity.Request
-	db.Where("id", requestData.RequestID).First(&Request)
+	var request entity.Request
+	db.Where("id", requestData.RequestID).First(&request)
+
+	var course entity.Course
+	db.Where("course_code", requestData.CourseCode).First(&course)
 
 	// บันทึกลง databases
 	printStory := entity.PrintStory{
@@ -3210,10 +3216,32 @@ func CreatePrintStory(c *gin.Context) {
 		RequestID:      requestData.RequestID,
 	}
 
+	request.CourseID = course.ID
+	request.Course = course
+
+	if err := config.DB().Updates(&request).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
+		return
+	}
+
 	if err := config.DB().Create(&printStory).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to save print story"})
 		return
 	}
 
 	c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
+}
+
+
+// GET /printstory
+func GetPrintStory(c *gin.Context) { 
+    var printStory []entity.PrintStory
+
+    db := config.DB()
+    result := db.Preload("Request").Find(&printStory) // ใช้ชื่อความสัมพันธ์ที่ถูกต้อง
+    if result.Error != nil {
+        c.JSON(http.StatusNotFound, gin.H{"error": result.Error.Error()})
+        return
+    }
+    c.JSON(http.StatusOK, printStory)
 }

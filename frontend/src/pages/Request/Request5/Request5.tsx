@@ -122,3 +122,82 @@
 // };
 
 // export default Request5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <table
+          style={{
+            width: '100%',
+            borderCollapse: 'collapse',
+            textAlign: 'center',
+            overflow: 'hidden',
+            // borderRadius: '10px',
+          }}
+        >
+          <thead>
+            <tr style={{ backgroundColor: '#8096bc', color: 'white' }}>
+              <th style={{ padding: '10px', border: 'none' }}>ลำดับ</th>
+              <th style={{ padding: '10px', border: 'none' }}>รหัสวิชา</th>
+              <th style={{ padding: '10px', border: 'none' }}>ชื่อวิชา</th>
+              <th style={{ padding: '10px', border: 'none' }}>หน่วยกิต</th>
+              <th style={{ padding: '10px', border: 'none' }}>กลุ่ม</th>
+              <th style={{ padding: '10px', border: 'none' }}>รายการ</th>
+              <th style={{ padding: '10px', border: 'none' }}>เอกสารที่เกี่ยวข้อง</th>
+              <th style={{ padding: '10px', border: 'none' }}>สถานะ</th>
+              <th style={{ padding: '10px', border: 'none' }}>เวลา</th>
+              <th style={{ padding: '10px', border: 'none' }}>หมายเหตุ</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr
+                // key={course.id}
+                style={{
+                  backgroundColor: '#f1f3f5',
+                  lineHeight: '20px',
+                }}
+              >
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+                <td style={{ padding: '10px', borderBottom: '1px solid #dee2e6' }}></td>
+
+                <td
+                  style={{
+                    padding: '10px',
+                    borderBottom: '1px solid #dee2e6',
+                    color: '#dc3545',
+                    fontWeight: 'bold',
+                  }}
+                >
+
+                </td>
+
+              </tr>
+          
+          </tbody>
+        </table> */}

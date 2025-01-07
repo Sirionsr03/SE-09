@@ -110,13 +110,17 @@ func main() {
 
 		router.PATCH("/pdf", pdf.PatchPDF)
 		router.POST("/CreatePrintStory",pdf.CreatePrintStory)
-		// router.DELETE("/printstory/:id", pdf.DeletePrintStory)
+		router.GET("/printstory", pdf.GetPrintStory)
 
-		//RequestType
-		router.GET("/requestType", controller.GetRequestType)
-
-		//StatusRequest
+		//Request
+		router.GET("/request", controller.GetRequest)
+		router.GET("/requesttype", controller.GetRequestType)
 		router.GET("/statusRequest", controller.GetStatusRequest)
+		router.PATCH("/add", controller.UpdateRequest)
+		router.POST("/createrequest", controller.CreateRequest) 
+		router.GET("/request/:student_id", controller.GetRequestByStudentID)
+
+		router.GET("/activity")
 
 	}
 
