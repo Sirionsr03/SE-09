@@ -48,6 +48,15 @@ const AdminRoutes = (): RouteObject => {
         element: <Request2 />,
       },
 
+      // {
+      //   path: "/request",
+      //   element: <Request />,
+      // },
+      // {
+      //   path: "/activity",
+      //   element: <Activity />,
+      // },
+
     ],
   };
 };

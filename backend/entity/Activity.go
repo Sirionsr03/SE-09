@@ -16,9 +16,9 @@ type Activity struct {
 	Location string
 	Organizer string
 	MaxParticipants int
-	 
+	ActivityPic string
 
-	Student   []Student `gorm:"many2many:enrolment;" json:"student"`
+	Student   []Student `gorm:"many2many:activity_enrolment;" json:"student"`
 
 	AdminID uint
 	Admin   Admin `gorm:"foreignKey:AdminID"`

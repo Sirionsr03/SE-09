@@ -114,6 +114,28 @@ async function CreateRequest(data: RequestInterface) {
 
 }
 
+export async function GetRequestsByStudentID(studentID: number) {
+  return await axios
+    .get(`${apiUrl}/request/${studentID}`, requestOptions)
+    .then((res) => res)
+    .catch((e) => e.response);
+}
+
+async function GetRequestTypes() {
+  return await axios
+      .get(`${apiUrl}/requesttype`)
+      .then((res) => res)
+      .catch((e) => e.response);
+}
+
+async function GetStatusRequest() {
+  return await axios
+      .get(`${apiUrl}/statusRequest`)
+      .then((res) => res)
+      .catch((e) => e.response);
+}
+
+
 async function GeneratePDF(data: PrintStoryInterface) {
 
     return await axios
@@ -127,6 +149,18 @@ async function GeneratePDF(data: PrintStoryInterface) {
   }
 
 
+  async function GetPrintStory() {
+
+    return await axios
+  
+      .get(`${apiUrl}/printstory`, requestOptions)
+  
+      .then((res) => res)
+  
+      .catch((e) => e.response);
+  
+  }
+
 export {
     GetFaculty,
     GetMajorByFacultyID,
@@ -138,8 +172,10 @@ export {
     GetStatusStaffs,
     GetDegree,
 
-
     //Request  JIW
-    CreateRequest,
     GeneratePDF,
+    CreateRequest,
+    GetRequestTypes,
+    GetStatusRequest,
+    GetPrintStory,
 };

@@ -1,5 +1,3 @@
-
-
 // //เซฟ pdf ได้แล้ว มีข้อมูลแล้ว ต่อ frontend ได้แล้ว เหลือ เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ม่ใช่ตัวเลข
 // package pdf
 
@@ -212,7 +210,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -226,7 +224,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, 
+// 				Left:  61,
 // 			})
 // 			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 // 				Top:   13.5,
@@ -240,7 +238,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Major, props.Text{
 // 				Top:   19.5,
@@ -254,7 +252,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -335,7 +333,6 @@
 // 				Left:  110.7,
 // 				Color: darkGrayColor,
 // 			})
-
 
 // 			m.Row(7, func() {
 // 				m.Col(7, func() {
@@ -419,7 +416,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, 
+// 				Left:  44,
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -436,7 +433,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -452,7 +449,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, 
+// 				Left:  119,
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -471,7 +468,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -499,7 +496,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -507,7 +504,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, 
+// 				Left:  125,
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -516,7 +513,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -524,7 +521,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, 
+// 				Left:  50,
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -533,7 +530,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, 
+// 				Left:  55,
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -541,7 +538,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, 
+// 				Left:  103,
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -549,7 +546,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, 
+// 				Left:  127,
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -557,7 +554,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -565,7 +562,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, 
+// 				Left:  38,
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -629,7 +626,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, 
+// 				Left:  23,
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -637,7 +634,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, 
+// 				Left:  49,
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -645,14 +642,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, 
+// 				Left:  80,
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, 
+// 				Left:  115,
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -660,7 +657,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, 
+// 				Left:  138,
 // 			})
 
 // 			m.Text("วันที่ Date :", props.Text{
@@ -668,7 +665,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, 
+// 				Left:  158,
 // 			})
 
 // 			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
@@ -677,7 +674,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, 
+// 				Left:  174,
 // 			})
 
 // 		})
@@ -790,7 +787,7 @@
 // 		return
 // 	}
 
-// 	// สุ่ม Code pdf 
+// 	// สุ่ม Code pdf
 // 	newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
 
 // 	// บันทึกลง databases
@@ -809,36 +806,7 @@
 // 	c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
 // }
 
-
 // //เซฟ pdf ได้แล้ว มีข้อมูลแล้ว ต่อ frontend ได้แล้ว เหลือ เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ม่ใช่ตัวเลข
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  // 2024-12-28  02.43 น.
 //  // เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ไม่ใช่ตัวเลข  ทำได้แล้วจ้าาาาาาาาาาา
@@ -999,7 +967,7 @@
 // 				Top:   7.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  10, 
+// 				Left:  10,
 // 			})
 
 // 			m.Text(inputName, props.Text{
@@ -1014,7 +982,7 @@
 // 				Top:   7.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  123, 
+// 				Left:  123,
 // 			})
 // 			m.Text(inputStudentID, props.Text{
 // 				Top:   7.5,
@@ -1028,7 +996,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -1042,7 +1010,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, 
+// 				Left:  61,
 // 			})
 // 			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 // 				Top:   13.5,
@@ -1056,7 +1024,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Major, props.Text{
 // 				Top:   19.5,
@@ -1070,7 +1038,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -1152,7 +1120,6 @@
 // 				Color: darkGrayColor,
 // 			})
 
-
 // 			m.Row(7, func() {
 // 				m.Col(7, func() {
 // 					m.Text("1. รายการ Details", props.Text{
@@ -1216,7 +1183,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, 
+// 				Left:  44,
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -1233,7 +1200,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -1249,7 +1216,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, 
+// 				Left:  119,
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -1268,7 +1235,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -1296,7 +1263,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -1304,7 +1271,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, 
+// 				Left:  125,
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -1313,7 +1280,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -1321,7 +1288,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, 
+// 				Left:  50,
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -1330,7 +1297,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, 
+// 				Left:  55,
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -1338,7 +1305,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, 
+// 				Left:  103,
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -1346,7 +1313,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, 
+// 				Left:  127,
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -1354,7 +1321,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -1362,7 +1329,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, 
+// 				Left:  38,
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -1426,7 +1393,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, 
+// 				Left:  23,
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -1434,7 +1401,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, 
+// 				Left:  49,
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -1442,14 +1409,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, 
+// 				Left:  80,
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, 
+// 				Left:  115,
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -1457,7 +1424,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, 
+// 				Left:  138,
 // 			})
 
 // 			m.Text("วันที่ Date :", props.Text{
@@ -1465,7 +1432,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, 
+// 				Left:  158,
 // 			})
 
 // 			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
@@ -1474,7 +1441,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, 
+// 				Left:  174,
 // 			})
 
 // 		})
@@ -1483,7 +1450,6 @@
 
 // 	return m.Output()
 // }
-
 
 // func getDarkGrayColor() color.Color {
 // 	return color.Color{
@@ -1526,7 +1492,7 @@
 // 		SpecifyReason    string `json:"specifyReason" valid:"required~SpecifyReason is required"`
 // 		InputPhoneNumber string `json:"inputPhoneNumber" valid:"required~InputPhoneNumber is required"`
 // 		Date             time.Time `json:"date"`
-		
+
 // 	}
 
 // 	if err := c.ShouldBindJSON(&requestData); err != nil {
@@ -1540,7 +1506,6 @@
 
 // 	var Major entity.Major
 // 	db.Where("id", requestData.Major).First(&Major)
-
 
 // 	// Generate PDF
 // 	pdfData, err := GeneratePDF(
@@ -1581,7 +1546,7 @@
 // 		return
 // 	}
 
-// 	// สุ่ม Code pdf 
+// 	// สุ่ม Code pdf
 // 	newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
 
 // 	// บันทึกลง databases
@@ -1602,26 +1567,8 @@
 
 // // เปลี่ยนค่าสำนักกับสาขาเป็น ตัวหนังสือที่ไม่ใช่ตัวเลข  ทำได้แล้วจ้าาาาาาาาาาา
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // // //2024-12-28 22.08 น.
-// // // ดึง Request ID 
+// // // ดึง Request ID
 
 // package pdf
 
@@ -1780,7 +1727,7 @@
 // 				Top:   7.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  10, 
+// 				Left:  10,
 // 			})
 
 // 			m.Text(inputName, props.Text{
@@ -1795,7 +1742,7 @@
 // 				Top:   7.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  123, 
+// 				Left:  123,
 // 			})
 // 			m.Text(inputStudentID, props.Text{
 // 				Top:   7.5,
@@ -1809,7 +1756,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Degree, props.Text{
 // 				Top:   13.5,
@@ -1823,7 +1770,7 @@
 // 				Top:   13.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  61, 
+// 				Left:  61,
 // 			})
 // 			m.Text(fmt.Sprintf("%v",Faculty), props.Text{
 // 				Top:   13.5,
@@ -1837,7 +1784,7 @@
 // 				Top:   19.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Major, props.Text{
 // 				Top:   19.5,
@@ -1851,7 +1798,7 @@
 // 				Top:   25.5,
 // 				Size:  11,
 // 				Align: consts.Left,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			// Add some space before the "Transactions" section
@@ -1933,7 +1880,6 @@
 // 				Color: darkGrayColor,
 // 			})
 
-
 // 			m.Row(7, func() {
 // 				m.Col(7, func() {
 // 					m.Text("1. รายการ Details", props.Text{
@@ -1997,7 +1943,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  44, 
+// 				Left:  44,
 // 			})
 // 			m.Text(CourseCode, props.Text{
 // 				Top:   1.5,
@@ -2014,7 +1960,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(CourseTitle, props.Text{
 // 				Top:   20.5,
@@ -2030,7 +1976,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  119, 
+// 				Left:  119,
 // 			})
 
 // 			//ส่วนของอาจารย์
@@ -2049,7 +1995,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(Group, props.Text{
 // 				Top:   27.5,
@@ -2077,7 +2023,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getRedColor(),
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 
 // 			m.Text("อาจารย์ผู้สอน / อาจารย์ผู้รับผิดชอบวิชา", props.Text{
@@ -2085,7 +2031,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  125, 
+// 				Left:  125,
 // 			})
 
 // 			m.Row(5.5, func() {})
@@ -2094,7 +2040,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(OldGroup, props.Text{
 // 				Top:   27.5,
@@ -2102,7 +2048,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  50, 
+// 				Left:  50,
 // 			})
 
 // 			// m.Row(5, func() {})
@@ -2111,7 +2057,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  55, 
+// 				Left:  55,
 // 			})
 // 			m.Text(NewGroup, props.Text{
 // 				Top:   27.5,
@@ -2119,7 +2065,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  103, 
+// 				Left:  103,
 // 			})
 
 // 			m.Text("Instructor / Course coordinator", props.Text{
@@ -2127,7 +2073,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  127, 
+// 				Left:  127,
 // 			})
 // 			m.Row(5.5, func() {})
 // 			m.Text("ระบุเหตุผล Specify reason ", props.Text{
@@ -2135,7 +2081,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  3, 
+// 				Left:  3,
 // 			})
 // 			m.Text(SpecifyReason, props.Text{
 // 				Top:   27.5,
@@ -2143,7 +2089,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  38, 
+// 				Left:  38,
 // 			})
 // 			m.Row(0.6, func() {})
 // 			m.Text("|", props.Text{
@@ -2207,7 +2153,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  23, 
+// 				Left:  23,
 // 			})
 // 			m.Row(3, func() {})
 // 			m.Text("นักศึกษาลงชื่อ Signature", props.Text{
@@ -2215,7 +2161,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  49, 
+// 				Left:  49,
 // 			})
 // 			m.Text(inputName, props.Text{
 // 				Top:   27.5,
@@ -2223,14 +2169,14 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  80, 
+// 				Left:  80,
 // 			})
 // 			m.Text("โทรศัพท์ Tel. No.", props.Text{
 // 				Top:   27.5,
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  115, 
+// 				Left:  115,
 // 			})
 // 			m.Text(inputPhoneNumber, props.Text{
 // 				Top:   27.5,
@@ -2238,7 +2184,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  138, 
+// 				Left:  138,
 // 			})
 
 // 			m.Text("วันที่ Date :", props.Text{
@@ -2246,7 +2192,7 @@
 // 				Size:  11,
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
-// 				Left:  158, 
+// 				Left:  158,
 // 			})
 
 // 			m.Text(fmt.Sprintf(" %s", formattedDate), props.Text{
@@ -2255,7 +2201,7 @@
 // 				Align: consts.Left,
 // 				Style: consts.Bold,
 // 				Color: getBlueColor(),
-// 				Left:  174, 
+// 				Left:  174,
 // 			})
 
 // 		})
@@ -2264,7 +2210,6 @@
 
 // 	return m.Output()
 // }
-
 
 // func getDarkGrayColor() color.Color {
 // 	return color.Color{
@@ -2322,7 +2267,6 @@
 // 	var Major entity.Major
 // 	db.Where("id", requestData.Major).First(&Major)
 
-
 // 	// Generate PDF
 // 	pdfData, err := GeneratePDF(
 // 		requestData.InputName,
@@ -2362,9 +2306,8 @@
 // 		return
 // 	}
 
-// 	// สุ่ม Code pdf 
+// 	// สุ่ม Code pdf
 // 	newPrintStoryCode := fmt.Sprintf("R%09d", rand.Intn(1000000000))
-
 
 // 	var Request entity.Request
 // 	db.Where("id", requestData.RequestID).First(&Request)
@@ -2385,25 +2328,15 @@
 // 	c.JSON(http.StatusOK, gin.H{"message": "PDF generated and saved successfully", "data": printStory})
 // }
 
-
-
-
-
-
-
-
-
-
-
-
 // // 2024-12-28 22.08 น.
-// // code จาก git 
+// // code จาก git
 // 2024-12-28 22.08 น.
 // ดึง course code จาก git
 package pdf
 
 import (
 	"bytes"
+	"strings"
 	// "errors"
 	"fmt"
 	"math/rand"
@@ -3205,8 +3138,14 @@ func CreatePrintStory(c *gin.Context) {
 	var request entity.Request
 	db.Where("id", requestData.RequestID).First(&request)
 
+	// var course entity.Course
+	// db.Where("course_code", requestData.CourseCode).First(&course)
+
+	//Test ignorcase
 	var course entity.Course
-	db.Where("course_code", requestData.CourseCode).First(&course)
+	db.Where("LOWER(course_code) = ?", strings.ToLower(requestData.CourseCode)).First(&course)
+
+
 
 	// บันทึกลง databases
 	printStory := entity.PrintStory{
